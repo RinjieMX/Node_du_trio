@@ -1,26 +1,26 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffb6c1; /* Couleur de fond - Rose clair */
+  background-color: var(--rose-clair);
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #000; /* Couleur du texte - Noir */
+  color: var(--noir);
 }
 
 .addnew-package-container {
-  background-color: #fff;
+  background-color: var(--blanc);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 20px;
-  width: 300px; /* Ajustez la largeur selon vos besoins */
+  width: 300px;
   text-align: center;
 }
 
 .addnew-package-container h1 {
   margin-bottom: 20px; /* Plus d'espace sous le titre */
-  color: #2ecc71; /* Couleur du titre - Vert clair */
+  color: var(--vert-clair);
 }
 
 .form-group {
@@ -38,14 +38,14 @@ textarea {
   width: 100%;
   padding: 10px; /* Plus grand espacement intérieur */
   box-sizing: border-box;
-  border: 1px solid #ccc; /* Bordure légère */
+  border: 1px solid var(--gris-clair); /* Bordure légère */
   border-radius: 4px;
   margin-bottom: 15px; /* Espace entre les champs */
 }
 
 input[type="submit"] {
-  color: #fff;
-  background-color: #2ecc71; /* Couleur du bouton "Add" - Vert clair */
+  color: var(--blanc);
+  background-color: var(--vert-clair);
   padding: 12px; /* Plus grand espacement intérieur */
   border: none;
   border-radius: 4px;
@@ -54,11 +54,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #27ae60; /* Couleur au survol du bouton "Add" - Vert plus sombre */
+  background-color: var(--vert);
 }
 
 .package-added-message {
-  color: #ffb6c1;
+  color: var(--rose-clair);
   padding: 10px 10px;
   margin-top: 10px;
 }

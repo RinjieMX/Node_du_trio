@@ -1,18 +1,18 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffb6c1; /* Couleur de fond - Rose clair */
+  background-color: var(--rose-clair);
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #000; /* Couleur du texte - Noir */
+  color: var(--noir);
 }
 
 .login-container {
-  background-color: #fff;
+  background-color: var(--blanc);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 20px;
   width: 300px;
   text-align: center;
@@ -20,7 +20,7 @@ body {
 
 .login-container h2 {
   margin-bottom: 20px;
-  color: #2ecc71; /* Couleur du titre - Vert clair */
+  color: var(--vert-clair);
 }
 
 .form-group {
@@ -39,7 +39,7 @@ input {
 }
 
 button {
-  color: #fff;
+  color: var(--blanc);
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -48,18 +48,18 @@ button {
 }
 
 button[type="submit"] {
-  background-color: #ffb6c1;
+  background-color: var(--rose-clair);
 }
 
 button[type="submit"]:hover {
-  background-color: #ff99ab;
+  background-color: var(--rose);
 }
 
 .login-container button[type="button"] {
-  background-color: #2ecc71;
+  background-color: var(--vert-clair);
   margin-top: 10px;
 }
 
 .login-container button[type="button"]:hover {
-  background-color: #27ae60;
+  background-color: var(--vert);
 }

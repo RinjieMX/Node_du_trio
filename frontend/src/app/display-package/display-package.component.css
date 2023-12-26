@@ -1,11 +1,11 @@
 .display-packages-container {
   font-family: Arial, sans-serif;
-  background-color: #ffb6c1; /* Couleur de fond - Rose clair */
+  background-color: var(--rose-clair);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 20px;
   text-align: center;
-  color: #000;
+  color: var(--noir);
   margin: 15px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 
 .title {
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--blanc);
 }
 
 app-package {

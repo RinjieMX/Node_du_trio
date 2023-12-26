@@ -1,12 +1,12 @@
 .package-container {
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  background-color: var(--blanc);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 40px;
-  width: 440px;
+  width: 500px;
   text-align: left;
-  color: #000;
+  color: var(--noir);
   margin: 15px;
   display: inline-block;
   vertical-align: top;
@@ -14,7 +14,7 @@
 
 .package-container h2 {
   margin-bottom: 20px;
-  color: #2ecc71;
+  color: var(--vert-clair);
   text-align: center;
 }
 
@@ -26,20 +26,20 @@
 .attribute-name {
   min-width: 170px;
   font-weight: bold;
-  color: #333;
+  color: var(--gris-fonce);
 }
 
 .attribute-value {
   text-align: left;
   flex-grow: 1;
-  color: #666;
-  max-width: 180px;
+  color: var(--gris);
+  max-width: 210px;
   overflow-wrap: break-word;
 }
 
 .see-facts {
-  background-color: #2ecc71;
-  color: #fff;
+  background-color: var(--vert-clair);
+  color: var(--blanc);
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -49,7 +49,7 @@
 }
 
 .bouton-facts button[type="button"]:hover {
-  background-color: #27ae60;
+  background-color: var(--vert);
 }
 
 .bouton-facts {

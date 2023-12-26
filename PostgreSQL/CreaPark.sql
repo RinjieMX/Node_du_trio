@@ -4,12 +4,12 @@
 
 -- CREATE SCHEMA IF NOT EXISTS "projeta4"
     -- AUTHORIZATION postgres;
-
-DROP TABLE IF EXISTS projeta4.userpackagelearning;
-DROP TABLE IF EXISTS projeta4.userlearningfact;
-DROP TABLE IF EXISTS projeta4.learning_fact;
-DROP TABLE IF EXISTS projeta4.learning_package;
-DROP TABLE IF EXISTS projeta4.users;
+	
+DROP TABLE IF EXISTS projeta4.userpackagelearning CASCADE;
+DROP TABLE IF EXISTS projeta4.userlearningfact CASCADE;
+DROP TABLE IF EXISTS projeta4.learning_fact CASCADE;
+DROP TABLE IF EXISTS projeta4.learning_package CASCADE;
+DROP TABLE IF EXISTS projeta4.users CASCADE;
 
 CREATE TABLE projeta4.users (
 	email_user VARCHAR(100) NOT NULL PRIMARY KEY,

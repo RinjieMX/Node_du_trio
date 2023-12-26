@@ -12,6 +12,10 @@ If any errors occur during this command, make sure your Node.js is correctly ins
 
 ## Running the Project
 
+First, ensure that the projet will recompile all ts file on changes. To make sure the settings is on, go to settings, 
+then settings sync. In language and Framework click on typescript and check the box 'Recompile on changes'.
+Now you should see .js file appear under all .ts file. 
+
 To run the project, follow these steps:
 
 1. In the backend terminal, run:

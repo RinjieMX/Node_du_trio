@@ -1,42 +1,45 @@
 <body>
-<div class="addnew-package-container">
-  <h1>Add a new package</h1>
+<div class="en-colonne">
+  <div class="addnew-package-container">
+    <h1>Add a new package</h1>
 
-  <form (ngSubmit)="insertPackage()" method="POST">
-    <label for="name-package">Package's name :</label>
-    <input type="text" id="name-package" name="name-package" [(ngModel)]="title_package" required>
-    <br>
+    <form (ngSubmit)="insertPackage()" method="POST">
+      <label for="name-package">Package's name :</label>
+      <input type="text" id="name-package" name="name-package" [(ngModel)]="title_package" required>
+      <br>
 
-    <label for="description">Description :</label>
-    <textarea id="description" name="description" [(ngModel)]="description_package"></textarea>
-    <br>
+      <label for="description">Description :</label>
+      <textarea id="description" name="description" [(ngModel)]="description_package"></textarea>
+      <br>
 
-    <label for="category">Category :</label>
-    <select id="category" name="category" [(ngModel)]="category">
-      <option value="Maths">Maths</option>
-      <option value="English">English</option>
-      <option value="Physics">Physics</option>
-      <option value="Philosophy">Philosophy</option>
-    </select>
-    <br>
+      <label for="category">Category :</label>
+      <select id="category" name="category" [(ngModel)]="category">
+        <option value="Maths">Maths</option>
+        <option value="English">English</option>
+        <option value="Physics">Physics</option>
+        <option value="Philosophy">Philosophy</option>
+      </select>
+      <br>
 
-    <!-- Target Audience Field -->
-    <label for="target-audience">Target Audience :</label>
-    <input type="text" id="target-audience" name="target-audience" [(ngModel)]="target_audience">
-    <br>
+      <!-- Target Audience Field -->
+      <label for="target-audience">Target Audience :</label>
+      <input type="text" id="target-audience" name="target-audience" [(ngModel)]="target_audience">
+      <br>
 
-    <!-- Difficulty Dropdown -->
-    <label for="difficulty">Difficulty :</label>
-    <select id="difficulty" name="difficulty" [(ngModel)]="difficulty_level">
-      <option value="Easy">Easy</option>
-      <option value="Medium">Medium</option>
-      <option value="Hard">Hard</option>
-    </select>
-    <br>
+      <!-- Difficulty Dropdown -->
+      <label for="difficulty">Difficulty :</label>
+      <select id="difficulty" name="difficulty" [(ngModel)]="difficulty_level">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+      <br>
 
-    <input type="submit" value="Add">
-  </form>
+      <input type="submit" value="Add">
+    </form>
 
-  <p *ngIf="packageAdded" class="package-added-message">Package added</p>
+    <p *ngIf="packageAdded" class="package-added-message">Package added</p>
+  </div>
+  <!-- <app-display-package></app-display-package> -->
 </div>
 </body>

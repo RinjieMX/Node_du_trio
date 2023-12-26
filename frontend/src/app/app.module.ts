@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AddnewPackageComponent } from './addnew-package/addnew-package.component';
+import { PackageComponent } from './package/package.component';
+import { DisplayPackageComponent } from './display-package/display-package.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AddnewPackageComponent } from './addnew-package/addnew-package.componen
     LoginFormComponent,
     NewaccountFormComponent,
     MenuNavbarComponent,
-    AddnewPackageComponent
+    AddnewPackageComponent,
+    PackageComponent,
+    DisplayPackageComponent
   ],
   imports: [
     BrowserModule,

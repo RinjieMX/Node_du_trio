@@ -57,7 +57,7 @@ interface ILearningPackageAttributes {
     description_package: string;
     category: string;
     target_audience: string;
-    difficulty_level: number;
+    difficulty_level: string;
 }
 class LearningPackage extends Model<ILearningPackageAttributes> {
     public id_package!: number;
@@ -65,7 +65,7 @@ class LearningPackage extends Model<ILearningPackageAttributes> {
     public description_package!: string;
     public category!: string;
     public target_audience!: string;
-    public difficulty_level!: number;
+    public difficulty_level!: string;
 }
 LearningPackage.init(
     {
@@ -88,7 +88,7 @@ LearningPackage.init(
             type: DataTypes.STRING(500),
         },
         difficulty_level: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(50),
         }
     },
     {

@@ -9,13 +9,15 @@ import { MenuNavbarComponent } from './menu-navbar/menu-navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { AddnewPackageComponent } from './addnew-package/addnew-package.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     NewaccountFormComponent,
-    MenuNavbarComponent
+    MenuNavbarComponent,
+    AddnewPackageComponent
   ],
   imports: [
     BrowserModule,

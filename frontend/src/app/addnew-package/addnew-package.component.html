@@ -3,7 +3,7 @@
   <div class="addnew-package-container">
     <h1>Add a new package</h1>
 
-    <form (ngSubmit)="insertPackage()" method="POST">
+    <form (ngSubmit)="insertPackage()" method="POST" #packageForm="ngForm">
       <label for="name-package">Package's name :</label>
       <input type="text" id="name-package" name="name-package" [(ngModel)]="title_package" required>
       <br>
@@ -13,7 +13,7 @@
       <br>
 
       <label for="category">Category :</label>
-      <select id="category" name="category" [(ngModel)]="category">
+      <select [(ngModel)]="category" id="category" name="category" required>
         <option value="Maths">Maths</option>
         <option value="English">English</option>
         <option value="Physics">Physics</option>
@@ -35,7 +35,13 @@
       </select>
       <br>
 
+      <!--We check if all input we need to fill are indeed filled-->
+      <div *ngIf="packageForm.invalid && (packageForm.dirty || packageForm.touched)" class="error-message">
+        Please fill out all the required fields.
+      </div>
+
       <input type="submit" value="Add">
+
     </form>
 
     <p *ngIf="packageAdded" class="package-added-message">Package added</p>

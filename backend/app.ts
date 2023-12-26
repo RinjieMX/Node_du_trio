@@ -11,6 +11,7 @@ app.get('/api/liveness', (req, res)=> {
     res.status(200).send('OK');
 });
 
+//------------------- PARTIE PACKAGE ---------------------
 app.get('/api/getpackage', async (req, res) => {
     try {
         const packages = await LearningPackage.findAll();
@@ -104,7 +105,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-//TEST DE LA DATABASE
+//------------------ PARTIE USER ---------------------
 app.get('/api/users', async (req, res) => {
     try {
         const users = await getAllUsers();
@@ -130,6 +131,21 @@ app.post('/api/createUser', async (req, res) => {
         res.status(201).json({ success: true, message: 'User created successfully', result });
     } catch (error) {
         console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+//---------------------- PARTIE FACT ----------------------
+app.get('/api/getfactfrompackage/:idpackage', async (req, res) => {
+    const idpackage = parseInt(req.params.idpackage);
+    try {
+        const facts = await LearningFact.findAll({
+            where: { id_package: idpackage },
+            attributes: ['id_fact', 'recto', 'verso', 'id_package'],
+        });
+        res.status(200).send(facts);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des facts :', error);
         res.status(500).send('Internal Server Error');
     }
 });

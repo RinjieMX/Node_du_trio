@@ -48,18 +48,18 @@ button {
 }
 
 button[type="submit"] {
-  background-color: #ffb6c1; /* Couleur du bouton de connexion - Rose clair */
+  background-color: #ffb6c1;
 }
 
 button[type="submit"]:hover {
-  background-color: #ff99ab; /* Couleur au survol du bouton de connexion - Rose plus sombre */
+  background-color: #ff99ab;
 }
 
 .login-container button[type="button"] {
-  background-color: #2ecc71; /* Couleur du bouton "New to Anki ? Click here" - Vert */
-  margin-top: 10px; /* Espacement depuis le bouton de connexion */
+  background-color: #2ecc71;
+  margin-top: 10px;
 }
 
 .login-container button[type="button"]:hover {
-  background-color: #27ae60; /* Couleur au survol du bouton "New to Anki ? Click here" - Vert plus sombre */
+  background-color: #27ae60;
 }

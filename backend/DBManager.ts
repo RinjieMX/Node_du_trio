@@ -40,6 +40,9 @@ LearningFact.init(
         verso: {
             type: DataTypes.STRING(500),
         },
+        id_package: {
+            type: DataTypes.INTEGER,
+        },
     },
     {
         sequelize,
@@ -99,6 +102,10 @@ LearningPackage.init(
         timestamps: false,
     }
 );
+
+//Relations
+LearningFact.belongsTo(LearningPackage);
+LearningPackage.hasMany(LearningFact, { foreignKey: 'id_package' });
 
 //Synchroniser les modèles avec la base de données
 async function syncModels() {

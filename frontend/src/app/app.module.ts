@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AddnewPackageComponent } from './addnew-package/addnew-package.component';
 import { PackageComponent } from './package/package.component';
 import { DisplayPackageComponent } from './display-package/display-package.component';
+import { DisplayFactsComponent } from './display-facts/display-facts.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DisplayPackageComponent } from './display-package/display-package.compo
     MenuNavbarComponent,
     AddnewPackageComponent,
     PackageComponent,
-    DisplayPackageComponent
+    DisplayPackageComponent,
+    DisplayFactsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: var(--rose-clair);
-  margin: 0;
+  margin: 75px 15px 15px 15px;
+  border-radius: var(--bordure-arrondie);
   display: flex;
   justify-content: center;
   align-items: center;

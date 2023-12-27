@@ -1,12 +1,12 @@
 .display-packages-container {
   font-family: Arial, sans-serif;
   background-color: var(--rose-clair);
-  border-radius: 8px;
+  border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
   padding: 20px;
   text-align: center;
   color: var(--noir);
-  margin: 15px;
+  margin: 75px 15px 15px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,4 +21,32 @@
 app-package {
   display: inline-block;
   vertical-align: top;
+}
+
+.filter-section {
+  flex-direction: column;
+  background-color: var(--rose-clair);
+  border-radius: var(--bordure-arrondie);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  width: 300px;
+  margin: 15px 15px 15px 15px;
+  padding: 20px;
+  color: var(--noir);
+  z-index: 1; /* Ensure the filter section stays above the content */
+}
+
+.filter-section select {
+  margin-left: 5px;
+  text-align: center;
+}
+
+.filter-position {
+  top: 80px;
+  position: fixed;
+  right: 80px;
+}
+
+.page-container {
+  display: flex;
 }

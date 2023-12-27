@@ -1,0 +1,16 @@
+
+.container {
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  height: 100%;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: var(--vert-pale);
+}
+
+

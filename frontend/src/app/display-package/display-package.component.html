@@ -1,3 +1,41 @@
+<div class="filter-position" >
+
+ <div class="filter-section">
+  <label for="category-filter">Filter by Category : </label>
+  <select id="category-filter">
+    <option value="All">All</option>
+    <option value="Maths">Maths</option>
+    <option value="English">English</option>
+    <option value="Physics">Physics</option>
+    <option value="Philosophy">Philosophy</option>
+    <option value="History">History</option>
+    <option value="Geography">Geography</option>
+    <option value="Informatics">Informatics</option>
+  </select></div>
+
+  <div class="filter-section">
+
+    <label for="target-filter">Filter by Audience : </label>
+    <select id="target-filter">
+      <option value="Any">Any</option>
+      <option value="Children">Children</option>
+      <option value="Adults">Adults</option>
+      <option value="Eldery">Eldery</option>
+    </select></div>
+
+  <div class="filter-section">
+
+    <label for="level-filter">Filter by Level : </label>
+    <select id="level-filter">
+      <option value="Any">Any</option>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select></div>
+
+
+</div>
+
 <div class="display-packages-container">
   <h1 class="title">All Packages</h1>
   <div *ngFor="let package of packages">

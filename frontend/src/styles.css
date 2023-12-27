@@ -2,6 +2,7 @@
 :root {
 
   /* Pour les couleurs */
+  --rose-pale: #fad4da;
   --rose-clair: #ffb6c1;
   --rose: #ff99ab;
   --rouge: #eb5b5b;
@@ -18,5 +19,6 @@
   --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*couleur gris foncé ++ */
 
   /* Pour les bordures */
+  --petite-bordure: 4px;
   --bordure-arrondie: 8px;
 }

@@ -1,16 +1,20 @@
-<h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
-<select *ngIf="currentPackage" [(ngModel)]="selectedPackageId" (change)="onPackageChange()">
-  <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
-</select>
+<div class="display-fact-container">
 
+  <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
+  <div class="select-shape">
+  <select *ngIf="currentPackage" [(ngModel)]="selectedPackageId" (change)="onPackageChange()">
+    <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
+  </select>
+  </div>
 
-<div id="question-container" *ngIf="currentFact && currentPackage">
-  <p>{{ currentFact.recto }}</p>
+  <div id="question-container" *ngIf="currentFact && currentPackage">
+    <p>{{ currentFact.recto }}</p>
+  </div>
+  <div id="answer-container" *ngIf="currentFact && currentPackage">
+    <p>{{ currentFact.verso }}</p>
+  </div>
+
+  <p id="index">{{ currentIndex }} / {{ totalFact }}</p>
+
+  <button id="next-button" (click)="onNextClick()">Next Fact</button>
 </div>
-<div id="answer-container" *ngIf="currentFact && currentPackage">
-  <p>{{ currentFact.verso }}</p>
-</div>
-
-<p id="index">{{ currentIndex }} / {{ totalFact }}</p>
-
-<button id="next-button" (click)="onNextClick()">Next Fact</button>

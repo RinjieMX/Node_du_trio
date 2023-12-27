@@ -25,7 +25,7 @@ app-package {
 
 .filter-section {
   flex-direction: column;
-  background-color: var(--rose-clair);
+  background-color: var(--rose-pale);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
   text-align: center;

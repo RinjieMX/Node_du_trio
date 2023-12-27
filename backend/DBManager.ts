@@ -166,31 +166,4 @@ async function getAllUsers() {
     }
 }
 
-async function getAllPackages() {
-    try {
-        const result = await LearningPackage.findAll();
-        const packageIds = result.map((result) => result.id_package);
-
-        return packageIds;
-    } catch (error) {
-        console.error('Erreur lors de la récupération des id_package :', error);
-        throw error;
-    }
-}
-
-async function getPackagesById(id: number) {
-    try {
-        const result = await LearningPackage.findByPk(id);
-
-        if (!result) {
-            throw new Error(`Package with id ${id} not found`);
-        }
-
-        return result;
-    } catch (error) {
-        console.error('Erreur lors de la récupération des id_package :', error);
-        throw error;
-    }
-}
-
-export { LearningFact, LearningPackage, User, insertUser, getAllUsers, getAllPackages, getPackagesById };
+export { LearningFact, LearningPackage, User, insertUser, getAllUsers };

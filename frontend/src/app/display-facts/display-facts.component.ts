@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router, ActivatedRoute} from "@angular/router";
-import { getAllPackages, getPackagesById } from "../../../../backend/DBManager";
+import { DbServiceService } from "../db-service.service";
 
 @Component({
   selector: 'app-display-facts',
@@ -9,7 +9,7 @@ import { getAllPackages, getPackagesById } from "../../../../backend/DBManager";
   styleUrl: './display-facts.component.css'
 })
 export class DisplayFactsComponent implements OnInit {
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private DbService: DbServiceService) { }
 
   facts: any[] = [];
   currentFact: any = { recto: '', verso: '' };
@@ -17,25 +17,20 @@ export class DisplayFactsComponent implements OnInit {
   usedFacts: any[] = [];
   currentIndex: number = 1;
   selectedPackageId: number = 0;
-  AllPackagesid: number[] = [];
   AllPackages: any[] = [];
 
   totalFact: number = 0;
 
   ngOnInit() {
+    //Prendre le paramètre de l'URL et trouver le currentPackage
     this.route.params.subscribe(params => {
       const packid = params['id_package'];
       this.getcurrentpackagefromId(packid);
     });
 
-    //Remplir la liste d'ID
-    fetchAllPackages().then((AllPackagesid) => {
-      console.log('Liste des id_package de tous les packages :', AllPackagesid);
-    }).catch((error) => {
-      console.error('Une erreur s\'est produite :', error);
+    this.DbService.getAllPackages().subscribe((data) => {
+      this.AllPackages = data;
     });
-
-    this.AllPackages = this.getListPackages(this.AllPackagesid);
   }
 
   getfactfromId(id: number){
@@ -46,24 +41,11 @@ export class DisplayFactsComponent implements OnInit {
   }
 
   getcurrentpackagefromId(id: number){
-    this.http.get(`/api/getpackage/${id}`).subscribe((data) => {
+    this.DbService.getPackagesById(id).subscribe((data) => {
       this.currentPackage = data;
       this.loadFacts();
       this.getTotalFact();
     });
-  }
-
-  getListPackages(AllPackagesId: number[]){
-    const packages = [];
-    for (const id of AllPackagesId) {
-      try {
-        const pack = getPackagesById(id);
-        packages.push(pack);
-      } catch (error) {
-        console.error(`Erreur lors de la récupération du package avec l'ID ${id} :`, error);
-      }
-    }
-    return packages;
   }
 
   loadFacts(){
@@ -101,15 +83,5 @@ export class DisplayFactsComponent implements OnInit {
 
   onPackageChange() {
     this.getcurrentpackagefromId(this.selectedPackageId);
-  }
-}
-
-async function fetchAllPackages() {
-  try {
-    const allPackages = await getAllPackages(); // Utilisez await ici
-    return allPackages;
-  } catch (error) {
-    console.error('Une erreur s\'est produite lors de la récupération des packages :', error);
-    throw error;
   }
 }

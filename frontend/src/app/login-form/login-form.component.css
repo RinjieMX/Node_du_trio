@@ -1,9 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   background-color: var(--rose-clair);
-  margin: 0;
   display: flex;
   justify-content: center;
+  margin: 75px 15px 15px 15px;
+  border-radius: var(--bordure-arrondie);
   align-items: center;
   height: 100vh;
   color: var(--noir);

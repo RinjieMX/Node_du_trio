@@ -12,7 +12,7 @@ h1 {
 }
 
 #question-container {
-  /*background-color: #fff; */
+  /* background-color: var(--blanc); */
   border-radius: 8px;
   box-shadow: var(--box-shadow);
   padding: 20px;

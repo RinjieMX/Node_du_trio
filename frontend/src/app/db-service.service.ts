@@ -17,4 +17,8 @@ export class DbServiceService {
   getPackagesById(id: number): Observable<any> {
     return this.http.get(`/api/getpackage/${id}`);
   }
+
+  getAllFacts(id_package: number){
+    return this.http.get(`/api/getfactfrompackage/${id_package}`);
+  }
 }

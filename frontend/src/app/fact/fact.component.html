@@ -1,0 +1,15 @@
+<div class="fact-container">
+  <div class="fact-detail">
+    <span class="attribute-name">Recto :</span>
+    <span class="attribute-value">{{ fact.recto }}</span>
+  </div>
+  <div class="fact-detail">
+    <span class="attribute-name">Verso :</span>
+    <span class="attribute-value">{{ fact.verso }}</span>
+  </div>
+  <div class="button-container">
+    <div class="bouton-position">
+      <button class="button-shape" type="button" [routerLink]="['/edit-fact', fact.id_fact]">Edit fact</button>
+    </div>
+  </div>
+</div>

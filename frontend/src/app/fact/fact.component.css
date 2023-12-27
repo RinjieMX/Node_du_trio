@@ -1,0 +1,62 @@
+.fact-container {
+  font-family: Arial, sans-serif;
+  background-color: var(--blanc);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 50px;
+  width: 550px;
+  text-align: left;
+  color: var(--noir);
+  margin: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fact-detail {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.attribute-name {
+  min-width: 210px;
+  font-weight: bold;
+  color: var(--gris-fonce);
+}
+
+.attribute-value {
+  text-align: left;
+  flex-grow: 1;
+  color: var(--gris);
+  max-width: 230px;
+  overflow-wrap: break-word;
+}
+
+.button-shape {
+  background-color: var(--vert-clair);
+  color: var(--blanc);
+  border: none;
+  width: 220px;
+  height: 40px;
+  border-radius: var(--petite-bordure);
+  cursor: pointer;
+}
+
+
+.bouton-facts button[type="button"]:hover {
+  background-color: var(--vert);
+}
+
+.bouton-position {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 10vh;
+}

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Router, ActivatedRoute} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Router, ActivatedRoute } from "@angular/router";
 import { DbServiceService } from "../db-service.service";
 
 @Component({

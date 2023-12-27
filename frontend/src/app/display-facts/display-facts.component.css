@@ -1,70 +1,28 @@
-
-.display-fact-container {
+.display-facts-container {
   font-family: Arial, sans-serif;
   background-color: var(--rose-clair);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
   padding: 20px;
+  text-align: center;
   color: var(--noir);
   margin: 75px 15px 15px 15px;
-  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.select-shape{
-  margin-left: 30px;
-  margin-top: 15px;
-}
-
-h1 {
-  margin-top: 30px;
-  margin-left: 30px;
-  color: var(--vert);
-}
-
-#question-container {
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
-  text-align: center;
-  color: var(--noir);
-  background-color: var(--blanc);
-  margin: 15px auto;
-  max-width: 600px;
-}
-
-#answer-container {
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  background-color: var(--blanc);
-  padding: 20px;
-  text-align: center;
-  color: var(--noir);
-  margin: 15px auto;
-  max-width: 600px;
-}
-
-#index {
-  position: absolute;
-  bottom: 30px;
-  left: 40px;
-  color: var(--noir);
-}
-
-#next-button {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-  margin: 40px;
-  background-color: var(--vert-clair);
+.title {
+  margin-bottom: 20px;
   color: var(--blanc);
-  border: none;
-  border-radius: var(--petite-bordure);
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-#next-button:hover {
-  background-color: var(--vert);
+app-fact {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.page-container {
+  display: flex;
 }

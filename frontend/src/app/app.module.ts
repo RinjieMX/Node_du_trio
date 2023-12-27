@@ -15,6 +15,7 @@ import { DisplayPackageComponent } from './display-package/display-package.compo
 import { DisplayFactsComponent } from './display-facts/display-facts.component';
 import { NomoreFactComponent } from './nomore-fact/nomore-fact.component';
 import { StudyNowComponent } from './study-now/study-now.component';
+import { FactComponent } from './fact/fact.component';
 import {EditPackageComponent} from "./edit-package/edit-package.component";
 
 @NgModule({
@@ -29,7 +30,8 @@ import {EditPackageComponent} from "./edit-package/edit-package.component";
     DisplayFactsComponent,
     NomoreFactComponent,
     StudyNowComponent,
-    EditPackageComponent
+    EditPackageComponent,
+    FactComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@
 }
 
 .attribute-name {
-  min-width: 170px;
+  min-width: 210px;
   font-weight: bold;
   color: var(--gris-fonce);
 }

@@ -3,13 +3,13 @@ INSERT INTO projeta4.users VALUES ('manon.gardin@gmail.com', '123', 'Manon', 'Ga
 
 --Learning Package
 INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
-VALUES ('Package 1', 'Description du package 1', 'Catégorie A', 'Public cible du package 1', 'Easy');
+VALUES ('English for All', 'A class for beginner in english, learning the basics here.', 'English', 'Any', 'Easy');
 INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
-VALUES ('Package 2', 'Description du package 2', 'Catégorie B', 'Public cible du package 2', 'Medium');
+VALUES ('French History', 'Learn about French history, from the small gallic villages to Napoleons Empire', 'History', 'Children', 'Medium');
 INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
-VALUES ('Package 3', 'Description du package 3', 'Catégorie C', 'Public cible du package 3', 'Hard');
+VALUES ('Learn Python', 'Advanced class in python', 'Informatics', 'Adults', 'Hard');
 INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
-VALUES ('Package 4', 'Description du package 4', 'Catégorie A', 'Public cible du package 4', 'Easy');
+VALUES ('Europe Geography', 'Learn the positions of Countries, their capitals and their flags', 'Geography', 'Eldery', 'Easy');
 
 --Learning Facts
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Coucou ca va ?', 'Oui et toi ?', 1);

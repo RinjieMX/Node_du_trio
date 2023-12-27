@@ -29,10 +29,10 @@ export class AddnewPackageComponent {
 
       const packageData = {
         title_package: this.title_package,
-        description_package: this.description_package,
+        description_package: this.description_package || 'No description provided',
         category: this.category,
-        target_audience: this.target_audience,
-        difficulty_level: this.difficulty_level
+        target_audience: this.target_audience || 'Any',
+        difficulty_level: this.difficulty_level || 'Undefined'
       };
 
       this.http.post('/api/createpackage', packageData)

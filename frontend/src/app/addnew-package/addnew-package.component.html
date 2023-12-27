@@ -4,26 +4,37 @@
     <h1>Add a new package</h1>
 
     <form (ngSubmit)="insertPackage()" method="POST" #packageForm="ngForm">
-      <label for="name-package">Package's name :</label>
+      <label for="name-package"><span class="required">*</span> Package's name : </label>
       <input type="text" id="name-package" name="name-package" [(ngModel)]="title_package" required>
       <br>
 
-      <label for="description">Description :</label>
-      <textarea id="description" name="description" [(ngModel)]="description_package"></textarea>
-      <br>
 
-      <label for="category">Category :</label>
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" [(ngModel)]="description_package"></textarea>
+        <br>
+
+
+      <label for="category"> <span class="required">*</span> Category : </label>
       <select [(ngModel)]="category" id="category" name="category" required>
         <option value="Maths">Maths</option>
         <option value="English">English</option>
         <option value="Physics">Physics</option>
         <option value="Philosophy">Philosophy</option>
+        <option value="History">History</option>
+        <option value="Geography">Geography</option>
+        <option value="Informatics">Informatics</option>
       </select>
       <br>
 
+
       <!-- Target Audience Field -->
       <label for="target-audience">Target Audience :</label>
-      <input type="text" id="target-audience" name="target-audience" [(ngModel)]="target_audience">
+      <select [(ngModel)]="target_audience" id="target-audience" name="target-audience">
+        <option value="Children">Children</option>
+        <option value="Adults">Adults</option>
+        <option value="Eldery">Eldery</option>
+        <option value="Any">Any</option>
+      </select>
       <br>
 
       <!-- Difficulty Dropdown -->
@@ -32,12 +43,15 @@
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
         <option value="Hard">Hard</option>
+        <option value="Undefined">Undefined</option>
       </select>
       <br>
 
+
+
       <!--We check if all input we need to fill are indeed filled-->
       <div *ngIf="packageForm.invalid && (packageForm.dirty || packageForm.touched)" class="error-message">
-        Please fill out all the required fields.
+        *Please fill out all the required fields*
       </div>
 
       <input type="submit" value="Add">

@@ -1,1 +1,9 @@
-<p>display-facts works!</p>
+<h1>{{ currentFact.recto }}</h1>
+
+<div id="fact-container">
+  <p>{{ currentFact.verso }}</p>
+</div>
+
+<p id="index">{{ currentIndex }} / {{ totalFact }}</p>
+
+<button id="next-button" (click)="onNextClick()">Next Fact</button>

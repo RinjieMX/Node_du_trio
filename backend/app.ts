@@ -149,3 +149,15 @@ app.get('/api/getfactfrompackage/:idpackage', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+//Get le nombre de facts dans un package
+app.get('/api/getNbFactinPackage/:idpackage', async (req, res) => {
+    const idpackage = parseInt(req.params.idpackage);
+    try {
+        const count = await LearningFact.count({ where: { id_package: idpackage } });
+        res.status(200).json({ count });
+    } catch (error) {
+        console.error('Erreur lors de la récupération des facts :', error);
+        res.status(500).send('Internal Server Error');
+    }
+});

@@ -1,6 +1,9 @@
-<h1>{{ currentFact.recto }}</h1>
+<h1>{{ currentPackage.title_package }}</h1>
 
-<div id="fact-container">
+<div id="question-container" *ngIf="currentFact">
+  <p>{{ currentFact.recto }}</p>
+</div>
+<div id="answer-container" *ngIf="currentFact">
   <p>{{ currentFact.verso }}</p>
 </div>
 

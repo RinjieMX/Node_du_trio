@@ -104,7 +104,10 @@ LearningPackage.init(
 );
 
 //Relations
-LearningFact.belongsTo(LearningPackage);
+LearningFact.belongsTo(LearningPackage, {
+    foreignKey: 'id_package',
+    targetKey: 'id_package',
+});
 LearningPackage.hasMany(LearningFact, { foreignKey: 'id_package' });
 
 //Synchroniser les modèles avec la base de données

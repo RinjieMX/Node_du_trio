@@ -161,3 +161,14 @@ app.get('/api/getNbFactinPackage/:idpackage', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+app.get('/api/getfact/:idfact', async (req, res) => {
+    const idfact = parseInt(req.params.idfact);
+    try {
+        const facts = await LearningFact.findByPk(idfact);
+        res.status(200).send(facts);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des facts :', error);
+        res.status(500).send('Internal Server Error');
+    }
+});

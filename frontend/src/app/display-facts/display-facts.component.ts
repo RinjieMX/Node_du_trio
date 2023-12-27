@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-display-facts',
@@ -8,33 +8,49 @@ import {Router} from "@angular/router";
   styleUrl: './display-facts.component.css'
 })
 export class DisplayFactsComponent implements OnInit {
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+
   facts: any[] = [];
-  currentFact: any;
+  currentFact: any = { recto: '', verso: '' };
+  currentPackage: any;
   usedFacts: any[] = [];
   currentIndex: number = 1;
 
   totalFact: number = 0;
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const packid = params['id_package'];
+      console.log(packid);
+      this.currentPackage = {
+        id_package: packid,
+      };
+    });
+
+    this.loadFacts();
+    this.getTotalFact();
+  }
+
+  getfactfromId(id: number){
+    this.http.get(`/api/getfact/${id}`).subscribe((data) => {
+      this.currentFact = data;
+      this.usedFacts.push(this.currentFact.id_fact);
+    });
+  }
+
+  loadFacts(){
+    this.http.get<any[]>(`/api/getfactfrompackage/${this.currentPackage.id_package}`).subscribe((data) => {
+      this.facts = data;
+      this.RandomFact();
+    });
+  }
   getTotalFact(){
-    this.http.get<{ count: number }>('/api/getNbFactinPackage/1')
+    this.http.get<{ count: number }>(`/api/getNbFactinPackage/${this.currentPackage.id_package}`)
       .subscribe((response) => {
         this.totalFact = response.count;
       }, (error) => {
         console.error('Erreur lors de la récupération du nombre de facts :', error);
       });
-  }
-
-  constructor(private http: HttpClient, private router: Router) { }
-
-  ngOnInit() {
-    this.loadFacts();
-    this.getTotalFact();
-  }
-
-  loadFacts(){
-    this.http.get<any[]>('/api/getfactfrompackage/1').subscribe((data) => {
-      this.facts = data;
-      this.RandomFact();
-    });
   }
 
   RandomFact() {
@@ -46,7 +62,7 @@ export class DisplayFactsComponent implements OnInit {
     }
 
     const randomIndex = Math.floor(Math.random() * unusedFacts.length);
-    this.currentFact = unusedFacts[randomIndex];
+    this.getfactfromId(unusedFacts[randomIndex].id_fact); //currentFact prend la valeur du prochain fact
     this.usedFacts.push(this.currentFact.id_fact);
   }
 

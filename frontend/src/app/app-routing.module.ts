@@ -12,7 +12,7 @@ const routes: Routes = [
   { path:'newaccount-form', component: NewaccountFormComponent },
   { path:'addnew-package', component: AddnewPackageComponent },
   { path:'display-package', component: DisplayPackageComponent },
-  { path:'display-facts', component: DisplayFactsComponent },
+  { path:'display-facts/:id_package', component: DisplayFactsComponent },
   { path:'nomore-fact', component: NomoreFactComponent }
 ];
 

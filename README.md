@@ -4,11 +4,11 @@
 
 To make sure you have all the necessary packages installed for the project to run, please follow these steps:
 
-- In the backend and frontend terminal, run:
+- In the backend and frontend terminal, run: 'npm i'
+- In the backend terminal run 'npm install sequelize' and 'npm install --save-dev typescript'
+- Pour finir dans le backend, run 'tsc' pour faire apparaitre les fichiers .js
 
-npm i
-
-If any errors occur during this command, make sure your Node.js is correctly installed and that you don't have any corrupted files.
+If any errors occur during these commands, make sure your Node.js is correctly installed and that you don't have any corrupted files.
 
 ## Running the Project
 

@@ -38,7 +38,7 @@
 }
 
 .button-shape {
-  background-color: var(--vert-pale);
+  background-color: var(--vert-clair);
   color: var(--blanc);
   border: none;
   width: 220px;
@@ -46,7 +46,6 @@
   border-radius: var(--petite-bordure);
   cursor: pointer;
 }
-
 
 
 .bouton-facts button[type="button"]:hover {

@@ -1,4 +1,8 @@
 <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
+<select *ngIf="currentPackage" [(ngModel)]="selectedPackageId" (change)="onPackageChange()">
+  <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
+</select>
+
 
 <div id="question-container" *ngIf="currentFact && currentPackage">
   <p>{{ currentFact.recto }}</p>

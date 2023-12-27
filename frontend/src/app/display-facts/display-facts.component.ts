@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router, ActivatedRoute} from "@angular/router";
+import { getAllPackages, getPackagesById } from "../../../../backend/DBManager";
 
 @Component({
   selector: 'app-display-facts',
@@ -15,14 +16,26 @@ export class DisplayFactsComponent implements OnInit {
   currentPackage: any;
   usedFacts: any[] = [];
   currentIndex: number = 1;
+  selectedPackageId: number = 0;
+  AllPackagesid: number[] = [];
+  AllPackages: any[] = [];
 
   totalFact: number = 0;
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const packid = params['id_package'];
-      this.getpackagefromId(packid);
+      this.getcurrentpackagefromId(packid);
     });
+
+    //Remplir la liste d'ID
+    fetchAllPackages().then((AllPackagesid) => {
+      console.log('Liste des id_package de tous les packages :', AllPackagesid);
+    }).catch((error) => {
+      console.error('Une erreur s\'est produite :', error);
+    });
+
+    this.AllPackages = this.getListPackages(this.AllPackagesid);
   }
 
   getfactfromId(id: number){
@@ -32,12 +45,25 @@ export class DisplayFactsComponent implements OnInit {
     });
   }
 
-  getpackagefromId(id: number){
+  getcurrentpackagefromId(id: number){
     this.http.get(`/api/getpackage/${id}`).subscribe((data) => {
       this.currentPackage = data;
       this.loadFacts();
       this.getTotalFact();
     });
+  }
+
+  getListPackages(AllPackagesId: number[]){
+    const packages = [];
+    for (const id of AllPackagesId) {
+      try {
+        const pack = getPackagesById(id);
+        packages.push(pack);
+      } catch (error) {
+        console.error(`Erreur lors de la récupération du package avec l'ID ${id} :`, error);
+      }
+    }
+    return packages;
   }
 
   loadFacts(){
@@ -71,5 +97,19 @@ export class DisplayFactsComponent implements OnInit {
   onNextClick() {
     this.RandomFact();
     this.currentIndex++;
+  }
+
+  onPackageChange() {
+    this.getcurrentpackagefromId(this.selectedPackageId);
+  }
+}
+
+async function fetchAllPackages() {
+  try {
+    const allPackages = await getAllPackages(); // Utilisez await ici
+    return allPackages;
+  } catch (error) {
+    console.error('Une erreur s\'est produite lors de la récupération des packages :', error);
+    throw error;
   }
 }

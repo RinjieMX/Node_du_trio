@@ -1,15 +1,31 @@
 <div class="fact-container">
-  <div class="fact-detail">
-    <span class="attribute-name">Recto :</span>
-    <span class="attribute-value">{{ fact.recto }}</span>
-  </div>
-  <div class="fact-detail">
-    <span class="attribute-name">Verso :</span>
-    <span class="attribute-value">{{ fact.verso }}</span>
-  </div>
-  <div class="button-container">
-    <div class="bouton-position">
-      <button class="button-shape" type="button" [routerLink]="['/edit-fact', fact.id_fact]">Edit fact</button>
+  <ng-container *ngIf="!isEditing; else editMode">
+    <div class="fact-detail">
+      <span class="attribute-name">Recto :</span>
+      <span class="attribute-value">{{ fact.recto }}</span>
     </div>
-  </div>
+    <div class="fact-detail">
+      <span class="attribute-name">Verso :</span>
+      <span class="attribute-value">{{ fact.verso }}</span>
+    </div>
+    <div class="button-container">
+      <div class="bouton-position">
+        <button class="button-shape" type="button" (click)="startEdit()">Edit fact</button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #editMode>
+    <div class="fact-detail">
+      <span class="attribute-name">Recto :</span>
+      <input [(ngModel)]="editedRecto" class="attribute-value" />
+    </div>
+    <div class="fact-detail">
+      <span class="attribute-name">Verso :</span>
+      <input [(ngModel)]="editedVerso" class="attribute-value" />
+    </div>
+    <div class="button-container">
+      <button class="button-shape" type="button" (click)="commitEdit()">Commit</button>
+      <button class="button-shape" type="button" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </ng-template>
 </div>

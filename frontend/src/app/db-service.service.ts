@@ -21,4 +21,12 @@ export class DbServiceService {
   getAllFacts(id_package: number){
     return this.http.get(`/api/getfactfrompackage/${id_package}`);
   }
+
+  editFact(id_fact: number, newrecto: string, newverso: string){
+    const requestBody = {
+      newrecto: newrecto,
+      newverso: newverso
+    }
+    return this.http.put(`/api/editfact/${id_fact}`, JSON.stringify(requestBody));
+  }
 }

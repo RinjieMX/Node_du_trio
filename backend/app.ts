@@ -172,3 +172,35 @@ app.get('/api/getfact/:idfact', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+app.put('/api/editfact/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const newrecto = req.body.newrecto;
+    const newverso = req.body.newverso;
+
+    if (!newrecto && !newverso) {
+        res.status(400).json({ error: "A modification is required." });
+        return;
+    }
+
+    try {
+        // Mettre à jour le titre du package dans la base de données
+        const [rowsUpdated, [updatedFact]] = await LearningFact.update(
+            { recto: newrecto, verso: newverso },
+            {
+                returning: true, // Retourner les lignes mises à jour
+                where: { id_fact: id },
+            }
+        );
+
+        if (rowsUpdated === 0 || !updatedFact) {
+            res.status(404).json({ error: 'Fact not found' });
+            return;
+        }
+
+        res.status(200).json(updatedFact);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});

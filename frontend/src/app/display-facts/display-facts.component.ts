@@ -21,20 +21,22 @@ export class DisplayFactsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       const packid = params['id_package'];
-      console.log(packid);
-      this.currentPackage = {
-        id_package: packid,
-      };
+      this.getpackagefromId(packid);
     });
-
-    this.loadFacts();
-    this.getTotalFact();
   }
 
   getfactfromId(id: number){
     this.http.get(`/api/getfact/${id}`).subscribe((data) => {
       this.currentFact = data;
       this.usedFacts.push(this.currentFact.id_fact);
+    });
+  }
+
+  getpackagefromId(id: number){
+    this.http.get(`/api/getpackage/${id}`).subscribe((data) => {
+      this.currentPackage = data;
+      this.loadFacts();
+      this.getTotalFact();
     });
   }
 

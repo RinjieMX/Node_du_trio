@@ -4,11 +4,11 @@ import {Router, ActivatedRoute} from "@angular/router";
 import { DbServiceService } from "../db-service.service";
 
 @Component({
-  selector: 'app-display-facts',
-  templateUrl: './display-facts.component.html',
-  styleUrl: './display-facts.component.css'
+  selector: 'app-study-now',
+  templateUrl: './study-now.component.html',
+  styleUrl: './study-now.component.css'
 })
-export class DisplayFactsComponent implements OnInit {
+export class StudyNowComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private DbService: DbServiceService) { }
 
   facts: any[] = [];

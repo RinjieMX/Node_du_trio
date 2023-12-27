@@ -6,6 +6,7 @@ import {AddnewPackageComponent} from "./addnew-package/addnew-package.component"
 import {DisplayPackageComponent} from "./display-package/display-package.component";
 import {DisplayFactsComponent} from "./display-facts/display-facts.component";
 import {NomoreFactComponent} from "./nomore-fact/nomore-fact.component";
+import {StudyNowComponent} from "./study-now/study-now.component";
 
 const routes: Routes = [
   { path:'login-form', component: LoginFormComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path:'addnew-package', component: AddnewPackageComponent },
   { path:'display-package', component: DisplayPackageComponent },
   { path:'display-facts/:id_package', component: DisplayFactsComponent },
+  { path:'study-now/:id_package', component: StudyNowComponent },
   { path:'nomore-fact', component: NomoreFactComponent }
 ];
 

@@ -1,0 +1,22 @@
+<div class="display-container">
+  <div class="display-packages-container">
+    <h1 class="title">My Package</h1>
+
+    <div *ngIf="currentPackage">
+      <div class="row">
+        <div class="col-md-6">
+          <div *ngFor="let key of ['description_package', 'category']">
+            <strong>{{ key }}:</strong> {{ currentPackage[key] }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div *ngFor="let key of ['target_audience', 'difficulty_level']">
+            <!-- Add more keys as needed -->
+            <strong>{{ key }}:</strong> {{ currentPackage[key] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

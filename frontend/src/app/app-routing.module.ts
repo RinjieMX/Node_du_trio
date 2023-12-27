@@ -7,6 +7,7 @@ import {DisplayPackageComponent} from "./display-package/display-package.compone
 import {DisplayFactsComponent} from "./display-facts/display-facts.component";
 import {NomoreFactComponent} from "./nomore-fact/nomore-fact.component";
 import {StudyNowComponent} from "./study-now/study-now.component";
+import {EditPackageComponent} from "./edit-package/edit-package.component";
 
 const routes: Routes = [
   { path:'login-form', component: LoginFormComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path:'display-package', component: DisplayPackageComponent },
   { path:'display-facts/:id_package', component: DisplayFactsComponent },
   { path:'study-now/:id_package', component: StudyNowComponent },
-  { path:'nomore-fact', component: NomoreFactComponent }
+  { path:'nomore-fact', component: NomoreFactComponent },
+  { path:'edit-package/:id_package', component: EditPackageComponent }
 ];
 
 @NgModule({

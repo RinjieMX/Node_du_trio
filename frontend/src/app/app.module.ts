@@ -15,6 +15,7 @@ import { DisplayPackageComponent } from './display-package/display-package.compo
 import { DisplayFactsComponent } from './display-facts/display-facts.component';
 import { NomoreFactComponent } from './nomore-fact/nomore-fact.component';
 import { StudyNowComponent } from './study-now/study-now.component';
+import {EditPackageComponent} from "./edit-package/edit-package.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StudyNowComponent } from './study-now/study-now.component';
     DisplayPackageComponent,
     DisplayFactsComponent,
     NomoreFactComponent,
-    StudyNowComponent
+    StudyNowComponent,
+    EditPackageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.display-container {
+  font-family: Arial, sans-serif;
+  background-color: var(--rose-clair);
+  border-radius: var(--bordure-arrondie);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  text-align: center;
+  color: var(--noir);
+  margin: 75px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

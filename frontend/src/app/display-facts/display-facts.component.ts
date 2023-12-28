@@ -22,9 +22,7 @@ export class DisplayFactsComponent implements OnInit {
       this.DbService.getPackagesById(this.id_package).subscribe((data) => {
         this.package = data;
       });
-      this.DbService.getAllFacts(this.id_package).subscribe((data) => {
-        this.facts = data;
-      });
+      this.refreshFacts(this.id_package);
     });
   };
 
@@ -36,8 +34,15 @@ export class DisplayFactsComponent implements OnInit {
     };
 
     this.DbService.addFact(newFact).subscribe((response) => {
-      // Ajoutez la nouvelle fact à la liste
+      // Ajoutez la nouvelle fact en haut de la liste
       this.facts.unshift(response);
+      this.refreshFacts(this.id_package);
+    });
+  }
+
+  refreshFacts(id_pack: number){
+    this.DbService.getAllFacts(id_pack).subscribe((data) => {
+      this.facts = data;
     });
   }
 }

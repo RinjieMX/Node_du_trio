@@ -42,14 +42,14 @@ LearningFact.init(
         },
         id_package: {
             type: DataTypes.INTEGER,
-        },
+        }
     },
     {
         sequelize,
         modelName: 'LearningFact',
         tableName: 'learning_fact',
         schema: 'projeta4',
-        timestamps: false,
+        timestamps: true,
     }
 );
 

@@ -57,3 +57,11 @@ ALTER TABLE projeta4.userlearningfact ADD CONSTRAINT FK_userlearningfact_email_u
 ALTER TABLE projeta4.userlearningfact ADD CONSTRAINT FK_userlearningfact_id_fact FOREIGN KEY (id_fact) REFERENCES projeta4.learning_fact (id_fact);
 ALTER TABLE projeta4.userpackagelearning ADD CONSTRAINT FK_userpackagelearning_id_package FOREIGN KEY (id_package) REFERENCES projeta4.learning_package (id_package);
 ALTER TABLE projeta4.userpackagelearning ADD CONSTRAINT FK_userpackagelearning_email_user FOREIGN KEY (email_user) REFERENCES projeta4.users (email_user);
+
+ALTER TABLE projeta4.learning_fact
+ADD COLUMN "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+ADD COLUMN "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now();
+
+ALTER TABLE projeta4.learning_package
+ADD COLUMN "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+ADD COLUMN "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now();

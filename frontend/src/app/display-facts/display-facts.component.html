@@ -4,6 +4,6 @@
     <button class="button-add" type="button" (click)="addNewFact()">Add Fact</button>
   </div>
   <div *ngFor="let fact of facts">
-    <app-fact [fact]="fact"></app-fact>
+    <app-fact [fact]="fact" (factDeleted)="onFactDeleted()"></app-fact>
   </div>
 </div>

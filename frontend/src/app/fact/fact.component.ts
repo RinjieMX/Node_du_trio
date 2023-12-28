@@ -43,6 +43,15 @@ export class FactComponent {
     );
   }
 
+  confirmDelete(): void {
+    const confirmation = confirm('Are you sure you want to delete this fact?');
+
+    if (confirmation) {
+      this.deleteFact();
+
+    }
+  }
+
   deleteFact(){
     this.DbService.deleteFact(this.fact.id_fact).subscribe(
       () => {

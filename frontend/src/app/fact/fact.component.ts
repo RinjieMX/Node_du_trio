@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input} from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
 import { DbServiceService } from "../db-service.service";
 
 @Component({
@@ -9,6 +9,7 @@ import { DbServiceService } from "../db-service.service";
 export class FactComponent {
   @Input() fact: any;
   @Input() package: any;
+  @Output() factDeleted: EventEmitter<void> = new EventEmitter<void>();
 
   isEditing: boolean = false;
   editedRecto: string = '';
@@ -44,6 +45,9 @@ export class FactComponent {
 
   deleteFact(){
     this.DbService.deleteFact(this.fact.id_fact).subscribe(
+      () => {
+        this.factDeleted.emit();
+      },
       (error) => {
         console.error('Error deleting fact:', error);
       }

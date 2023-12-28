@@ -99,4 +99,10 @@ export class DisplayFactsComponent implements OnInit {
     // Si aucune correspondance n'est trouvée, renvoie undefined
     return undefined;
   }
+
+  onFactDeleted() {
+    console.log("test");
+    // Cette fonction sera appelée lorsque l'événement factDeleted est émis depuis FactComponent
+    this.refreshFacts(this.id_package);
+  }
 }

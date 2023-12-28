@@ -1,6 +1,12 @@
 .container {
-  width: 500px;
-  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: var(--rose-clair);
+  border-radius: var(--bordure-arrondie);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  color: var(--noir);
+  margin: 75px 15px 15px 15px;
+
 }
 
 #myChart {

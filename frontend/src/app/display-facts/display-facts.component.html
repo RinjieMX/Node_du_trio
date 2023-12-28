@@ -6,4 +6,7 @@
   <div *ngFor="let fact of facts">
     <app-fact [fact]="fact" (factDeleted)="onFactDeleted()"></app-fact>
   </div>
+  <div class="bouton-retour">
+    <button class="button-back" type="button" routerLink="/display-package">Back</button>
+  </div>
 </div>

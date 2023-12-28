@@ -3,7 +3,7 @@
   background-color: var(--blanc);
   border-radius: 8px;
   box-shadow: var(--box-shadow);
-  padding: 20px; /* Réduisez la marge intérieure pour que les éléments soient plus proches */
+  padding: 20px;
   width: 550px;
   text-align: left;
   color: var(--noir);
@@ -12,10 +12,9 @@
   vertical-align: top;
 }
 
-/* Les styles pour le contenu des détails */
 .fact-detail {
   display: flex;
-  flex-direction: column; /* Placez les attributs les uns sous les autres */
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
@@ -27,15 +26,15 @@
 .attribute-value {
   text-align: left;
   color: var(--gris);
-  max-width: 100%; /* Ajustez la largeur pour éviter un débordement */
+  max-width: 100%;
 }
 
 /* Styles pour les boutons */
 .button-container {
   display: flex;
-  flex-direction: column; /* Placez les boutons les uns sous les autres */
-  align-items: center; /* Centrez les boutons horizontalement */
-  margin-top: 20px; /* Augmentez la marge supérieure pour espacer les boutons */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .button-shape {
@@ -46,7 +45,7 @@
   height: 40px;
   border-radius: var(--petite-bordure);
   cursor: pointer;
-  margin: 10px 0; /* Ajoutez de l'espace entre les boutons */
+  margin: 10px 0;
 }
 
 .bouton-shape:hover {

@@ -174,6 +174,9 @@ app.get('/api/getfact/:idfact', async (req, res) => {
 });
 
 app.put('/api/editfact/:id', async (req, res) => {
+    console.log('Received PUT request with body:', req.body);
+
+
     const id = parseInt(req.params.id);
     const newrecto = req.body.newrecto;
     const newverso = req.body.newverso;

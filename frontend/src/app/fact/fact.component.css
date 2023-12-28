@@ -33,9 +33,9 @@
 /* Styles pour les boutons */
 .button-container {
   display: flex;
-  flex-direction: column; /* Placez les boutons les uns sous les autres */
-  align-items: center; /* Centrez les boutons horizontalement */
-  margin-top: 20px; /* Augmentez la marge supérieure pour espacer les boutons */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .button-shape {
@@ -46,7 +46,7 @@
   height: 40px;
   border-radius: var(--petite-bordure);
   cursor: pointer;
-  margin: 10px 0; /* Ajoutez de l'espace entre les boutons */
+  margin: 10px 0;
 }
 
 .bouton-shape:hover {

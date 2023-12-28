@@ -14,6 +14,6 @@
 
 ## Problème à régler
 
--Hover sur les boutons qui ne marche plus/ont été oublié
+
 
 

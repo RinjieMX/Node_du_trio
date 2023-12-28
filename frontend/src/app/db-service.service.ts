@@ -51,7 +51,11 @@ export class DbServiceService {
     return this.http.put(`/api/editpackage/${id_package}`, requestBody);
   }
 
-  deleteFact(id_package: number) {
-    return this.http.delete(`/api/deleteFact/${id_package}`);
+  deleteFact(id_fact: number) {
+    return this.http.delete(`/api/deleteFact/${id_fact}`);
+  }
+
+  deletePackage(id_package:number){
+    return this.http.delete(`/api/deletePackage/${id_package}`)
   }
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DbServiceService} from "../db-service.service";
 import {ActivatedRoute} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-package',
@@ -10,7 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 
 export class EditPackageComponent implements OnInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute,private DbService: DbServiceService) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute,private DbService: DbServiceService, private router: Router) {}
 
   currentPackage: any;
 
@@ -78,6 +79,20 @@ export class EditPackageComponent implements OnInit {
   getWidthTitle(): string {
     const factor = 25;
     return (this.currentPackage.title_package.length) * factor + 'px';
+  }
+
+  confirmDelete(): void {
+    const confirmation = confirm('Are you sure you want to delete this package?');
+
+    if (confirmation) {
+      this.DbService.deletePackage(this.currentPackage.id_package).subscribe(
+        (error) => {
+          console.error('Error deleting package:', error);
+        }
+      );
+      this.router.navigate(['/display-package']);
+
+    }
   }
 
 }

@@ -17,7 +17,6 @@ export class FactComponent {
   constructor(private cdr: ChangeDetectorRef, private DbService: DbServiceService) { }
 
   startEdit() {
-    console.log("coucou", this.fact);
     this.isEditing = true;
     this.editedRecto = this.fact.recto;
     this.editedVerso = this.fact.verso;
@@ -36,7 +35,6 @@ export class FactComponent {
     this.DbService.editFact(this.fact.id_fact, this.editedRecto, this.editedVerso).subscribe(
       (updatedFact) => {
         this.fact = updatedFact;
-        console.log(this.fact.id_fact);
       },
       (error) => {
         console.error('Error updating fact:', error);
@@ -45,6 +43,10 @@ export class FactComponent {
   }
 
   deleteFact(){
-
+    this.DbService.deleteFact(this.fact.id_fact).subscribe(
+      (error) => {
+        console.error('Error deleting fact:', error);
+      }
+    );
   }
 }

@@ -39,10 +39,6 @@ export class DbServiceService {
     return this.http.post(`api/createFact`, requestBody);
   }
 
-  getFactbyId(id_fact: number){
-    return this.http.get(`/api/getfact/${id_fact}`);
-  }
-
   editPackage(id_package: number,new_title:string, new_description: string, new_category: string, new_target:string, new_difficulty: string){
     const requestBody = {
       newtitle: new_title,
@@ -53,5 +49,9 @@ export class DbServiceService {
     }
     console.log('Right in the editPackage');
     return this.http.put(`/api/editpackage/${id_package}`, requestBody);
+  }
+
+  deleteFact(id_package: number) {
+    return this.http.delete(`/api/deleteFact/${id_package}`);
   }
 }

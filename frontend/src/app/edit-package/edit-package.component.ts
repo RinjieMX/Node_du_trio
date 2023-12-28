@@ -1,8 +1,7 @@
-
 import {Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { DbServiceService } from "../db-service.service";
-import {Router, ActivatedRoute} from "@angular/router";
+import {HttpClient} from '@angular/common/http';
+import {DbServiceService} from "../db-service.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-edit-package',
@@ -11,11 +10,13 @@ import {Router, ActivatedRoute} from "@angular/router";
 })
 
 export class EditPackageComponent implements OnInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute,private DbService: DbServiceService,private router: Router) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute,private DbService: DbServiceService) {}
 
   currentPackage: any;
 
   isEditing: boolean = false;
+
+  editedTitle: string = '';
   editedDescription: string = '';
   editedCategory: string = '';
   editedDifficulty: string = '';
@@ -40,6 +41,7 @@ export class EditPackageComponent implements OnInit {
 
   startEdit() {
     this.isEditing = true;
+    this.editedTitle = this.currentPackage.title_package;
     this.editedCategory = this.currentPackage.category;
     this.editedDifficulty = this.currentPackage.difficulty_level;
     this.editedAudience = this.currentPackage.target_audience;
@@ -52,13 +54,30 @@ export class EditPackageComponent implements OnInit {
   }
 
   commitEdit() {
+    this.editedTitle = this.currentPackage.title_package;
     this.editedCategory = this.currentPackage.category;
     this.editedDifficulty = this.currentPackage.difficulty_level;
     this.editedAudience = this.currentPackage.target_audience;
     this.editedDescription = this.currentPackage.description_package;
     this.isEditing = false;
 
-    /*this.DbService.editPackage(this.fact.id_fact, this.editedRecto, this.editedVerso);*/
+    this.DbService.editPackage(this.currentPackage.id_package, this.editedTitle, this.editedDescription, this.editedCategory,this.editedAudience,this.editedDifficulty).subscribe(
+    (updatedPackage) => {
+      console.log('Right in the .ts');
+      this.currentPackage = updatedPackage;
+    },
+    (error) => {
+      console.error('Error updating fact:', error);
+    });
+  }
+
+  getWidthDescription(): string {
+    const factor = 9;
+    return (this.currentPackage.description_package.length) * factor + 'px';
+  }
+  getWidthTitle(): string {
+    const factor = 20;
+    return (this.currentPackage.title_package.length) * factor + 'px';
   }
 
 }

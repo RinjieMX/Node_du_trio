@@ -1,29 +1,34 @@
 <div class="display-container">
 
     <ng-container *ngIf="!isEditing; else editMode">
-    <h1 class="title">{{ currentPackage.title_package }}</h1>
 
     <div *ngIf="currentPackage" class="display-packages-container">
-
-        <div class="attribute-detail">
-          <span class="attribute-name">Description : </span>
+      <div class="section">
+        <h1 class="title">
+          <span class="attribute-name" >Title : </span>
+          <span class="attribute-value" >{{ currentPackage.title_package }}</span>
+        </h1>
+      </div>
+      <div class="section">
+          <span class="attribute-name"> Description : </span>
           <span class="attribute-value">{{ currentPackage.description_package }}</span>
-        </div>
 
-        <div class="attribute-detail">
+      </div>
+      <div class="section">
           <span class="attribute-name">Category : </span>
           <span class="attribute-value">{{ currentPackage.category }}</span>
-        </div>
 
-          <div class="attribute-detail">
+      </div>
+      <div class="section">
             <span class="attribute-name">Target Audience : </span>
             <span class="attribute-value">{{ currentPackage.target_audience }}</span>
-          </div>
 
-          <div class="attribute-detail">
+      </div>
+      <div class="section">
             <span class="attribute-name">Difficulty Level : </span>
             <span class="attribute-value">{{ currentPackage.difficulty_level }}</span>
-          </div>
+
+      </div>
 
 
     </div>
@@ -33,16 +38,29 @@
     </ng-container>
     <ng-template #editMode>
 
-      <h1 class="title">{{ currentPackage.title_package }}</h1>
 
       <div *ngIf="currentPackage" class="display-packages-container">
 
-        <div class="attribute-detail">
-          <span class="attribute-name">Description : </span>
-          <input [(ngModel)]="currentPackage.description_package" class="attribute-value" />
+        <div class="section">
+
+          <h1 class="title">
+
+            <span class="attribute-name">Title : </span>
+          <input [(ngModel)]="currentPackage.title_package" class="attribute-value" [ngStyle]="{ 'width': getWidthTitle() }"/>
+
+          </h1>
         </div>
 
-        <div class="attribute-detail">
+
+      <div class="section">
+
+          <span class="attribute-name">Description : </span>
+          <input [(ngModel)]="currentPackage.description_package" class="attribute-value" [ngStyle]="{ 'width': getWidthDescription() }"/>
+
+      </div>
+
+      <div class="section">
+
           <span class="attribute-name">Category : </span>
           <select class="attribute-value" [(ngModel)]="currentPackage.category">
             <option value="Maths">Maths</option>
@@ -53,9 +71,10 @@
             <option value="Geography">Geography</option>
             <option value="Informatics">Informatics</option>
           </select>
-        </div>
 
-        <div class="attribute-detail">
+      </div>
+        <div class="section">
+
           <span class="attribute-name">Target Audience : </span>
           <select class="attribute-value" [(ngModel)]="currentPackage.target_audience">
             <option value="Children">Children</option>
@@ -63,9 +82,11 @@
             <option value="Eldery">Eldery</option>
             <option value="Any">Any</option>
           </select>
-        </div>
 
-        <div class="attribute-detail">
+
+        </div>
+        <div class="section">
+
           <span class="attribute-name">Difficulty Level : </span>
           <select class="attribute-value" [(ngModel)]="currentPackage.difficulty_level">
             <option value="Easy">Easy</option>
@@ -73,11 +94,10 @@
             <option value="Hard">Hard</option>
             <option value="Undefined">Undefined</option>
           </select>
+
         </div>
 
-
       </div>
-
 
       <div class="button-container">
         <button class="button-shape" type="button" (click)="commitEdit()">Commit</button>

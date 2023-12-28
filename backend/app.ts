@@ -70,36 +70,47 @@ app.post('/api/createpackage', async (req, res) => {
     }
 });
 
+
+
 app.put('/api/editpackage/:id', async (req, res) => {
+    console.log('Received PUT request with body:', req.body);
+
     const id = parseInt(req.params.id);
     const newtitle = req.body.newtitle;
+    const newdescription = req.body.newdecription;
+    const newcategory = req.body.newcategory;
+    const newtarget = req.body.newtarget;
+    const newdifficulty = req.body.newdifficulty;
 
-    if (!newtitle) {
-        res.status(400).json({ error: "New title is required" });
+    if (!newtitle ) {
+        res.status(400).json({ error: "A modification is required." });
         return;
     }
 
     try {
-        // Mettre à jour le titre du package dans la base de données
-        const [rowsUpdated, [updatedPackage]] = await LearningPackage.update(
-            { title_package: newtitle },
+        const [rowsUpdated, [updatePackage]] = await LearningPackage.update(
+            { title_package: newtitle, description_package: newdescription, category: newcategory, target_audience: newtarget, difficulty_level: newdifficulty},
             {
-                returning: true, // Retourner les lignes mises à jour
+                returning: true,
                 where: { id_package: id },
             }
         );
 
-        if (rowsUpdated === 0 || !updatedPackage) {
+        if (rowsUpdated === 0 || !updatePackage) {
             res.status(404).json({ error: 'Package not found' });
             return;
         }
 
-        res.status(200).json(updatedPackage);
+        res.status(200).json(updatePackage);
     } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
+
+
 });
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
@@ -225,4 +236,3 @@ app.post('/api/createFact', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-

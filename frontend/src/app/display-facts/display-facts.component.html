@@ -1,5 +1,8 @@
 <div class="display-facts-container">
   <h1 *ngIf="package" class="title">{{ package.title_package }}</h1>
+  <div>
+    <button class="button-add" type="button" (click)="addNewFact()">Add Fact</button>
+  </div>
   <div *ngFor="let fact of facts">
     <app-fact [fact]="fact"></app-fact>
   </div>

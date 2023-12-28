@@ -12,3 +12,29 @@
   align-items: center;
   justify-content: center;
 }
+
+.button-shape {
+  background-color: var(--vert-clair);
+  color: var(--blanc);
+  border: none;
+  width: 220px;
+  height: 40px;
+  border-radius: var(--petite-bordure);
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.display-packages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 10px 20px;
+}
+
+.attribute-detail {
+  display: flex;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: var(--vert-clair);
+  padding-bottom: 20px;
+}

@@ -27,4 +27,17 @@ export class DisplayFactsComponent implements OnInit {
       });
     });
   };
+
+  addNewFact() {
+    const newFact = {
+      recto: '',
+      verso: '',
+      id_package: this.id_package
+    };
+
+    this.DbService.addFact(newFact).subscribe((response) => {
+      // Ajoutez la nouvelle fact à la liste
+      this.facts.unshift(response);
+    });
+  }
 }

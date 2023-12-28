@@ -1,22 +1,89 @@
 <div class="display-container">
-  <div class="display-packages-container">
-    <h1 class="title">My Package</h1>
 
-    <div *ngIf="currentPackage">
-      <div class="row">
-        <div class="col-md-6">
-          <div *ngFor="let key of ['description_package', 'category']">
-            <strong>{{ key }}:</strong> {{ currentPackage[key] }}
-          </div>
+    <ng-container *ngIf="!isEditing; else editMode">
+    <h1 class="title">{{ currentPackage.title_package }}</h1>
+
+    <div *ngIf="currentPackage" class="display-packages-container">
+
+        <div class="attribute-detail">
+          <span class="attribute-name">Description : </span>
+          <span class="attribute-value">{{ currentPackage.description_package }}</span>
         </div>
-        <div class="col-md-6">
-          <div *ngFor="let key of ['target_audience', 'difficulty_level']">
-            <!-- Add more keys as needed -->
-            <strong>{{ key }}:</strong> {{ currentPackage[key] }}
-          </div>
+
+        <div class="attribute-detail">
+          <span class="attribute-name">Category : </span>
+          <span class="attribute-value">{{ currentPackage.category }}</span>
         </div>
-      </div>
+
+          <div class="attribute-detail">
+            <span class="attribute-name">Target Audience : </span>
+            <span class="attribute-value">{{ currentPackage.target_audience }}</span>
+          </div>
+
+          <div class="attribute-detail">
+            <span class="attribute-name">Difficulty Level : </span>
+            <span class="attribute-value">{{ currentPackage.difficulty_level }}</span>
+          </div>
+
+
     </div>
 
+    <button class="button-shape" type="button" (click)="startEdit()">Edit Package</button>
+
+    </ng-container>
+    <ng-template #editMode>
+
+      <h1 class="title">{{ currentPackage.title_package }}</h1>
+
+      <div *ngIf="currentPackage" class="display-packages-container">
+
+        <div class="attribute-detail">
+          <span class="attribute-name">Description : </span>
+          <input [(ngModel)]="currentPackage.description_package" class="attribute-value" />
+        </div>
+
+        <div class="attribute-detail">
+          <span class="attribute-name">Category : </span>
+          <select class="attribute-value" [(ngModel)]="currentPackage.category">
+            <option value="Maths">Maths</option>
+            <option value="English">English</option>
+            <option value="Physics">Physics</option>
+            <option value="Philosophy">Philosophy</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+            <option value="Informatics">Informatics</option>
+          </select>
+        </div>
+
+        <div class="attribute-detail">
+          <span class="attribute-name">Target Audience : </span>
+          <select class="attribute-value" [(ngModel)]="currentPackage.target_audience">
+            <option value="Children">Children</option>
+            <option value="Adults">Adults</option>
+            <option value="Eldery">Eldery</option>
+            <option value="Any">Any</option>
+          </select>
+        </div>
+
+        <div class="attribute-detail">
+          <span class="attribute-name">Difficulty Level : </span>
+          <select class="attribute-value" [(ngModel)]="currentPackage.difficulty_level">
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+            <option value="Undefined">Undefined</option>
+          </select>
+        </div>
+
+
+      </div>
+
+
+      <div class="button-container">
+        <button class="button-shape" type="button" (click)="commitEdit()">Commit</button>
+        <button class="button-shape" type="button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </ng-template>
+
   </div>
-</div>
+

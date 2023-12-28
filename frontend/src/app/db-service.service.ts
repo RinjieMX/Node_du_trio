@@ -27,6 +27,15 @@ export class DbServiceService {
       newrecto: newrecto,
       newverso: newverso
     }
-    return this.http.put(`/api/editfact/${id_fact}`, JSON.stringify(requestBody));
+    return this.http.put(`/api/editfact/${id_fact}`, requestBody);
+  }
+
+  addFact(newFact: any){
+    const requestBody = {
+      recto: newFact.recto,
+      verso: newFact.verso,
+      id_package: newFact.id_package
+    }
+    return this.http.post(`api/createFact`, requestBody);
   }
 }

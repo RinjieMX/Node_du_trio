@@ -207,3 +207,22 @@ app.put('/api/editfact/:id', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+app.post('/api/createFact', async (req, res) => {
+    const { recto, verso, id_package } = req.body;
+
+    try {
+        // Créer un nouveau package dans la base de données
+        const result = await LearningFact.create({
+            recto,
+            verso,
+            id_package
+        });
+
+        res.status(201).json({ success: true, message: 'Fact created successfully', result });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+

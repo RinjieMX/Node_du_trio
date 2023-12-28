@@ -28,7 +28,7 @@ app-fact {
 }
 
 .button-add {
-  margin: 40px;
+  margin: 20px;
   background-color: var(--vert-clair);
   color: var(--blanc);
   border: none;
@@ -36,8 +36,9 @@ app-fact {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 220px;
 }
 
-.button-add button[type="button"]:hover {
+.button-add:hover {
   background-color: var(--vert);
 }

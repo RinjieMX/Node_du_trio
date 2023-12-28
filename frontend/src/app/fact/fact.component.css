@@ -48,6 +48,6 @@
   margin: 10px 0;
 }
 
-.bouton-shape:hover {
+.bouton-shape button[type="button"]:hover {
   background-color: var(--vert);
 }

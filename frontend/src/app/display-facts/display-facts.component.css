@@ -26,3 +26,18 @@ app-fact {
 .page-container {
   display: flex;
 }
+
+.button-add {
+  margin: 40px;
+  background-color: var(--vert-clair);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--petite-bordure);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-add button[type="button"]:hover {
+  background-color: var(--vert);
+}

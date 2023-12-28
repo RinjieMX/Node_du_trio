@@ -38,4 +38,8 @@ export class DbServiceService {
     }
     return this.http.post(`api/createFact`, requestBody);
   }
+
+  getFactbyId(id_fact: number){
+    return this.http.get(`/api/getfact/${id_fact}`);
+  }
 }

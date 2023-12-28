@@ -33,7 +33,11 @@
 
     </div>
 
-    <button class="button-shape" type="button" (click)="startEdit()">Edit Package</button>
+      <div class="button-container">
+
+        <button class="button-shape" type="button" (click)="startEdit()">Edit Package</button>
+        <button class="button-shape delete-button" type="button" (click)="startEdit()">Delete Package</button>
+      </div>
 
     </ng-container>
     <ng-template #editMode>
@@ -101,7 +105,7 @@
 
       <div class="button-container">
         <button class="button-shape" type="button" (click)="commitEdit()">Commit</button>
-        <button class="button-shape" type="button" (click)="cancelEdit()">Cancel</button>
+        <button class="button-shape cancel-button" type="button" (click)="cancelEdit()">Cancel</button>
       </div>
     </ng-template>
 

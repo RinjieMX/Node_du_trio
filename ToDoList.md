@@ -2,8 +2,8 @@
 
 ## Côté fonctionnalité de l'application
 
-- Suppression/modification des Packages --> en cours 
-- Suppression/ajout/modification des Facts --> en cours 
+- Suppression des Packages --> en cours 
+- Suppression des Facts --> en cours 
 - Gérer la page Settings
 - Ajout des statistiques avec HighCharts --> en cours
 
@@ -14,6 +14,6 @@
 
 ## Problème à régler
 
--Hover sur les boutons qui ne marche plus
+
 
 

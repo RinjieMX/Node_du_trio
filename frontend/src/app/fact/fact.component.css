@@ -32,7 +32,7 @@
 /* Styles pour les boutons */
 .button-container {
   display: flex;
-  justify-content: space-between; /* Add this to evenly space the buttons */
+  justify-content: space-between;
   margin: 20px 10px 5px 5px;
 }
 
@@ -45,7 +45,7 @@
   height: 40px;
   border-radius: var(--petite-bordure);
   cursor: pointer;
-  margin: 5px 10px; /* Adjust the margin as needed */
+  margin: 5px 10px;
 }
 
 .button-shape:hover {

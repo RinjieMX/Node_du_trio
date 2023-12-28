@@ -72,11 +72,11 @@ export class EditPackageComponent implements OnInit {
   }
 
   getWidthDescription(): string {
-    const factor = 9;
+    const factor = 10;
     return (this.currentPackage.description_package.length) * factor + 'px';
   }
   getWidthTitle(): string {
-    const factor = 20;
+    const factor = 25;
     return (this.currentPackage.title_package.length) * factor + 'px';
   }
 

@@ -110,6 +110,20 @@ app.put('/api/editpackage/:id', async (req, res) => {
 
 });
 
+app.delete('/api/deletePackage/:id_package', async (req, res) => {
+    const id_package = req.params.id_package;
+    try {
+        const result = await LearningFact.destroy({
+            where: { id_package: id_package }
+        });
+
+        res.status(201).json({ success: true, message: 'Package deleted successfully', result });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 
 app.listen(PORT, () => {
@@ -230,6 +244,20 @@ app.post('/api/createFact', async (req, res) => {
         });
 
         res.status(201).json({ success: true, message: 'Fact created successfully', result });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+app.delete('/api/deleteFact/:id_fact', async (req, res) => {
+    const id_fact = req.params.id_fact;
+    try {
+        const result = await LearningFact.destroy({
+            where: { id_fact: id_fact }
+        });
+
+        res.status(201).json({ success: true, message: 'Fact deleted successfully', result });
     } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');

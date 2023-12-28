@@ -15,6 +15,12 @@ export class EditPackageComponent implements OnInit {
 
   currentPackage: any;
 
+  isEditing: boolean = false;
+  editedDescription: string = '';
+  editedCategory: string = '';
+  editedDifficulty: string = '';
+  editedAudience: string = '';
+
   ngOnInit(){
 
     //Prendre le paramètre de l'URL et trouver le currentPackage
@@ -32,5 +38,27 @@ export class EditPackageComponent implements OnInit {
     });
   }
 
+  startEdit() {
+    this.isEditing = true;
+    this.editedCategory = this.currentPackage.category;
+    this.editedDifficulty = this.currentPackage.difficulty_level;
+    this.editedAudience = this.currentPackage.target_audience;
+    this.editedDescription = this.currentPackage.description_package;
+
+  }
+
+  cancelEdit() {
+    this.isEditing = false;
+  }
+
+  commitEdit() {
+    this.editedCategory = this.currentPackage.category;
+    this.editedDifficulty = this.currentPackage.difficulty_level;
+    this.editedAudience = this.currentPackage.target_audience;
+    this.editedDescription = this.currentPackage.description_package;
+    this.isEditing = false;
+
+    /*this.DbService.editPackage(this.fact.id_fact, this.editedRecto, this.editedVerso);*/
+  }
 
 }

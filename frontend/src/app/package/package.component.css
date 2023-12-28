@@ -48,7 +48,7 @@
 }
 
 
-.bouton-facts button[type="button"]:hover {
+.button-shape:hover {
   background-color: var(--vert);
 }
 

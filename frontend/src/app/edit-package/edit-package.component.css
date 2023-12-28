@@ -20,11 +20,10 @@
   box-shadow: var(--box-shadow);
   text-align: center;
   width: auto;
-  max-height: 75px;
+  max-height: 70px;
   margin: 15px 15px 15px 15px;
-  padding: 20px;
+  padding: 10px;
   color: var(--noir);
-  z-index: 1;
 }
 
 .button-shape {
@@ -38,6 +37,28 @@
   margin-top: 10px;
   margin-left:10px;
   margin-right:10px;
+}
+
+.button-shape:hover {
+  background-color: var(--vert);
+}
+
+
+.delete-button {
+  background-color: var(--rouge-pale);
+}
+
+.delete-button:hover {
+  background-color: var(--rouge);
+}
+
+.cancel-button {
+  background-color: var(--rose);
+  color: var(--noir);
+}
+
+.cancel-button:hover {
+  background-color: var(--rose-fonce);
 }
 
 .display-packages-container {

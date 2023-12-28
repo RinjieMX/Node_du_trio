@@ -51,3 +51,21 @@
 .button-shape:hover {
   background-color: var(--vert);
 }
+
+.delete-button {
+  background-color: var(--rouge-pale);
+}
+
+.delete-button:hover {
+  background-color: var(--rouge);
+}
+
+.cancel-button {
+  background-color: var(--rose);
+  color: var(--noir);
+}
+
+.cancel-button:hover {
+  background-color: var(--rose-fonce);
+}
+

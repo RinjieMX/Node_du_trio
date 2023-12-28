@@ -2,15 +2,18 @@
 
 ## Côté fonctionnalité de l'application
 
-- Suppression/modification des Packages
-- Suppression/ajout/modification des Facts
+- Suppression/modification des Packages --> en cours 
+- Suppression/ajout/modification des Facts --> en cours 
 - Gérer la page Settings
-- Ajout des statistiques avec HighCharts 
+- Ajout des statistiques avec HighCharts --> en cours
 
 ## Coté design de l'interface de l'application
 
 - Faire les tris des packages
 - Cacher les réponses dans la page fact
-- Faire une page Facts de vue à travers les packages (là ou on pourra les modifier)
-- Mettre la page créer un package sur deux colonnes pour plus de visibilité
+
+## Problème à régler
+
+-Hover sur les boutons qui ne marche plus
+
 

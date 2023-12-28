@@ -8,6 +8,8 @@ import {DisplayFactsComponent} from "./display-facts/display-facts.component";
 import {NomoreFactComponent} from "./nomore-fact/nomore-fact.component";
 import {StudyNowComponent} from "./study-now/study-now.component";
 import {EditPackageComponent} from "./edit-package/edit-package.component";
+import {ProgressStatisticsComponent} from "./progress-statistics/progress-statistics.component";
+
 
 const routes: Routes = [
   { path:'login-form', component: LoginFormComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path:'display-facts/:id_package', component: DisplayFactsComponent },
   { path:'study-now/:id_package', component: StudyNowComponent },
   { path:'nomore-fact', component: NomoreFactComponent },
-  { path:'edit-package/:id_package', component: EditPackageComponent }
+  { path:'edit-package/:id_package', component: EditPackageComponent },
+  { path: 'progress-statistics', component: ProgressStatisticsComponent}
+
 ];
 
 @NgModule({

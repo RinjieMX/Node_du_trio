@@ -3,7 +3,7 @@
   background-color: var(--blanc);
   border-radius: 8px;
   box-shadow: var(--box-shadow);
-  padding: 20px;
+  padding: 30px;
   width: 550px;
   text-align: left;
   color: var(--noir);
@@ -32,10 +32,10 @@
 /* Styles pour les boutons */
 .button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  justify-content: space-between; /* Add this to evenly space the buttons */
+  margin: 20px 10px 5px 5px;
 }
+
 
 .button-shape {
   background-color: var(--vert-clair);
@@ -45,7 +45,7 @@
   height: 40px;
   border-radius: var(--petite-bordure);
   cursor: pointer;
-  margin: 10px 0;
+  margin: 5px 10px; /* Adjust the margin as needed */
 }
 
 .button-shape:hover {

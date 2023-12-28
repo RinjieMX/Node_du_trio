@@ -152,7 +152,6 @@ app.get('/api/getfactfrompackage/:idpackage', async (req, res) => {
     try {
         const facts = await LearningFact.findAll({
             where: { id_package: idpackage },
-            attributes: ['id_fact', 'recto', 'verso', 'id_package'],
         });
         res.status(200).send(facts);
     } catch (error) {

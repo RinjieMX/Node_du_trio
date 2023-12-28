@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {DbServiceService} from "../db-service.service";
+import { ChangeDetectorRef, Component, Input} from '@angular/core';
+import { DbServiceService } from "../db-service.service";
 
 @Component({
   selector: 'app-fact',
@@ -14,12 +14,14 @@ export class FactComponent {
   editedRecto: string = '';
   editedVerso: string = '';
 
-  constructor(private DbService: DbServiceService) { }
+  constructor(private cdr: ChangeDetectorRef, private DbService: DbServiceService) { }
 
   startEdit() {
+    console.log("coucou", this.fact);
     this.isEditing = true;
     this.editedRecto = this.fact.recto;
     this.editedVerso = this.fact.verso;
+    this.cdr.detectChanges();
   }
 
   cancelEdit() {
@@ -34,10 +36,15 @@ export class FactComponent {
     this.DbService.editFact(this.fact.id_fact, this.editedRecto, this.editedVerso).subscribe(
       (updatedFact) => {
         this.fact = updatedFact;
+        console.log(this.fact.id_fact);
       },
       (error) => {
         console.error('Error updating fact:', error);
       }
     );
+  }
+
+  deleteFact(){
+
   }
 }

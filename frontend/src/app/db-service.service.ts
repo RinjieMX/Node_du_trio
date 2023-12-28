@@ -27,6 +27,7 @@ export class DbServiceService {
       newrecto: newrecto,
       newverso: newverso
     }
-    return this.http.put(`/api/editfact/${id_fact}`, JSON.stringify(requestBody));
+    console.log(requestBody);
+    return this.http.put(`/api/editfact/${id_fact}`, requestBody);
   }
 }

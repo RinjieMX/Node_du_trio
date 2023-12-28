@@ -14,8 +14,7 @@ export class FactComponent {
   editedRecto: string = '';
   editedVerso: string = '';
 
-  constructor(private DbService: DbServiceService) {
-  }
+  constructor(private DbService: DbServiceService) { }
 
   startEdit() {
     this.isEditing = true;
@@ -32,6 +31,13 @@ export class FactComponent {
     this.fact.verso = this.editedVerso;
     this.isEditing = false;
 
-    this.DbService.editFact(this.fact.id_fact, this.editedRecto, this.editedVerso);
+    this.DbService.editFact(this.fact.id_fact, this.editedRecto, this.editedVerso).subscribe(
+      (updatedFact) => {
+        this.fact = updatedFact;
+      },
+      (error) => {
+        console.error('Error updating fact:', error);
+      }
+    );
   }
 }

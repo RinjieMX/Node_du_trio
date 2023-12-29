@@ -6,7 +6,7 @@
   padding: 20px;
   color: var(--noir);
   margin: 75px 15px 15px 15px;
-  min-height: 72vh;
+  min-height: 87vh;
 }
 
 
@@ -94,3 +94,33 @@ h1 {
   color: var(--blanc);
 }
 
+.button-difficulty {
+  background-color: var(--rose-pale);
+  color: var(--noir);
+  border: none;
+  border-radius: var(--petite-bordure);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+  width: 150px;
+}
+
+.button-difficulty:hover {
+  background-color: var(--blanc);
+}
+
+.difficulty-div {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#txt-difficulty {
+  margin-bottom: 20px;
+}

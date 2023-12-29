@@ -88,6 +88,7 @@ export class StudyNowComponent implements OnInit {
 
   onPackageChange() {
     this.getcurrentpackagefromId(this.selectedPackageId);
+    this.isVisible = false;
   }
 
   onReveal() {

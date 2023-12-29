@@ -23,13 +23,13 @@
     <button class="reveal-button" (click)="onReveal()">Hide</button>
   </div>
 
-  <div class="difficulty-div" *ngIf="isVisible">
+  <div class="difficulty-div" *ngIf="isVisible && !isStated">
     <p id="txt-difficulty">How did you feel about it ?</p>
 
     <div class="button-container">
-      <button class="button-difficulty">Difficult</button>
-      <button class="button-difficulty">To review</button>
-      <button class="button-difficulty">Easy</button>
+      <button class="button-difficulty" (click)="setStateFact('Difficult')">Difficult</button>
+      <button class="button-difficulty" (click)="setStateFact('To review')">To review</button>
+      <button class="button-difficulty"(click)="setStateFact('Easy')">Easy</button>
     </div>
   </div>
 

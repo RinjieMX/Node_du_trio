@@ -12,6 +12,11 @@
   position: fixed;
   top: 0;
   background-color: var(--vert-pale);
+  z-index: 1000;
+}
+
+.dropdown-item{
+  z-index: 1000;
 }
 
 

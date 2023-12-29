@@ -48,9 +48,6 @@ export class FactsStatisticsComponent
 
 
 
-
-
-
   numeroaprint:number=10;
   barchart()
   {

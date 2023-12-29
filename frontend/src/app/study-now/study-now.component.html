@@ -1,4 +1,3 @@
-
 <div class="display-fact-container">
   <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
   <div class="select-shape">
@@ -8,13 +7,12 @@
     </select>
   </div>
 
-
-  <div id="question-container" *ngIf="currentFact && currentPackage">
-    <p>{{ currentFact.recto }}</p>
-  </div>
-  <div id="answer-container" *ngIf="currentFact && currentPackage && isVisible">
-    <p>{{ currentFact.verso }}</p>
-  </div>
+    <div id="question-container" *ngIf="currentFact && currentPackage">
+      <p>{{ currentFact.recto }}</p>
+    </div>
+    <div id="answer-container" *ngIf="currentFact && currentPackage && isVisible">
+      <p>{{ currentFact.verso }}</p>
+    </div>
 
   <div class="bouton-reveal" *ngIf="!isVisible">
     <button class="reveal-button" (click)="onReveal()">Reveal</button>
@@ -23,13 +21,13 @@
     <button class="reveal-button" (click)="onReveal()">Hide</button>
   </div>
 
-  <div class="difficulty-div" *ngIf="isVisible">
+  <div class="difficulty-div" *ngIf="isVisible && !isStated">
     <p id="txt-difficulty">How did you feel about it ?</p>
 
     <div class="button-container">
-      <button class="button-difficulty">Difficult</button>
-      <button class="button-difficulty">To review</button>
-      <button class="button-difficulty">Easy</button>
+      <button class="button-difficulty color-difficult" (click)="setStateFact('Difficult')">Difficult</button>
+      <button class="button-difficulty color-review" (click)="setStateFact('To review')">To review</button>
+      <button class="button-difficulty color-easy" (click)="setStateFact('Easy')">Easy</button>
     </div>
   </div>
 

@@ -1,6 +1,7 @@
 import express from 'express';
 import {insertUser, getAllUsers} from "./DBManager";
 import { LearningPackage, LearningFact, User } from "./DBManager";
+import { Sequelize, Op } from "sequelize";
 
 const app = express();
 const PORT= 3000;
@@ -51,7 +52,7 @@ app.get('/api/package-summaries', async (req, res) => {
 });
 
 app.post('/api/createpackage', async (req, res) => {
-    const { title_package, description_package, category, target_audience, difficulty_level } = req.body;
+    const { title_package, description_package, category, target_audience, difficulty_level, finished_package } = req.body;
 
     try {
         // Créer un nouveau package dans la base de données
@@ -61,6 +62,7 @@ app.post('/api/createpackage', async (req, res) => {
             category,
             target_audience,
             difficulty_level,
+            finished_package,
         });
 
         res.status(201).json(newPackage);
@@ -181,10 +183,18 @@ app.get('/api/getfactfrompackage/:idpackage', async (req, res) => {
 });
 
 //Get le nombre de facts dans un package
-app.get('/api/getNbFactinPackage/:idpackage', async (req, res) => {
+app.get('/api/getNbFactLeft/:idpackage', async (req, res) => {
     const idpackage = parseInt(req.params.idpackage);
     try {
-        const count = await LearningFact.count({ where: { id_package: idpackage } });
+        const count = await LearningFact.count({
+            where: {
+                id_package: idpackage,
+                /*[Op.or]: [ //To get the fact left
+                    { state_fact: { [Op.ne]: 'Easy' } }, // state_fact différent de 'Easy'
+                    { state_fact: { [Op.is]: null } } // state_fact est null
+                ]*/
+            }
+        });
         res.status(200).json({ count });
     } catch (error) {
         console.error('Erreur lors de la récupération des facts :', error);
@@ -264,6 +274,30 @@ app.delete('/api/deleteFact/:id_fact', async (req, res) => {
         });
 
         res.status(201).json({ success: true, message: 'Fact deleted successfully', result });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+app.put('/api/setStateFact/:id_fact', async (req, res) => {
+    const id_fact = req.params.id_fact;
+    const state = req.body.state_fact;
+    try {
+        const [rowsUpdated] = await LearningFact.update(
+            { state_fact: state },
+            {
+                returning: false, // Ne retourne pas les lignes mises à jour
+                where: { id_fact: id_fact },
+            }
+        );
+
+        if (rowsUpdated === 0) {
+            res.status(404).json({ error: 'Fact not found' });
+            return;
+        }
+        const updatedFact = await LearningFact.findOne({ where: { id_fact: id_fact } });
+        res.status(200).send(updatedFact);
     } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');

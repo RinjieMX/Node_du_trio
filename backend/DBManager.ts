@@ -42,6 +42,9 @@ LearningFact.init(
         },
         id_package: {
             type: DataTypes.INTEGER,
+        },
+        state_fact: {
+            type: DataTypes.STRING(50),
         }
     },
     {
@@ -61,6 +64,7 @@ interface ILearningPackageAttributes {
     category: string;
     target_audience: string;
     difficulty_level: string;
+    finished_package: boolean;
 }
 class LearningPackage extends Model<ILearningPackageAttributes> {
     public id_package!: number;
@@ -69,6 +73,7 @@ class LearningPackage extends Model<ILearningPackageAttributes> {
     public category!: string;
     public target_audience!: string;
     public difficulty_level!: string;
+    public finished_package!: boolean;
 }
 LearningPackage.init(
     {
@@ -92,6 +97,9 @@ LearningPackage.init(
         },
         difficulty_level: {
             type: DataTypes.STRING(50),
+        },
+        finished_package: {
+            type: DataTypes.BOOLEAN,
         }
     },
     {

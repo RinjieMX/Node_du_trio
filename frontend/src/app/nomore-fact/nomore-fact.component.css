@@ -12,3 +12,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.button-back {
+  margin: 20px;
+  background-color: var(--rose);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--petite-bordure);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 120px;
+  z-index: 1;
+  top: 80px;
+  position: fixed;
+  left: 40px;
+}
+

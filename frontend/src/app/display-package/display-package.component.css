@@ -44,7 +44,7 @@ app-package {
 .filter-position {
   top: 80px;
   position: fixed;
-  right: 80px;
+  right: 15px;
 }
 
 .page-container {

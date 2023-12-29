@@ -107,6 +107,7 @@ LearningPackage.init(
 LearningFact.belongsTo(LearningPackage, {
     foreignKey: 'id_package',
     targetKey: 'id_package',
+    onDelete: 'CASCADE',
 });
 LearningPackage.hasMany(LearningFact, { foreignKey: 'id_package' });
 

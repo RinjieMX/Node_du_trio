@@ -35,7 +35,7 @@ export class StudyNowComponent implements OnInit {
       // const firstPackage = this.AllPackages.length > 0 ? this.AllPackages[0] : null;
       console.log('First Package:', firstPackage);
 
-      if (!firstPackage || firstPackage ==0) { //on a aucun package alors on a aucun facts
+      if (!firstPackage || firstPackage == 0) { //on a aucun package alors on a aucun facts
         // Redirect to another route (you can replace 'redirect-route' with the desired route)
         this.router.navigate(['/nomore-fact']).then(r => {});
       }
@@ -127,6 +127,7 @@ export class StudyNowComponent implements OnInit {
   }
 
   factIsUsed(){
+    console.log(this.isStated, this.currentFact);
     if (this.isStated && this.currentFact.state_fact === 'Easy'){
       this.usedFacts.push(this.currentFact.id_fact);
       console.log(this.usedFacts);

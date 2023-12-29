@@ -80,7 +80,7 @@ h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 250px;
+  bottom: 200px;
 }
 
 .reveal-button:hover {
@@ -91,4 +91,7 @@ h1 {
   text-align: center;
 }
 
+.change-package{
+  color: var(--blanc);
+}
 

@@ -189,10 +189,10 @@ app.get('/api/getNbFactLeft/:idpackage', async (req, res) => {
         const count = await LearningFact.count({
             where: {
                 id_package: idpackage,
-                [Op.or]: [
+                /*[Op.or]: [ //To get the fact left
                     { state_fact: { [Op.ne]: 'Easy' } }, // state_fact différent de 'Easy'
                     { state_fact: { [Op.is]: null } } // state_fact est null
-                ]
+                ]*/
             }
         });
         res.status(200).json({ count });

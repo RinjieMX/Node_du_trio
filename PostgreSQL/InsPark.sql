@@ -10,6 +10,8 @@ INSERT INTO projeta4.learning_package (title_package, description_package, categ
 VALUES ('Learn Python', 'Advanced class in python', 'Informatics', 'Adults', 'Hard');
 INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
 VALUES ('Europe Geography', 'Learn the positions of Countries, their capitals and their flags', 'Geography', 'Eldery', 'Easy');
+INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
+VALUES ('Basics of Trigonometry', 'Start understanding the concept of trigonometry', 'Maths', 'Adults', 'Undefined');
 
 --Learning Facts
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('What is the official language of England?', 'The official language of England is English.', 1);
@@ -55,6 +57,12 @@ INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Which sea
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Identify the northernmost country in Europe.', 'The northernmost country in Europe is Norway.', 4);
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('What is the symbol on the flag of Greece?', 'The symbol on the flag of Greece is the blue and white cross.', 4);
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Which country is known as the "Land of a Thousand Lakes"?', 'Finland is known as the "Land of a Thousand Lakes" in Europe.', 4);
+
+INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('What is the sine function?', 'The sine function represents the ratio of the length of the side opposite an angle to the length of the hypotenuse.', 5);
+INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Define cosine in trigonometry.', 'Cosine is the ratio of the length of the adjacent side to the length of the hypotenuse in a right-angled triangle.', 5);
+INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Explain tangent in trigonometry.', 'Tangent is the ratio of the length of the side opposite an angle to the length of the adjacent side in a right-angled triangle.', 5);
+INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('What is the Pythagorean theorem?', 'The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse is equal to the sum of the squares of the lengths of the other two sides.', 5);
+INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('How is trigonometry used in real life?', 'Trigonometry is applied in various fields such as physics, engineering, and architecture to calculate angles, distances, and heights.', 5);
 
 --Tests
 SELECT * FROM projeta4.users;

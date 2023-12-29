@@ -18,6 +18,7 @@ export class StudyNowComponent implements OnInit {
   currentIndex: number = 1;
   selectedPackageId: number = 0;
   AllPackages: any[] = [];
+  isVisible: boolean = false;
 
   totalFact: number = 0;
 
@@ -80,9 +81,14 @@ export class StudyNowComponent implements OnInit {
   onNextClick() {
     this.RandomFact();
     this.currentIndex++;
+    this.isVisible = false;
   }
 
   onPackageChange() {
     this.getcurrentpackagefromId(this.selectedPackageId);
+  }
+
+  onReveal() {
+    this.isVisible = !this.isVisible;
   }
 }

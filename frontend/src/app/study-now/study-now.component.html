@@ -11,11 +11,18 @@
 <div id="question-container" *ngIf="currentFact && currentPackage">
   <p>{{ currentFact.recto }}</p>
 </div>
-<div id="answer-container" *ngIf="currentFact && currentPackage">
+<div id="answer-container" *ngIf="currentFact && currentPackage && isVisible">
   <p>{{ currentFact.verso }}</p>
 </div>
 
 <p id="index">{{ currentIndex }} / {{ totalFact }}</p>
+
+<div class="bouton-reveal" *ngIf="!isVisible">
+  <button class="reveal-button" (click)="onReveal()">Reveal</button>
+</div>
+<div class="bouton-reveal" *ngIf="isVisible">
+  <button class="reveal-button" (click)="onReveal()">Hide</button>
+</div>
 
 <button id="next-button" (click)="onNextClick()">Next Fact</button>
 </div>

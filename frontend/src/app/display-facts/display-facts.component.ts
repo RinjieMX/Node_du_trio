@@ -92,7 +92,7 @@ export class DisplayFactsComponent implements OnInit {
     for (const factItem of this.facts) {
       if (factItem.id_fact === fact.id_fact) {
         // Trouvé correspondance, renvoie le composant correspondant
-        console.log("coucou", this.factComponents.find((factComponent: FactComponent) => factComponent.fact.id_fact === fact.id_fact));
+        console.log(this.factComponents.find((factComponent: FactComponent) => factComponent.fact.id_fact === fact.id_fact));
         return this.factComponents.find((factComponent: FactComponent) => factComponent.fact.id_fact === fact.id_fact);
       }
     }
@@ -101,7 +101,6 @@ export class DisplayFactsComponent implements OnInit {
   }
 
   onFactDeleted() {
-    console.log("test");
     // Cette fonction sera appelée lorsque l'événement factDeleted est émis depuis FactComponent
     this.refreshFacts(this.id_package);
   }

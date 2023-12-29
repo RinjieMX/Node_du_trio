@@ -4,6 +4,7 @@
   justify-content: center; /* Horizontally center content */
   align-items: center; /* Vertically center content */
   height: 100%;
+  z-index: 1000;
 }
 
 .navbar {

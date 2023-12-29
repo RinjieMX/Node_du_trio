@@ -2,8 +2,8 @@
 
  <div class="filter-section">
   <label for="category-filter">Filter by Category : </label>
-  <select id="category-filter">
-    <option value="All">All</option>
+  <select id="category-filter" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+    <option value="Any">Any</option>
     <option value="Maths">Maths</option>
     <option value="English">English</option>
     <option value="Physics">Physics</option>
@@ -16,21 +16,23 @@
   <div class="filter-section">
 
     <label for="target-filter">Filter by Audience : </label>
-    <select id="target-filter">
+    <select id="target-filter" [(ngModel)]="selectedAudience" (change)="applyFilters()">
       <option value="Any">Any</option>
       <option value="Children">Children</option>
       <option value="Adults">Adults</option>
       <option value="Eldery">Eldery</option>
+
     </select></div>
 
   <div class="filter-section">
 
     <label for="level-filter">Filter by Level : </label>
-    <select id="level-filter">
+    <select id="level-filter" [(ngModel)]="selectedLevel" (change)="applyFilters()">
       <option value="Any">Any</option>
       <option value="Easy">Easy</option>
       <option value="Medium">Medium</option>
       <option value="Hard">Hard</option>
+      <option value="Undefined">Undefined</option>
     </select></div>
 
 
@@ -42,3 +44,5 @@
     <app-package [package]="package"></app-package>
   </div>
 </div>
+
+

@@ -55,6 +55,7 @@ INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Which sea
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Identify the northernmost country in Europe.', 'The northernmost country in Europe is Norway.', 4);
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('What is the symbol on the flag of Greece?', 'The symbol on the flag of Greece is the blue and white cross.', 4);
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('Which country is known as the "Land of a Thousand Lakes"?', 'Finland is known as the "Land of a Thousand Lakes" in Europe.', 4);
+
 --Tests
 SELECT * FROM projeta4.users;
 SELECT * FROM projeta4.learning_fact;

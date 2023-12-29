@@ -1,0 +1,25 @@
+.bottom-right-image {
+    max-width: 75%;
+    max-height: 75%;
+    bottom: 0;
+    margin-left: 600px;
+    right: 10px;
+    position: fixed;
+}
+
+.display-packages-container {
+    font-family: "Ink Free", sans-serif;
+    font-size: 40px;
+    background-color: var(--rose-clair);
+    border-radius: var(--bordure-arrondie);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    text-align: center;
+    color: var(--noir);
+    margin: 75px 15px 15px 15px;
+    display: flex;
+    height: 78vh;
+    width: 98%;
+    justify-content: center;
+    top: 0px;
+}

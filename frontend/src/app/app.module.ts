@@ -21,8 +21,7 @@ import { FactComponent } from './fact/fact.component';
 import { EditPackageComponent } from "./edit-package/edit-package.component";
 import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
 import { FactsStatisticsComponent } from './facts-statistics/facts-statistics.component';
-
-
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,8 @@ import { FactsStatisticsComponent } from './facts-statistics/facts-statistics.co
     EditPackageComponent,
     FactComponent,
     ProgressStatisticsComponent,
-    FactsStatisticsComponent
+    FactsStatisticsComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

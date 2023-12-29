@@ -111,13 +111,19 @@ app.put('/api/editpackage/:id', async (req, res) => {
 });
 
 app.delete('/api/deletePackage/:id_package', async (req, res) => {
+
     const id_package = req.params.id_package;
+    console.log("on veut delete le package " ,id_package);
     try {
-        const result = await LearningFact.destroy({
+        const result = await LearningPackage.destroy({
             where: { id_package: id_package }
         });
+        if (result === 0) {
+            res.status(404).json({ success: false, message: 'No matching rows found for deletion.' });
+            return;
+        }
 
-        res.status(201).json({ success: true, message: 'Package deleted successfully', result });
+        res.status(200).json({ success: true, message: 'Package deleted successfully', result });
     } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');

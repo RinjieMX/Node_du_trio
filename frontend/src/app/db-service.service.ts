@@ -56,6 +56,7 @@ export class DbServiceService {
   }
 
   deletePackage(id_package:number){
+    console.log("on delete un package", id_package);
     return this.http.delete(`/api/deletePackage/${id_package}`)
   }
 }

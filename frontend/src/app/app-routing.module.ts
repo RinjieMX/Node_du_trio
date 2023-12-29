@@ -15,7 +15,7 @@ const routes: Routes = [
   { path:'login-form', component: LoginFormComponent },
   { path:'newaccount-form', component: NewaccountFormComponent },
   { path:'addnew-package', component: AddnewPackageComponent },
-  { path:'display-package', component: DisplayPackageComponent },
+  { path:'display-package', component: DisplayPackageComponent , data: { refresh: true } },
   { path:'display-facts/:id_package', component: DisplayFactsComponent },
   { path:'study-now/:id_package', component: StudyNowComponent },
   { path:'nomore-fact', component: NomoreFactComponent },

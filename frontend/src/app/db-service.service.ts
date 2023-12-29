@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {LearningPackage} from "../../../backend/DBManager";
 import { HttpClient } from '@angular/common/http';
 import {Observable} from "rxjs";
+import {NavigationExtras, Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getAllPackages(): Observable<number[]> {
     return this.http.get<number[]>('/api/getpackage');
@@ -55,8 +56,57 @@ export class DbServiceService {
     return this.http.delete(`/api/deleteFact/${id_fact}`);
   }
 
-  deletePackage(id_package:number){
-    console.log("on delete un package", id_package);
-    return this.http.delete(`/api/deletePackage/${id_package}`)
+  getallFactsFromPackage(id_package: number){
+    return this.http.get(`/api/getfactfrompackage/${id_package}`);
   }
+
+  deletePackage(id_package:number){
+    //on a la confirmation on va aller récupérer tous les facts associés au package
+      console.log("on récupère les facts", id_package);
+      let facts: any = [];
+      this.getallFactsFromPackage(id_package).subscribe((data) => {
+        facts = data;
+        console.log("on a récupérer les facts, longueur ", facts.length);
+
+        //une fois récupérer on va les supprimer un par un
+        if(facts.length != 0){ //on a trouver au moins un fact lié à la database
+            for (const fact of facts) {
+                console.log(fact.id_fact);
+                const id = fact.id_fact; // Assuming your Fact object has an 'id' property
+                this.deleteFact(id).subscribe(
+                    () => {
+                        console.log(`Fact ${id} deleted successfully.`);
+                    },
+                    (error) => {
+                        console.error(`Error deleting fact ${id}:`, error);
+                    }
+                );
+            }
+            this.deletePackageDirectly(id_package);
+        }
+        else this.deletePackageDirectly(id_package);
+    });
+
+  }
+
+    deletePackageDirectly(id_package: number) {
+        console.log('Deleting the package directly.');
+        this.http.delete(`/api/deletePackage/${id_package}`).subscribe(
+            () => {
+
+                console.log('Package deleted successfully.');
+                //Success = on recharge la page display packages
+                const navigationExtras: NavigationExtras = {
+                    state: { refresh: true }
+                };
+                this.router.navigate(['/display-package'], navigationExtras);
+            },
+            (error) => {
+                console.error('Error deleting package:', error);
+            }
+        );
+    }
+
+
+
 }

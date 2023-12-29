@@ -9,6 +9,7 @@ import {NomoreFactComponent} from "./nomore-fact/nomore-fact.component";
 import {StudyNowComponent} from "./study-now/study-now.component";
 import {EditPackageComponent} from "./edit-package/edit-package.component";
 import {ProgressStatisticsComponent} from "./progress-statistics/progress-statistics.component";
+import {FactsStatisticsComponent} from "./facts-statistics/facts-statistics.component";
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path:'study-now/:id_package', component: StudyNowComponent },
   { path:'nomore-fact', component: NomoreFactComponent },
   { path:'edit-package/:id_package', component: EditPackageComponent },
-  { path: 'progress-statistics', component: ProgressStatisticsComponent}
+  { path: 'progress-statistics', component: ProgressStatisticsComponent},
+  {path: 'facts-statistics',component:FactsStatisticsComponent}
 
 ];
 

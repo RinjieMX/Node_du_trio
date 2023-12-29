@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './menu-navbar.component.html',
   styleUrl: './menu-navbar.component.css'
 })
-export class MenuNavbarComponent {
+export class MenuNavbarComponent
+{
+
 
 }

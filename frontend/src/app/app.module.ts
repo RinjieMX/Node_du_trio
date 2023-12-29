@@ -20,6 +20,7 @@ import { StudyNowComponent } from './study-now/study-now.component';
 import { FactComponent } from './fact/fact.component';
 import { EditPackageComponent } from "./edit-package/edit-package.component";
 import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
+import { FactsStatisticsComponent } from './facts-statistics/facts-statistics.component';
 
 
 
@@ -37,7 +38,8 @@ import { ProgressStatisticsComponent } from './progress-statistics/progress-stat
     StudyNowComponent,
     EditPackageComponent,
     FactComponent,
-    ProgressStatisticsComponent
+    ProgressStatisticsComponent,
+    FactsStatisticsComponent
   ],
   imports: [
     BrowserModule,

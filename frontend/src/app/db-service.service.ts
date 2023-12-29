@@ -108,5 +108,10 @@ export class DbServiceService {
     }
 
 
+  getNbFactInPackage(idPackage: number): Observable<number> {
+    return this.http.get<number>(`api/getNbFactinPackage/${idPackage}`);
+  }
+
+
 
 }

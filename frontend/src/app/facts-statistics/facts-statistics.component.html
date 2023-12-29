@@ -1,0 +1,22 @@
+<p>facts-statistics works!</p>
+<h1>FACTS STATS</h1>>
+
+
+<div>
+  <highcharts-chart
+    *ngIf="chartOptions"
+    [Highcharts]="highcharts"
+    [options]="chartOptions"
+    style="height: 100%; width: 100%; display: block">
+
+  </highcharts-chart>
+
+</div>
+
+<!-- fact-statistics.component.html -->
+<div *ngIf="numberOfFacts !== undefined">
+  <p>Nombre de faits dans le package : {{ numberOfFacts }}</p>
+</div>
+
+{{ numberOfFacts }}
+

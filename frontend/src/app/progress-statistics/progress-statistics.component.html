@@ -1,73 +1,9 @@
-<p>progress-statistics works!</p>
+<h1>PROGRESS-STATISTICS</h1>
+<highcharts-chart
+*ngIf="chartOptions"
+[Highcharts]="highcharts"
+[options]="chartOptions"
+style="height: 100%; width: 100%; display: block">
 
-<div class="container">
-  <h1>Statistiques</h1>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Inclure la bibliothèque Highcharts depuis un CDN -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-
-      h1 {
-        color: #3498db;
-      }
-
-      p {
-        color: #333;
-      }
-
-      #chart-container {
-        max-width: 600px;
-      }
-    </style>
-  </head>
-  <ul>
-    <li>sur cette page il y aura les graphiques </li>
-    <li>je dois trouver quoi afficher</li>
-    <li>le nombre de fois ou on a cliqué sur des facts ar exemple</li>
-    <li>ou les dates et les heures </li>
-  </ul>
-
-  <div id="chart-container"></div>
-
-  <script>
-    // Données du graphique
-    const data = {
-      chart: {
-        type: 'bar'
-      },
-      title: {
-        text: 'Ventes mensuelles'
-      },
-      xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
-      },
-      yAxis: {
-        title: {
-          text: 'Quantité'
-        }
-      },
-      series: [{
-        name: 'Ventes',
-        data: [10, 20, 15, 25, 30]
-      }]
-    };
-
-    // Créer le graphique dans le conteneur spécifié
-    Highcharts.chart('chart-container', data);
-  </script>
-
-
-
-
-  <canvas id="myChart"></canvas>
-
-</div>
-
-
+</highcharts-chart>
 

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {HighchartsChartModule} from 'highcharts-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -18,6 +20,8 @@ import { StudyNowComponent } from './study-now/study-now.component';
 import { FactComponent } from './fact/fact.component';
 import { EditPackageComponent } from "./edit-package/edit-package.component";
 import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
+
+
 
 @NgModule({
   declarations: [
@@ -40,8 +44,10 @@ import { ProgressStatisticsComponent } from './progress-statistics/progress-stat
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

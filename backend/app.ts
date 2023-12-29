@@ -113,8 +113,8 @@ app.put('/api/editpackage/:id', async (req, res) => {
 app.delete('/api/deletePackage/:id_package', async (req, res) => {
 
     const id_package = req.params.id_package;
-    console.log("on veut delete le package " ,id_package);
     try {
+        console.log("on veut delete le package " ,id_package);
         const result = await LearningPackage.destroy({
             where: { id_package: id_package }
         });

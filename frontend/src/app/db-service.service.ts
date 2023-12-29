@@ -118,7 +118,7 @@ export class DbServiceService {
     }
     this.http.put(`/api/setStateFact/${id_fact}`, requestBody).subscribe(
     (response) => {
-      console.log('Fact_state updated successfully.', response);
+      //console.log('Fact_state updated successfully.', response);
     },
     (error) => {
       console.error('Error updating fact:', error);

@@ -31,23 +31,23 @@ export class StudyNowComponent implements OnInit {
       let firstPackage: any;
 
       if(this.AllPackages.length != 0) firstPackage = this.AllPackages[0].id_package;
-      console.log('First Package:', firstPackage);
 
       if (!firstPackage || firstPackage == 0) { //on a aucun package alors on a aucun facts
-        // Redirect to another route (you can replace 'redirect-route' with the desired route)
         this.router.navigate(['/nomore-fact']).then(r => {});
       }
       else {
         this.getcurrentpackagefromId(firstPackage);
-
       }
     });
 
   }
 
-  getfactfromId(id: number){
-    this.http.get(`/api/getfact/${id}`).subscribe((data) => {
-      this.currentFact = data;
+  getfactfromId(id: number): Promise<void> {
+    return new Promise<void>((resolve) => {
+      this.http.get(`/api/getfact/${id}`).subscribe((data) => {
+        this.currentFact = data;
+        resolve();
+      });
     });
   }
 
@@ -77,7 +77,7 @@ export class StudyNowComponent implements OnInit {
 
   RandomFact() {
     const unusedFacts = this.facts.filter((fa) => !this.usedFacts.includes(fa.id_fact)); //Utiliser une liste avec les facts qui ne sont pas encore passées
-    console.log(unusedFacts);
+    //console.log(unusedFacts);
     if (unusedFacts.length === 0) {
       this.currentFact = null;
       this.router.navigate(['/nomore-fact']);
@@ -108,8 +108,10 @@ export class StudyNowComponent implements OnInit {
   setStateFact(state: string){
     this.DbService.setStateFact(this.currentFact.id_fact, state);
     this.isStated = true;
-    this.getTotalFact();
-    this.factIsUsed();
+    this.getfactfromId(this.currentFact.id_fact)
+      .then(() => {
+        this.factIsUsed();
+      });
   }
 
   factIsUsed(){

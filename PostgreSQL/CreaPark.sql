@@ -22,7 +22,8 @@ CREATE TABLE projeta4.learning_fact (
 	id_fact SERIAL PRIMARY KEY NOT NULL, 
 	recto varchar(500), 
 	verso varchar(500),
-	id_package INT
+	id_package INT,
+	state_fact varchar(50)
 );
 	
 CREATE TABLE projeta4.learning_package (
@@ -31,7 +32,8 @@ CREATE TABLE projeta4.learning_package (
 	description_package varchar(200), 
 	category varchar(50), 
 	target_audience varchar(500), 
-	difficulty_level varchar(50)
+	difficulty_level varchar(50),
+	finished_package boolean NOT NULL DEFAULT false
 ); 
 
 CREATE TABLE projeta4.userpackagelearning (

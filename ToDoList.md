@@ -8,7 +8,6 @@
 
 ## Coté design de l'interface de l'application
 
-- Régler le problème d'affichage des facts dans StudyNow quand it n'y a plus aucun fact (afficher page no-fact)
 - Faire la page 'Home'
 
 ## Autres

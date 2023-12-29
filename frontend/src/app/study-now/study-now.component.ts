@@ -26,15 +26,37 @@ export class StudyNowComponent implements OnInit {
   totalFact: number = 0;
 
   ngOnInit() {
-    //Prendre le paramètre de l'URL et trouver le currentPackage
-    this.route.params.subscribe(params => {
-      const packid = params['id_package'];
-      this.getcurrentpackagefromId(packid);
-    });
-
     this.DbService.getAllPackages().subscribe((data) => {
       this.AllPackages = data;
+      let firstPackage: any;
+
+      if(this.AllPackages.length != 0) firstPackage = this.AllPackages[0].id_package;
+
+      // const firstPackage = this.AllPackages.length > 0 ? this.AllPackages[0] : null;
+      console.log('First Package:', firstPackage);
+
+      if (!firstPackage || firstPackage ==0) { //on a aucun package alors on a aucun facts
+        // Redirect to another route (you can replace 'redirect-route' with the desired route)
+        this.router.navigate(['/nomore-fact']).then(r => {});
+      }
+      else {
+        console.log("piloiu ",firstPackage)
+          this.route.params.subscribe(params => {
+              const packid = params['id_package'];
+              console.log(packid);
+              this.getcurrentpackagefromId(firstPackage);
+          });
+
+      }
+
+
     });
+
+      this.route.params.subscribe(params => {
+          const packid = params['id_package'];
+          console.log(packid);
+          this.getcurrentpackagefromId(packid);
+      });
   }
 
   getfactfromId(id: number){

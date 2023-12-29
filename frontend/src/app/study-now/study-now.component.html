@@ -2,6 +2,7 @@
 <div class="display-fact-container">
 <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
   <div class="select-shape">
+    <div class="change-package">Change Package</div>
     <select *ngIf="currentPackage" [(ngModel)]="selectedPackageId" (change)="onPackageChange()">
       <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
     </select>

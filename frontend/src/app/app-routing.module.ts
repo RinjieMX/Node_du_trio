@@ -11,6 +11,9 @@ import {EditPackageComponent} from "./edit-package/edit-package.component";
 import {ProgressStatisticsComponent} from "./progress-statistics/progress-statistics.component";
 import {FactsStatisticsComponent} from "./facts-statistics/facts-statistics.component";
 import {HomePageComponent} from "./home-page/home-page.component";
+import {HelpAboutComponent} from "./help-about/help-about.component";
+import {HelpDocumentationComponent} from "./help-documentation/help-documentation.component"
+import {HelpGlossaryComponent} from "./help-glossary/help-glossary.component";
 
 
 const routes: Routes = [
@@ -25,7 +28,10 @@ const routes: Routes = [
   { path:'edit-package/:id_package', component: EditPackageComponent },
   { path: 'progress-statistics', component: ProgressStatisticsComponent},
   {path: 'facts-statistics',component:FactsStatisticsComponent},
-  { path: 'home-page', component: HomePageComponent }
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'help-about', component: HelpAboutComponent},
+  { path:'help-documentation', component: HelpDocumentationComponent},
+  { path: 'help-glossary', component: HelpGlossaryComponent}
 ];
 
 @NgModule({

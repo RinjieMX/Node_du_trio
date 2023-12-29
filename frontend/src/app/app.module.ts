@@ -22,6 +22,9 @@ import { EditPackageComponent } from "./edit-package/edit-package.component";
 import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
 import { FactsStatisticsComponent } from './facts-statistics/facts-statistics.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HelpAboutComponent } from './help-about/help-about.component';
+import { HelpDocumentationComponent } from './help-documentation/help-documentation.component';
+import { HelpGlossaryComponent } from './help-glossary/help-glossary.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     FactComponent,
     ProgressStatisticsComponent,
     FactsStatisticsComponent,
-    HomePageComponent
+    HomePageComponent,
+    HelpAboutComponent,
+    HelpDocumentationComponent,
+    HelpGlossaryComponent
   ],
   imports: [
     BrowserModule,

@@ -33,7 +33,7 @@ app-package {
   margin: 15px 15px 15px 15px;
   padding: 20px;
   color: var(--noir);
-  z-index: 1; /* Ensure the filter section stays above the content */
+
 }
 
 .filter-section select {

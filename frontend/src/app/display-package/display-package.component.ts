@@ -11,6 +11,7 @@ export class DisplayPackageComponent implements OnInit {
 
   packages: any[] = [];
 
+
   ngOnInit() {
     this.http.get<any[]>('/api/getpackage').subscribe(
       (data) => {

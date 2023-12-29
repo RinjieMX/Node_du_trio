@@ -1,4 +1,7 @@
 <h1>PROGRESS-STATISTICS</h1>
+<h1>PROGRESS STATISTICS DATA</h1>
+
+<div>
 <highcharts-chart
 *ngIf="chartOptions"
 [Highcharts]="highcharts"
@@ -7,3 +10,6 @@ style="height: 100%; width: 100%; display: block">
 
 </highcharts-chart>
 
+</div>
+
+<p>Le numéro est : {{ numeroaprint }}</p>

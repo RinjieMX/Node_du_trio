@@ -7,6 +7,7 @@ To make sure you have all the necessary packages installed for the project to ru
 - In the backend and frontend terminal, run: 'npm i'
 - In the backend terminal run 'npm install sequelize' and 'npm install --save-dev typescript'
 - In the front end terminal run 'npm install highcharts'
+- In the front end terminal run 'npm install highcharts-angular'
 - Pour finir dans le backend, run 'tsc' pour faire apparaitre les fichiers .js
 
 If any errors occur during these commands, make sure your Node.js is correctly installed and that you don't have any corrupted files.

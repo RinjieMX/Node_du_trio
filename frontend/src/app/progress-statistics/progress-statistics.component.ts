@@ -18,6 +18,7 @@ export class ProgressStatisticsComponent  implements OnInit
     this.barchart();
 
   }
+  numeroaprint:number=10;
   barchart()
   {
     this.chartOptions =
@@ -28,7 +29,7 @@ export class ProgressStatisticsComponent  implements OnInit
           },
         title:
           {
-            text: 'PROGRESS STATISTICS'
+            text: 'NUMBER OF FACTS WORKED ON'
           },
         subtitle:
           {
@@ -37,7 +38,7 @@ export class ProgressStatisticsComponent  implements OnInit
         xAxis:
           {
             categories:[
-              'Africa', 'America', 'Asia', 'Europe'
+              'Maths', 'python', 'geography', 'english'
             ]
 
           },

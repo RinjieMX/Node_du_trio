@@ -20,6 +20,8 @@ export class StudyNowComponent implements OnInit {
   AllPackages: any[] = [];
   isVisible: boolean = false;
 
+  numberofpackages: number= 0;
+
   totalFact: number = 0;
 
   ngOnInit() {

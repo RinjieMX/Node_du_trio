@@ -2,8 +2,8 @@
 
 ## Côté fonctionnalité de l'application
 
-- Suppression des Packages --> en cours 
-- Suppression des Facts --> en cours 
+- Suppression des Packages --> en cours
+- Suppression des Facts --> done
 - Gérer la page Settings
 - Ajout des statistiques avec HighCharts --> en cours
 - Ajout des niveaux de difficultés ressentis par l'utilisateur 
@@ -12,7 +12,6 @@
 
 - Faire une page 'Home'
 - Faire les tris des packages
-- Cacher les réponses dans la page fact
 
 ## Problèmes à régler
 

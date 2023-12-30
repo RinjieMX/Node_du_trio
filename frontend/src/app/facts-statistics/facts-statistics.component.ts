@@ -30,8 +30,6 @@ export class FactsStatisticsComponent
   {
     this.barchart();
     this.getNumberOfFactsInPackage(4);
-
-
   }
 
   getNumberOfFactsInPackage(idPackage: number): void {

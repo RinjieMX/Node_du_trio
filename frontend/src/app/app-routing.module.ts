@@ -13,8 +13,6 @@ import {FactsStatisticsComponent} from "./facts-statistics/facts-statistics.comp
 import {HomePageComponent} from "./home-page/home-page.component";
 import {HelpAboutComponent} from "./help-about/help-about.component";
 import {HelpDocumentationComponent} from "./help-documentation/help-documentation.component"
-import {HelpGlossaryComponent} from "./help-glossary/help-glossary.component";
-
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
@@ -30,8 +28,7 @@ const routes: Routes = [
   {path: 'facts-statistics',component:FactsStatisticsComponent},
   { path: 'home-page', component: HomePageComponent },
   { path: 'help-about', component: HelpAboutComponent},
-  { path:'help-documentation', component: HelpDocumentationComponent},
-  { path: 'help-glossary', component: HelpGlossaryComponent}
+  { path:'help-documentation', component: HelpDocumentationComponent}
 ];
 
 @NgModule({

@@ -1,13 +1,17 @@
-body {
+.container {
   font-family: Arial, sans-serif;
   background-color: var(--rose-clair);
-  margin: 75px 15px 15px 15px;
   border-radius: var(--bordure-arrondie);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  text-align: center;
   color: var(--noir);
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .addnew-package-container {

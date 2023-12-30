@@ -9,7 +9,6 @@
 
 ## Coté design de l'interface de l'application
 
-- remettre dans le style du site les pages Help
 
 ## Autres
 

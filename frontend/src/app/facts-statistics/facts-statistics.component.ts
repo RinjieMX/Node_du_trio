@@ -178,6 +178,8 @@ export class FactsStatisticsComponent implements OnInit
 
 
 
+
+
   numeroaprint:number=10;
   barchart()
   {

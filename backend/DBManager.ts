@@ -1,4 +1,4 @@
-import {Sequelize, Model, DataTypes } from 'sequelize';
+import { Sequelize, Model, DataTypes } from 'sequelize';
 
 // Configuration de Sequelize
 const sequelize = new Sequelize('LearningFactDb', 'learningdbUser', 'projeta4', {

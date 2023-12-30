@@ -1,6 +1,5 @@
 import express from 'express';
-import {insertUser, getAllUsers} from "./DBManager";
-import { LearningPackage, LearningFact, User } from "./DBManager";
+import { LearningPackage, LearningFact } from "./DBManager";
 import { Sequelize, Op } from "sequelize";
 
 const app = express();
@@ -136,36 +135,6 @@ app.delete('/api/deletePackage/:id_package', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-});
-
-//------------------ PARTIE USER ---------------------
-app.get('/api/users', async (req, res) => {
-    try {
-        const users = await getAllUsers();
-        res.status(200).json(users);
-    } catch (error) {
-        res.status(500).send({ error: 'Connexion à la db impossible' });
-    }
-});
-
-app.post('/api/createUser', async (req, res) => {
-    const { email_user, password_user, firstname_user, lastname_user } = req.body;
-    console.log(req.body);
-
-    try {
-        // Créer un nouveau package dans la base de données
-        const result = await User.create({
-            email_user,
-            password_user,
-            firstname_user,
-            lastname_user
-        });
-
-        res.status(201).json({ success: true, message: 'User created successfully', result });
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).send('Internal Server Error');
-    }
 });
 
 //---------------------- PARTIE FACT ----------------------

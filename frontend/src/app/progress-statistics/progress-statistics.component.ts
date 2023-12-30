@@ -39,7 +39,7 @@ export class ProgressStatisticsComponent  implements OnInit
   showdata(): void
   {
     console.log('showdatarunning');
-    console.log(this.tableau1[0])
+
 
   }
   async ngOnInit() {
@@ -61,6 +61,7 @@ export class ProgressStatisticsComponent  implements OnInit
 
       this.showdata();
       this.barchart();
+      console.log(this.tableau1)
 
 
     } catch (error) {

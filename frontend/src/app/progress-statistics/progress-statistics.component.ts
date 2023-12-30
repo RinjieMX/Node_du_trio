@@ -14,7 +14,7 @@ export class ProgressStatisticsComponent  implements OnInit
   idPackage = 1; // Remplacez par l'ID du package souhaité
   apiUrl = `/api/getactualfactfrompackage/${(this.idPackage)}`;
   public learningFacts: any[] = [];
-
+  packageId:number=1 ;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,11 +22,11 @@ export class ProgressStatisticsComponent  implements OnInit
     console.log('Début de ngOnInit');
 
     this.barchart();
-    const packageId:number=1 ;
+
 
     console.log('Avant la requête HTTP');
 
-    this.httpClient.get('/api/getactualfactfrompackage/${packageId}').subscribe(
+    this.httpClient.get(`/api/getactualfactfrompackage/${this.packageId}`).subscribe(
       (response) => {
         console.log('inside');
         console.log('Réponse de l\'API réussie :', response);

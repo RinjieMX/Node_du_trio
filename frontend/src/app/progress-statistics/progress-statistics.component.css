@@ -8,3 +8,7 @@
   width: 100%;
   height: 400px;
 }
+
+.color-easy{
+  color: var(--vert);
+}

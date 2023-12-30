@@ -1,28 +1,10 @@
-import {Sequelize, Model, DataTypes } from 'sequelize';
+import { Sequelize, Model, DataTypes } from 'sequelize';
 
 // Configuration de Sequelize
 const sequelize = new Sequelize('LearningFactDb', 'learningdbUser', 'projeta4', {
     host: 'localhost',
     dialect: 'postgres'
 });
-
-// Class User
-class User extends Model {}
-User.init({
-    email_user: {
-        type: DataTypes.STRING,
-        primaryKey: true,
-    },
-    password_user: {
-        type: DataTypes.STRING,
-    },
-    firstname_user: {
-        type: DataTypes.STRING,
-    },
-    lastname_user: {
-        type: DataTypes.STRING,
-    },
-}, { sequelize, modelName: 'user', schema: 'projeta4', timestamps: false });
 
 //Class LearningFact
 class LearningFact extends Model {}
@@ -129,7 +111,6 @@ async function syncModels() {
         console.log('Connecté à la base de données');
 
         // Synchronise chaque modèle avec la base de données
-        await User.sync();
         await LearningFact.sync();
         await LearningPackage.sync();
 
@@ -140,42 +121,4 @@ async function syncModels() {
 }
 syncModels();
 
-// Fonction pour insérer un utilisateur
-async function insertUser(mail: string, password: string, firstname: string, lastname: string) {
-    try {
-        await sequelize.authenticate();
-        console.log('Connecté à la base de données');
-
-        const newUser = await User.create({
-            email_user: mail,
-            password_user: password,
-            firstname_user: firstname,
-            lastname_user: lastname
-        });
-
-        console.log('Utilisateur inséré:', newUser.toJSON());
-    } catch (error) {
-        console.error('Erreur lors de l\'insertion:', error);
-    }
-}
-
-// Fonction pour récupérer des utilisateurs
-async function getAllUsers() {
-    try {
-        await sequelize.authenticate();
-        console.log('Connecté à la base de données');
-
-        const users = await User.findAll();
-
-        console.log('Nombre de users:', users.length);
-
-        const usersText = users.map(user => JSON.stringify(user.toJSON())).join(', ');
-
-        return `Utilisateurs récupérés: ${usersText}`;
-    } catch (error) {
-        console.error('Erreur lors de la récupération:', error);
-        throw error;
-    }
-}
-
-export { LearningFact, LearningPackage, User, insertUser, getAllUsers };
+export { LearningFact, LearningPackage };

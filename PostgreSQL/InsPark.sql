@@ -1,6 +1,3 @@
---Users
-INSERT INTO projeta4.users VALUES ('manon.gardin@gmail.com', '123', 'Manon', 'Gardin');
-
 --Learning Package
 INSERT INTO projeta4.learning_package (title_package, description_package, category, target_audience, difficulty_level)
 VALUES ('English for All', 'A class for beginner in english, learning the basics here.', 'English', 'Any', 'Easy');
@@ -65,6 +62,5 @@ INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('What is t
 INSERT INTO projeta4.learning_fact (recto, verso, id_package) VALUES ('How is trigonometry used in real life?', 'Trigonometry is applied in various fields such as physics, engineering, and architecture to calculate angles, distances, and heights.', 5);
 
 --Tests
-SELECT * FROM projeta4.users;
 SELECT * FROM projeta4.learning_fact;
 SELECT * FROM projeta4.learning_package;

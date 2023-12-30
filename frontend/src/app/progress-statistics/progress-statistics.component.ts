@@ -156,25 +156,27 @@ export class ProgressStatisticsComponent  implements OnInit
   }
 
 
-
-
   //highchartdata
   Chartdata= [
     {
       name: 'Easy',
-      data:[2, 3, 1, 8]
+      data:[2, 3, 1, 8],
+      color: '#27ae60'
     },
     {
       name: 'correct',
-      data:[4, 1, 3, 1]
-    },
-    {
-      name: 'difficult',
-      data:[1, 0, 2, 3]
+      data:[4, 1, 3, 1],
+      color: '#89e0ae'
     },
     {
       name: 'To review',
-      data:[1, 7, 1, 1]
+      data:[1, 7, 1, 1],
+      color: '#ffb6c1'
+    },
+    {
+      name: 'difficult',
+      data:[1, 0, 2, 3],
+      color: '#f06c84'
     }
 
   ]

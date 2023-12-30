@@ -115,12 +115,10 @@ export class FactsStatisticsComponent implements OnInit
   Chartdata= [
     {
       name: 'NUMBER OF FACTS',
-      /*data:[ 10, 12 , 17 ,30]*/
-      data:[ this.numberOfFacts1 , this.numberOfFacts2 , this.numberOfFacts3 ,this.numberOfFacts4]
+      data:[ {y: this.numberOfFacts1 , point: { color: '#89e0ae' }} ,this.numberOfFacts2 , this.numberOfFacts3 ,this.numberOfFacts4]
     }
 
   ]
-
 
   async getNumberOfFactsInPackage(idPackage: number): Promise<number> {
     try {

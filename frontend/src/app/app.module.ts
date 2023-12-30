@@ -23,6 +23,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HelpAboutComponent } from './help-about/help-about.component';
 import { HelpDocumentationComponent } from './help-documentation/help-documentation.component';
 import {DisplayAchievements} from "./achievements-page/achievements-page.component";
+import {PackageStatisticsComponent} from "./package-statistics/package-statistics.component";
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {DisplayAchievements} from "./achievements-page/achievements-page.compone
     HomePageComponent,
     HelpAboutComponent,
     HelpDocumentationComponent,
-    DisplayAchievements
+    DisplayAchievements,
+    PackageStatisticsComponent
   ],
   imports: [
     BrowserModule,

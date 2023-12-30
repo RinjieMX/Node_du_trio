@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginFormComponent} from "./login-form/login-form.component";
-import {NewaccountFormComponent} from "./newaccount-form/newaccount-form.component";
 import {AddnewPackageComponent} from "./addnew-package/addnew-package.component";
 import {DisplayPackageComponent} from "./display-package/display-package.component";
 import {DisplayFactsComponent} from "./display-facts/display-facts.component";
@@ -18,8 +16,6 @@ import {DisplayAchievements} from "./achievements-page/achievements-page.compone
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
-  { path:'login-form', component: LoginFormComponent },
-  { path:'newaccount-form', component: NewaccountFormComponent },
   { path:'addnew-package', component: AddnewPackageComponent },
   { path:'display-package', component: DisplayPackageComponent , data: { refresh: true } },
   { path:'display-facts/:id_package', component: DisplayFactsComponent },

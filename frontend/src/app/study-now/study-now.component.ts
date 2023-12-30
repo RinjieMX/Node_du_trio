@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 import { DbServiceService } from "../db-service.service";
-import {concatMap, forkJoin, of, switchMap, take} from "rxjs";
+import { forkJoin } from "rxjs";
 
 @Component({
   selector: 'app-study-now',

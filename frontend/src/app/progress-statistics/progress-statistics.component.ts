@@ -10,30 +10,14 @@ export class ProgressStatisticsComponent  implements OnInit
 {
   chartOptions: any;
   highcharts:typeof Highcharts= Highcharts;
-  private startTime: number =0;
-  public time: number=0;
 
   constructor() { }
 
   ngOnInit()
   {
     this.barchart();
-    // Enregistrez le temps de début lorsque le composant est initialisé
-    //this.startTime = performance.now();
-    //
-
 
   }
-
-
-  /*ngOnDestroy(): number {
-    // Calculez la durée totale lorsque le composant est détruit (par exemple, lorsque vous naviguez loin de la page)
-    const endTime = performance.now();
-    const elapsedTime = endTime - this.startTime;
-
-    console.log(`Le temps passé sur ce composant est de ${elapsedTime} millisecondes.`);
-    return elapsedTime;
-  }*/
   numeroaprint:number=10;
   barchart()
   {
@@ -99,6 +83,5 @@ export class ProgressStatisticsComponent  implements OnInit
   }
 
 ]
-
 
 }

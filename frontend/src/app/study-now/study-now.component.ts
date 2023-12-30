@@ -76,7 +76,7 @@ export class StudyNowComponent implements OnInit {
 
   getTotalFact(){
     //Obtenir le nombre de fact dans le package
-    this.http.get<{ count: number }>(`/api/getNbFactLeft/${this.currentPackage.id_package}`)
+    this.http.get<{ count: number }>(`/api/getNbFactinPackage/${this.currentPackage.id_package}`)
       .subscribe((response) => {
         this.totalFact = response.count;
       }, (error) => {

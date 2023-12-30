@@ -183,7 +183,7 @@ app.get('/api/getfactfrompackage/:idpackage', async (req, res) => {
 });
 
 //Get le nombre de facts dans un package
-app.get('/api/getNbFactLeft/:idpackage', async (req, res) => {
+app.get('/api/getNbFactinPackage/:idpackage', async (req, res) => {
     const idpackage = parseInt(req.params.idpackage);
     try {
         const count = await LearningFact.count({

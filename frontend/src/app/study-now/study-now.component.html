@@ -1,10 +1,12 @@
 <div class="display-fact-container">
-  <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
-  <div class="select-shape">
-    <div class="change-package">Change Package</div>
-    <select *ngIf="currentPackage" [(ngModel)]="selectedPackageId" (change)="onPackageChange()">
-      <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
-    </select>
+  <div class="header-container">
+    <div class="select-shape">
+      <p class="change-package">Change Package</p>
+      <select *ngIf="currentPackage" [(ngModel)]="selectedPackageId" (change)="onPackageChange()">
+        <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
+      </select>
+    </div>
+    <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
   </div>
 
     <div id="question-container" *ngIf="currentFact && currentPackage">
@@ -14,12 +16,13 @@
       <p>{{ currentFact.verso }}</p>
     </div>
 
-  <div class="bouton-reveal" *ngIf="!isVisible">
+  <div class="bouton-reveal" *ngIf="!isVisible" [ngStyle]="{'margin-top': '140px'}">
     <button class="reveal-button" (click)="onReveal()">Reveal</button>
   </div>
-  <div class="bouton-reveal" *ngIf="isVisible">
+  <div class="bouton-reveal" *ngIf="isVisible" [ngStyle]="{'margin-top': '45px'}">
     <button class="reveal-button" (click)="onReveal()">Hide</button>
   </div>
+
 
   <div class="difficulty-div" *ngIf="isVisible && !isStated">
     <p id="txt-difficulty">How did you feel about it ?</p>

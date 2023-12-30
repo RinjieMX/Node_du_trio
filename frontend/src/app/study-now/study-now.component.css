@@ -13,10 +13,11 @@
 .select-shape{
   margin-left: 30px;
   margin-top: 15px;
+  position: fixed;
 }
 
 h1 {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
   color: var(--blanc);
 }
@@ -28,8 +29,9 @@ h1 {
   text-align: center;
   color: var(--noir);
   background-color: var(--blanc);
-  margin: 15px auto;
+  margin: 20px auto 10px auto; /* Ajustez la marge supérieure selon vos besoins */
   max-width: 600px;
+  overflow-wrap: break-word;
 }
 
 #answer-container {
@@ -39,9 +41,11 @@ h1 {
   padding: 20px;
   text-align: center;
   color: var(--noir);
-  margin: 15px auto;
+  margin: 5px auto;
   max-width: 600px;
+  overflow-wrap: break-word;
 }
+
 
 #index {
   position: absolute;
@@ -51,7 +55,7 @@ h1 {
 }
 
 #next-button {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 10px;
   margin: 40px;
@@ -79,7 +83,7 @@ h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 475px;
+  margin-top: 20px;
 
 }
 
@@ -111,8 +115,8 @@ h1 {
 }
 
 .difficulty-div {
-  position: fixed;
-  bottom: 50px;
+  position: absolute;
+  bottom: 20px;
   left: 0;
   right: 0;
   display: flex;

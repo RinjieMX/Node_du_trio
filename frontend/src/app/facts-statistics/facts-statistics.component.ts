@@ -35,6 +35,7 @@ export class FactsStatisticsComponent
 
 
 
+
   async ngOnInit() {
     console.log(101010);
 
@@ -46,7 +47,7 @@ export class FactsStatisticsComponent
     ]).toPromise();
 
 
-    if (responses ) {
+    if (responses) {
       this.numberOfFacts1 = responses[0];
       this.numberOfFacts2 = responses[1];
       this.numberOfFacts3 = responses[2];
@@ -64,6 +65,7 @@ export class FactsStatisticsComponent
       console.error('Réponses invalides:', responses);
     }
   }
+
 
 
   Chartdata= [

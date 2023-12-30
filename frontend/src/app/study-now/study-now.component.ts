@@ -9,7 +9,7 @@ import { DbServiceService } from "../db-service.service";
   styleUrl: './study-now.component.css'
 })
 export class StudyNowComponent implements OnInit {
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private DbService: DbServiceService) { }
+  constructor(private http: HttpClient, private router: Router, private DbService: DbServiceService) { }
 
   facts: any[] = [];
   currentFact: any = { recto: '', verso: '' };
@@ -42,14 +42,16 @@ export class StudyNowComponent implements OnInit {
 
   }
 
-  getfactfromId(id: number): Promise<void> {
-    return new Promise<void>((resolve) => {
-      this.http.get(`/api/getfact/${id}`).subscribe((data) => {
-        this.currentFact = data;
-        resolve();
-      });
-    });
+  async getfactfromId(id: number) {
+    try {
+      const data = await this.http.get(`/api/getfact/${id}`).toPromise();
+      this.currentFact = data;
+    } catch (error) {
+      console.error('Erreur lors de la récupération du fact :', error);
+      throw error;
+    }
   }
+
 
   getcurrentpackagefromId(id: number){
     this.DbService.getPackagesById(id).subscribe((data) => {
@@ -67,9 +69,18 @@ export class StudyNowComponent implements OnInit {
   }
 
   getTotalFact(){
+    //Obtenir le nombre de fact dans le package
     this.http.get<{ count: number }>(`/api/getNbFactLeft/${this.currentPackage.id_package}`)
       .subscribe((response) => {
         this.totalFact = response.count;
+      }, (error) => {
+        console.error('Erreur lors de la récupération du nombre de facts :', error);
+      });
+
+    //Obtenir le nombre de fact finies dans le package
+    this.http.get<{ count: number }>(`/api/geteasyfact/${this.currentPackage.id_package}`)
+      .subscribe((response) => {
+        this.currentIndex = response.count;
       }, (error) => {
         console.error('Erreur lors de la récupération du nombre de facts :', error);
       });
@@ -105,22 +116,21 @@ export class StudyNowComponent implements OnInit {
     this.isVisible = !this.isVisible;
   }
 
-  setStateFact(state: string){
-    this.DbService.setStateFact(this.currentFact.id_fact, state);
-    this.isStated = true;
-    this.getfactfromId(this.currentFact.id_fact)
-      .then(() => {
-        this.factIsUsed();
-      });
+  async setStateFact(state: string) {
+    try {
+      this.DbService.setStateFact(this.currentFact.id_fact, state);
+      this.isStated = true;
+      await this.getfactfromId(this.currentFact.id_fact);
+      this.factIsUsed();
+      this.getTotalFact();
+    } catch (error) {
+      console.error("Error in setStateFact:", error);
+    }
   }
 
   factIsUsed(){
-    console.log(this.isStated, this.currentFact);
     if (this.isStated && this.currentFact.state_fact === 'Easy'){
       this.usedFacts.push(this.currentFact.id_fact);
-      console.log(this.usedFacts);
-      this.currentIndex++;
-      console.log(this.currentIndex)
     }
     else {
       console.log('This fact is not easy yet');

@@ -213,6 +213,23 @@ app.get('/api/getfact/:idfact', async (req, res) => {
     }
 });
 
+//Récupération des facts marquées comme Easy
+app.get('/api/geteasyfact/:idpackage', async (req, res) => {
+    const idpackage = parseInt(req.params.idpackage);
+    try {
+        const count = await LearningFact.count({
+            where: {
+                id_package: idpackage,
+                state_fact: 'Easy',
+            }
+        });
+        res.status(200).json({ count });
+    } catch (error) {
+        console.error('Erreur lors de la récupération des facts :', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 app.put('/api/editfact/:id', async (req, res) => {
     console.log('Received PUT request with body:', req.body);
 

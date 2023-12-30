@@ -1,4 +1,4 @@
-<div class="filter-position" >
+<div class="filter-position" *ngIf="isAnyPackage">
 
  <div class="filter-section">
   <label for="category-filter">Filter by Category : </label>
@@ -40,8 +40,14 @@
 
 <div class="display-packages-container">
   <h1 class="title">All Packages</h1>
-  <div *ngFor="let package of packages">
-    <app-package [package]="package"></app-package>
+  <div *ngIf="isAnyPackage">
+    <div *ngFor="let package of packages">
+      <app-package [package]="package"></app-package>
+    </div>
+  </div>
+  <div *ngIf="!isAnyPackage">
+    <p>There is no package here ! To add one : </p>
+    <button class="add-button" routerLink="/addnew-package">Add a package</button>
   </div>
 </div>
 

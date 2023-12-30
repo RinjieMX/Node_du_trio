@@ -18,6 +18,8 @@ export class DisplayPackageComponent implements OnInit {
   selectedAudience: string = 'Any';
   selectedLevel: string = 'Any';
 
+  isAnyPackage: boolean = true;
+
   ngOnInit() {
     const refresh = this.route.snapshot?.data['refresh'];
     if (refresh) {
@@ -28,8 +30,11 @@ export class DisplayPackageComponent implements OnInit {
   refreshPackages(){
     this.http.get<any[]>('/api/getpackage').subscribe(
         (data) => {
-          this.packages = data; //packages qui seront affiché
+          this.packages = data; //packages qui seront affichés
           this.all_packages = data; //sauvegarde pour stocker tout les packages
+          if (this.packages.length === 0 || !this.packages.length){
+            this.isAnyPackage = false;
+          }
         },
         (error) => {
           console.error('Une erreur s\'est produite lors du chargement des packages:', error);

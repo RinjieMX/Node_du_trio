@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Highcharts from 'highcharts/highstock';
-import {Observable} from "rxjs";
+import {forkJoin, Observable} from "rxjs";
 import { DbServiceService } from "../db-service.service";
 
 @Component({
@@ -22,6 +22,7 @@ export class ProgressStatisticsComponent  implements OnInit
   public tableau2: any[]= [];
   public tableau3: any[]= [];
   public tableau4: any[]= [];
+  public AllPackages: any;
 
 
   async getApiResponse(packagenumber: number): Promise<any[]> {
@@ -51,38 +52,127 @@ export class ProgressStatisticsComponent  implements OnInit
   }*/
   async ngOnInit() {
     console.log('Début de ngOnInit');
-    try {
-      const [response1, response2, response3, response4] = await Promise.all([
-        this.getApiResponse(1),
-        this.getApiResponse(2),
-        this.getApiResponse(3),
-        this.getApiResponse(4),
-      ]);
-
-      //console.log('Réponses de l\'API réussies :', response1, response2, response3, response4);
-
-      this.tableau1 = response1;
-      this.tableau2 = response2;
-      this.tableau3 = response3;
-      this.tableau4 = response4;
-      console.log(response1)
-      this.showdata();
-      this.barchart();
-      //console.log(response1[0].state_fact);
-      //console.log(response1[1].state_fact);
-
-      for (let i = 0; i < response1.length; i++) {
-        console.log(response3[i].state_fact);
-      }
-
-
-
-    } catch (error) {
-      console.error('Erreur lors de la récupération des données :', error);
-    }
-
+      this.loadData();
+      //this.barchart();
     console.log('Fin de ngOnInit');
   }
+
+  loadData() {
+    this.DbService.getAllPackages().subscribe((data: any[]) => {
+      const observables = data.map((pack: any) => {
+        return this.DbService.getAllFacts(pack.id_package);
+      });
+
+      forkJoin(observables).subscribe(
+        (results: any[]) => {
+          for (let i = 0; i < data.length; i++) {
+            data[i].Facts = results[i];
+          }
+
+          //Toutes les données des packages avec le nombre de facts associées
+          this.AllPackages = data;
+
+          let state_easy = [];
+          let state_correct = [];
+          let state_difficult = [];
+          let state_review = [];
+
+          for (let i = 0; i < this.AllPackages.length; i++){
+
+            let easy = 0;
+            let correct = 0;
+            let difficult = 0;
+            let review = 0;
+
+            for (let j = 0; j < this.AllPackages[i].Facts.length; j++) {
+              switch (this.AllPackages[i].Facts[j].state_fact){
+                case 'Easy': {
+                  easy++;
+                  break;
+                }
+                case 'Correct': {
+                  correct++;
+                  break;
+                }
+                case 'Difficult': {
+                  difficult++;
+                  break;
+                }
+                case 'To review': {
+                  review++;
+                  break;
+                }
+                default: {
+                  break;
+                }
+              }
+            }
+            state_easy.push(easy);
+            state_correct.push(correct);
+            state_difficult.push(difficult);
+            state_review.push(review);
+          }
+
+          if (this.AllPackages){
+            const packs: string[] = this.AllPackages.map((pack: any) => pack.title_package);
+
+            let data_f = [
+              {
+                name: 'Easy',
+                data: state_easy,
+                color: '#27ae60'
+              },
+              {
+                name: 'Correct',
+                data: state_correct,
+                color: '#89e0ae'
+              },
+              {
+                name: 'To review',
+                data: state_review,
+                color: '#ffb6c1'
+              },
+              {
+                name: 'Difficult',
+                data: state_difficult,
+                color: '#f06c84'
+              }
+            ]
+
+            this.chartOptions =
+              {
+                chart:
+                  {
+                    type: 'column'
+                  },
+                title:
+                  {
+                    text: 'PROGRESS IN ANKI'
+                  },
+                subtitle:
+                  {
+                    text: 'what was easy ? dificult?'
+                  },
+                xAxis:
+                  {
+                    categories: packs
+                  },
+                credits: {
+                  enabled : false
+                },
+                series: data_f
+              }
+          }
+        },
+        (error) => {
+          console.error('Erreur lors de la récupération du nombre de faits :', error);
+        }
+      );
+    });
+  }
+
+
+
 
 
   /*
@@ -135,20 +225,7 @@ export class ProgressStatisticsComponent  implements OnInit
           {enabled : false
 
           },
-        /*plotOptions:
-          {
-            series:
-              {
-              stacking:'normal'
-              },
-            bar:
-              {
-                dataLables:
-                  {
-                    enabled: true
-                  }
-              }
-          },*/
+
         series: this.Chartdata
 
       }

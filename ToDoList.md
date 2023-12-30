@@ -2,8 +2,7 @@
 
 ## Côté fonctionnalité de l'application
 
-- Ajout des statistiques avec HighCharts --> en cours 
-- Faire la page settings
+- Faire la page settings?
 
 ## Coté design de l'interface de l'application
 

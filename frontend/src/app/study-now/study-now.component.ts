@@ -42,6 +42,7 @@ export class StudyNowComponent implements OnInit {
 
   }
 
+  //Obtenir toutes les informations d'une fact
   async getfactfromId(id: number) {
     try {
       const data = await this.http.get(`/api/getfact/${id}`).toPromise();
@@ -53,6 +54,7 @@ export class StudyNowComponent implements OnInit {
   }
 
 
+  //Obtenir toutes les informations d'un package
   getcurrentpackagefromId(id: number){
     this.DbService.getPackagesById(id).subscribe((data) => {
       this.currentPackage = data;
@@ -61,8 +63,9 @@ export class StudyNowComponent implements OnInit {
     });
   }
 
+  //Obtenir toutes les facts d'un package
   loadFacts(){
-    this.http.get<any[]>(`/api/getfactfrompackage/${this.currentPackage.id_package}`).subscribe((data) => {
+    this.http.get<any[]>(`/api/getunusedfactfrompackage/${this.currentPackage.id_package}`).subscribe((data) => {
       this.facts = data;
       this.RandomFact();
     });
@@ -103,7 +106,6 @@ export class StudyNowComponent implements OnInit {
     this.RandomFact();
     this.isVisible = false;
     this.isStated = false;
-    this.factIsUsed();
   }
 
   onPackageChange() {
@@ -121,15 +123,18 @@ export class StudyNowComponent implements OnInit {
       this.DbService.setStateFact(this.currentFact.id_fact, state);
       this.isStated = true;
       await this.getfactfromId(this.currentFact.id_fact);
+      console.log(this.currentFact.id_fact);
       this.factIsUsed();
       this.getTotalFact();
+      this.onNextClick();
     } catch (error) {
       console.error("Error in setStateFact:", error);
     }
   }
 
   factIsUsed(){
-    if (this.isStated && this.currentFact.state_fact === 'Easy'){
+    if (this.currentFact.state_fact === 'Easy'){
+      console.log(this.currentFact.id_fact);
       this.usedFacts.push(this.currentFact.id_fact);
     }
     else {

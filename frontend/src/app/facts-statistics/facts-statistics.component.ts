@@ -110,8 +110,6 @@ export class FactsStatisticsComponent implements OnInit
     });
   }
 
-
-
   Chartdata= [
     {
       name: 'NUMBER OF FACTS',

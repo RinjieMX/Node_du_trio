@@ -296,9 +296,10 @@ app.delete('/api/deleteFact/:id_fact', async (req, res) => {
 app.put('/api/setStateFact/:id_fact', async (req, res) => {
     const id_fact = req.params.id_fact;
     const state = req.body.state_fact;
+    const next_date = req.body.next_date;
     try {
         const [rowsUpdated] = await LearningFact.update(
-            { state_fact: state },
+            { state_fact: state, next_date: next_date },
             {
                 returning: false, // Ne retourne pas les lignes mises à jour
                 where: { id_fact: id_fact },
@@ -317,16 +318,16 @@ app.put('/api/setStateFact/:id_fact', async (req, res) => {
     }
 });
 
-app.get('/api/getunusedfactfrompackage/:idpackage', async (req, res) => {
+app.get('/api/getactualfactfrompackage/:idpackage', async (req, res) => {
     const idpackage = parseInt(req.params.idpackage);
+    const currentDate = new Date(); // Date actuelle
     try {
         const facts = await LearningFact.findAll({
             where: {
                 id_package: idpackage,
-                [Op.or]: [ //To get the fact left
-                    { state_fact: { [Op.ne]: 'Easy' } }, // state_fact différent de 'Easy'
-                    { state_fact: { [Op.is]: null } } // state_fact est null
-                ]
+                next_date: {
+                    [Op.lt]: currentDate // Vérifie que next_date est supérieure à la date actuelle
+                }
             },
         });
         res.status(200).send(facts);

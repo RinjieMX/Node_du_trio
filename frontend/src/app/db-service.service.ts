@@ -112,9 +112,10 @@ export class DbServiceService {
     return this.http.get<number>(`api/getNbFactinPackage/${idPackage}`);
   }
 
-  setStateFact(id_fact: number, state: string){
+  setStateFact(id_fact: number, state: string, next_date: Date){
     const requestBody = {
-      state_fact: state
+      state_fact: state,
+      next_date: next_date
     }
     this.http.put(`/api/setStateFact/${id_fact}`, requestBody).subscribe(
     (response) => {

@@ -23,7 +23,8 @@ CREATE TABLE projeta4.learning_fact (
 	recto varchar(500), 
 	verso varchar(500),
 	id_package INT,
-	state_fact varchar(50)
+	state_fact varchar(50),
+	next_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 	
 CREATE TABLE projeta4.learning_package (

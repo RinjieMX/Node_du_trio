@@ -25,9 +25,10 @@
     <p id="txt-difficulty">How did you feel about it ?</p>
 
     <div class="button-container">
-      <button class="button-difficulty color-difficult" (click)="setStateFact('Difficult')">Difficult</button>
-      <button class="button-difficulty color-review" (click)="setStateFact('To review')">To review</button>
-      <button class="button-difficulty color-easy" (click)="setStateFact('Easy')">Easy</button>
+      <button class="button-difficulty color-difficult" (click)="setStateFact('To review', 1)">To Review <1m</button>
+      <button class="button-difficulty color-review" (click)="setStateFact('Difficult', 10)">Difficult <10m</button>
+      <button class="button-difficulty color-review" (click)="setStateFact('Correct', 1440)">Correct 1j</button>
+      <button class="button-difficulty color-easy" (click)="setStateFact('Easy', 7200)">Easy 5j</button>
     </div>
   </div>
 

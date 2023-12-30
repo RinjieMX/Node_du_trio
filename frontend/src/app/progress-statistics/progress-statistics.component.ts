@@ -16,6 +16,7 @@ export class ProgressStatisticsComponent  implements OnInit
   ngOnInit()
   {
     this.barchart();
+
   }
   numeroaprint:number=10;
   barchart()

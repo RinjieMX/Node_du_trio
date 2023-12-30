@@ -23,6 +23,8 @@ export class FactsStatisticsComponent
   numberOfFacts3: number = 3;
   numberOfFacts4: number = 4;
   numberOfFacts: number = 0;
+  unfinishedfactindex: number=77;
+  currentPackage: any;
 
 
 
@@ -72,6 +74,8 @@ export class FactsStatisticsComponent
     }
 
   ]
+
+
   async getNumberOfFactsInPackage(idPackage: number): Promise<number> {
     try {
       const response = await this.http.get<{ count?: number }>(`/api/getNbFactLeft/${idPackage}`).toPromise();
@@ -88,6 +92,36 @@ export class FactsStatisticsComponent
       return 0;
     }
   }
+
+
+
+
+
+
+
+
+
+
+  async getNumberOfUnfinishedFactsInPackage(idPackage: number): Promise<number> {
+    try {
+      const response = await this.http.get<{ count?: number }>(`/api/geteasyfact/${this.currentPackage.id_package}`).toPromise();
+      if (response && response.count !== undefined) {
+        return response.count;
+      } else {
+        // Gérer le cas où la réponse n'a pas la propriété attendue
+        console.error('Réponse invalide:', response);
+        return 0;
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération du nombre de facts :', error);
+      return 0;
+    }
+  }
+
+
+
+
+
 
 
 

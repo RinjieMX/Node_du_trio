@@ -14,8 +14,6 @@ export class FactsStatisticsComponent implements OnInit
 
   AllPackages: any;
 
-
-
   idPackage: number = 5;
   numberOfFacts1: number = 1;
   numberOfFacts2: number = 2;
@@ -25,15 +23,10 @@ export class FactsStatisticsComponent implements OnInit
   unfinishedfactindex: number=77;
   currentPackage: any;
 
-
-
   chartOptions: any;
   highcharts:typeof Highcharts= Highcharts;
 
   constructor(private DbService: DbServiceService, private http: HttpClient) { }
-
-
-
 
   async ngOnInit() {
     console.log(101010);

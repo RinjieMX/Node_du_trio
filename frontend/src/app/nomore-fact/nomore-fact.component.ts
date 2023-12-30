@@ -1,7 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { DbServiceService } from "../db-service.service";
-import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute, Router} from "@angular/router";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nomore-fact',
@@ -9,6 +6,4 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrl: './nomore-fact.component.css'
 })
 export class NomoreFactComponent {
-
-
 }

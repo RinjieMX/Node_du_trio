@@ -10,9 +10,14 @@ import {StudyNowComponent} from "./study-now/study-now.component";
 import {EditPackageComponent} from "./edit-package/edit-package.component";
 import {ProgressStatisticsComponent} from "./progress-statistics/progress-statistics.component";
 import {FactsStatisticsComponent} from "./facts-statistics/facts-statistics.component";
+import {HomePageComponent} from "./home-page/home-page.component";
+import {HelpAboutComponent} from "./help-about/help-about.component";
+import {HelpDocumentationComponent} from "./help-documentation/help-documentation.component"
+import {HelpGlossaryComponent} from "./help-glossary/help-glossary.component";
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path:'login-form', component: LoginFormComponent },
   { path:'newaccount-form', component: NewaccountFormComponent },
   { path:'addnew-package', component: AddnewPackageComponent },
@@ -22,8 +27,11 @@ const routes: Routes = [
   { path:'nomore-fact', component: NomoreFactComponent },
   { path:'edit-package/:id_package', component: EditPackageComponent },
   { path: 'progress-statistics', component: ProgressStatisticsComponent},
-  {path: 'facts-statistics',component:FactsStatisticsComponent}
-
+  {path: 'facts-statistics',component:FactsStatisticsComponent},
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'help-about', component: HelpAboutComponent},
+  { path:'help-documentation', component: HelpDocumentationComponent},
+  { path: 'help-glossary', component: HelpGlossaryComponent}
 ];
 
 @NgModule({

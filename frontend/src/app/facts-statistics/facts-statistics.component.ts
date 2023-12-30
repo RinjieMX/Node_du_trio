@@ -48,9 +48,6 @@ export class FactsStatisticsComponent
 
 
 
-
-
-
   numeroaprint:number=10;
   barchart()
   {
@@ -104,10 +101,8 @@ export class FactsStatisticsComponent
   Chartdata= [
     {
       name: 'NUMBER OF FACTS',
-      data:[this.getNumberOfFactsInPackage(1),
-            this.getNumberOfFactsInPackage(2),
-            this.getNumberOfFactsInPackage(3),
-            this.getNumberOfFactsInPackage(4)]
+      data:[this.DbService.getNbFactInPackage(1),
+            10,10,140]
     }
 
   ]

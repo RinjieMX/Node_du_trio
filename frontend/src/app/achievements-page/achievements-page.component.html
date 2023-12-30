@@ -1,8 +1,16 @@
-<div class="display-packages-container">
-  <h1 class="title">All Packages</h1>
-  <div *ngFor="let package of packages">
-    <app-package [package]="package"></app-package>
+<div *ngIf="Achievements; else noAchievements">
+
+  <div class="display-packages-container">
+    <div class="h1">Here are all the packages you finished</div>
+    <div *ngFor="let package of completed_packages">
+      <app-package [package]="package"></app-package>
+    </div>
   </div>
 </div>
 
-
+<ng-template #noAchievements>
+  <div class="display-packages-container">
+    <div class="h1">You did not finish any Package.</div>
+    <button class="nav-link button-back" [routerLink]="['/study-now', 1]">Study Now</button>
+  </div>
+</ng-template>

@@ -52,3 +52,25 @@ app-package {
 }
 
 
+.button-back {
+  margin: 20px;
+  background-color: var(--rose);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--petite-bordure);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 120px;
+  z-index: 1;
+}
+
+.button-back:hover {
+  background-color: var(--rose-fonce);
+}
+
+.h1{
+  color: var(--blanc);
+  font-size: 30px;
+}
+

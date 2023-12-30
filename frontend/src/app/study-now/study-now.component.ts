@@ -20,6 +20,7 @@ export class StudyNowComponent implements OnInit {
   AllPackages: any[] = [];
   isVisible: boolean = false;
   isStated: boolean = false;
+  norepeat: number = 0;
 
   numberofpackages: number= 0;
 
@@ -47,6 +48,8 @@ export class StudyNowComponent implements OnInit {
     try {
       const data = await this.http.get(`/api/getfact/${id}`).toPromise();
       this.currentFact = data;
+      this.norepeat = this.currentFact.id_fact;
+      console.log(this.norepeat);
     } catch (error) {
       console.error('Erreur lors de la récupération du fact :', error);
       throw error;
@@ -65,7 +68,7 @@ export class StudyNowComponent implements OnInit {
 
   //Obtenir toutes les facts d'un package
   loadFacts(){
-    this.http.get<any[]>(`/api/getunusedfactfrompackage/${this.currentPackage.id_package}`).subscribe((data) => {
+    this.http.get<any[]>(`/api/getactualfactfrompackage/${this.currentPackage.id_package}`).subscribe((data) => {
       this.facts = data;
       this.RandomFact();
     });
@@ -90,7 +93,16 @@ export class StudyNowComponent implements OnInit {
   }
 
   RandomFact() {
-    const unusedFacts = this.facts.filter((fa) => !this.usedFacts.includes(fa.id_fact)); //Utiliser une liste avec les facts qui ne sont pas encore passées
+    console.log(this.norepeat);
+    const unusedFacts = this.facts.filter((fa) => {
+      // Vérifiez s'il y a d'autres facts que celui de norepeat
+      const hasOtherFacts = this.facts.some((fact) => fact.id_fact !== this.norepeat);
+
+      if (!hasOtherFacts && fa.id_fact === this.norepeat) {
+        return true;
+      }
+      return !this.usedFacts.includes(fa.id_fact) && fa.id_fact !== this.norepeat;
+    }); //Utiliser une liste avec les facts qui ne sont pas encore passées
     //console.log(unusedFacts);
     if (unusedFacts.length === 0) {
       this.currentFact = null;
@@ -103,9 +115,10 @@ export class StudyNowComponent implements OnInit {
   }
 
   onNextClick() {
-    this.RandomFact();
+    //this.RandomFact();
     this.isVisible = false;
     this.isStated = false;
+    this.loadFacts();
   }
 
   onPackageChange() {
@@ -118,9 +131,12 @@ export class StudyNowComponent implements OnInit {
     this.isVisible = !this.isVisible;
   }
 
-  async setStateFact(state: string) {
+  async setStateFact(state: string, duration: number) {
     try {
-      this.DbService.setStateFact(this.currentFact.id_fact, state);
+      const next_date = new Date();
+      next_date.setMinutes(next_date.getMinutes() + duration);
+
+      this.DbService.setStateFact(this.currentFact.id_fact, state, next_date);
       this.isStated = true;
       await this.getfactfromId(this.currentFact.id_fact);
       console.log(this.currentFact.id_fact);

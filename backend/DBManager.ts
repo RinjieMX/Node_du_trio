@@ -43,6 +43,9 @@ LearningFact.init(
         id_package: {
             type: DataTypes.INTEGER,
         },
+        next_date: {
+            type: DataTypes.DATE,
+        },
         state_fact: {
             type: DataTypes.STRING(50),
         }

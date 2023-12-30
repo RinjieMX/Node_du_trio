@@ -27,7 +27,7 @@ export class ProgressStatisticsComponent  implements OnInit
     try {
       const response = await this.httpClient.get(`/api/getactualfactfrompackage/${packagenumber}`).toPromise();
       const tab = response as any[];
-      console.log(tab[0]);
+      //console.log(tab[0]);
       return tab;
     } catch (error) {
       console.error('Erreur lors de la requête API :', error);
@@ -52,7 +52,7 @@ export class ProgressStatisticsComponent  implements OnInit
         this.getApiResponse(4),
       ]);
 
-      console.log('Réponses de l\'API réussies :', response1, response2, response3, response4);
+      //console.log('Réponses de l\'API réussies :', response1, response2, response3, response4);
 
       this.tableau1 = response1;
       this.tableau2 = response2;
@@ -61,6 +61,8 @@ export class ProgressStatisticsComponent  implements OnInit
 
       this.showdata();
       this.barchart();
+
+
     } catch (error) {
       console.error('Erreur lors de la récupération des données :', error);
     }
@@ -68,24 +70,24 @@ export class ProgressStatisticsComponent  implements OnInit
     console.log('Fin de ngOnInit');
   }
 
-      /*
-      console.log('Avant la requête HTTP');
+  /*
+  console.log('Avant la requête HTTP');
 
-      this.httpClient.get(`/api/getactualfactfrompackage/${this.packageId}`).subscribe(
-        (response) => {
-          console.log('Réponse de l\'API réussie :', response);
-          this.learningFacts = response as any;
-          console.log(this.learningFacts[0].state_fact);
-          for (let i = 0; i < this.learningFacts.length; i++) {
-            let fact = this.learningFacts[i];
-            console.log(`Fact ${fact.id_fact}: ${fact.state_fact}`);
-          }
+  this.httpClient.get(`/api/getactualfactfrompackage/${this.packageId}`).subscribe(
+    (response) => {
+      console.log('Réponse de l\'API réussie :', response);
+      this.learningFacts = response as any;
+      console.log(this.learningFacts[0].state_fact);
+      for (let i = 0; i < this.learningFacts.length; i++) {
+        let fact = this.learningFacts[i];
+        console.log(`Fact ${fact.id_fact}: ${fact.state_fact}`);
+      }
 
-        },
-        (error) => {
-          console.error('Erreur lors de la requête API :', error);
-        }
-      );*/
+    },
+    (error) => {
+      console.error('Erreur lors de la requête API :', error);
+    }
+  );*/
 
 
 

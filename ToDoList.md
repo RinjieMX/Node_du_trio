@@ -11,6 +11,7 @@
   (faire quelque chose de fixe pour tout le monde, une page d'un certain nombre de pixels de longueur)
 Particulièrement sur StudyNow 
 - La Nav bar prend toute la place lorsqu'on diminue la page en largeur
+- No more Fact ne propose pas une façon de revenir aux autres facts
 
 ## Autres
 

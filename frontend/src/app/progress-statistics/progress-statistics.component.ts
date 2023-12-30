@@ -155,7 +155,7 @@ export class ProgressStatisticsComponent  implements OnInit
       data:[4, 1, 3, 1]
     },
     {
-      name: 'dificult',
+      name: 'difficult',
       data:[1, 0, 2, 3]
     },
     {

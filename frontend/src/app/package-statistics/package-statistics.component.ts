@@ -9,80 +9,84 @@ import { forkJoin } from 'rxjs';
   templateUrl: './package-statistics.component.html',
   styleUrl: './package-statistics.component.css'
 })
-export class PackageStatisticsComponent implements OnInit
-{
+export class PackageStatisticsComponent implements OnInit {
 
-  AllPackages: any;
-  numberOfFacts: number = 0;
+    all_packages: any[] = [];
+    numberOfFacts: number = 0;
 
-  chartOptions: any;
-  highcharts:typeof Highcharts= Highcharts;
+    chartOptions: any;
+    highcharts: typeof Highcharts = Highcharts;
 
-  constructor(private DbService: DbServiceService, private http: HttpClient) { }
+    constructor(private DbService: DbServiceService, private http: HttpClient) {
+    }
 
-  async ngOnInit() {
-    console.log(101010);
-    this.loadData();
-  }
+    async ngOnInit() {
+        console.log("test");
+        this.loadData();
+    }
 
-  loadData() {
-    this.DbService.getAllPackages().subscribe((data: any[]) => {
-      const observables = data.map((pack: any) => {
-        return this.DbService.getNbFactInPackage(pack.id_package);
-      });
+    loadData() {
+        this.DbService.getAllPackages().subscribe((data: any[]) => {
 
-      forkJoin(observables).subscribe(
-        (results: any[]) => {
-          for (let i = 0; i < data.length; i++) {
-            data[i].numberOfFacts = results[i].count;
-          }
+            //on récupère tout les packages
+            this.all_packages = data;
 
-          //Toutes les données des packages avec le nombre de facts associées
-          this.AllPackages = data;
-          console.log(this.AllPackages);
+            const allCategories: string[] = ['Maths', 'English', 'History','Informatics','Geography','Philosophy' ,'Physics'];
 
-          if (this.AllPackages){
-            const packs: string[] = this.AllPackages.map((pack: any) => pack.title_package);
-            const data: number[] = this.AllPackages.map((pack: any) => pack.numberOfFacts);
+            /*
+            const categoryCounts: { [category: string]: number } = this.all_packages.reduce((acc, pack) => {
+                const category = pack.category;
+                acc[category] = (acc[category] || 0) + 1;
+                return acc;
+            }, {});
 
-            this.chartOptions = {
-              chart: {
-                type: 'column'
-              },
-              title: {
-                text: 'NUMBER OF FACTS PER PACKAGE'
-              },
-              xAxis: {
-                categories: packs
-              },
-              yAxis: {
-                title: {
-                  text: 'How many facts ?'
-                }
-              },
-              series: [
-                {
-                  name: 'Number of facts',
-                  color: 'white',
-                  //data: data
-                  data: data.map((count: number, index: number) => ({
-                    y: count,
-                    color: count <= 1 ? '#eb5b5b' :
-                      count >1 && count < 5 ? '#ffb6c1' :
-                        count >= 5 && count < 10 ? '#89e0ae' :
-                          count >= 10 ? '#27ae60' :
-                            '#27ae60'
-                  }))
-                }
-              ]
-            };
-          }
-        },
-        (error) => {
-          console.error('Erreur lors de la récupération du nombre de faits :', error);
-        }
-      );
-    });
-  }
+            const categories: string[] = Object.keys(categoryCounts);
+            const counts: number[] = Object.values(categoryCounts);
 
+             */
+
+            const categoryCounts: { [category: string]: number } = allCategories.reduce((acc, category) => {
+                acc[category] = 0;
+                return acc;
+            }, {} as { [category: string]: number });
+
+            this.all_packages.forEach((pack) => {
+                const category = pack.category;
+                categoryCounts[category] += 1;
+            });
+
+
+                this.chartOptions = {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'DISTRIBUTION OF CATEGORY'
+                    },
+                    xAxis: {
+                        categories: allCategories
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'How many instance per Category ?'
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'Number of Category',
+                            color: 'white',
+                            data: allCategories.map((category: string) => ({
+                                y: categoryCounts[category],
+                                color: categoryCounts[category] <= 1 ? '#eb5b5b' :
+                                    categoryCounts[category] > 1 && categoryCounts[category] < 5 ? '#ffb6c1' :
+                                        categoryCounts[category] >= 5 ? '#27ae60' :
+                                                '#27ae60'
+                            }))
+                        }
+                    ]
+                };
+
+        })
+
+    }
 }

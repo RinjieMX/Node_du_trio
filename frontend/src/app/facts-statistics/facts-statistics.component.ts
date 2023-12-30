@@ -8,26 +8,24 @@ import { forkJoin } from 'rxjs';
   templateUrl: './facts-statistics.component.html',
   styleUrl: './facts-statistics.component.css'
 })
+
 export class FactsStatisticsComponent
 {
 
   @Input() fact: any;
   @Input() package: any;
 
-
-
-  idPackage: number = 5;
+  idPackage: number = 0;
   numberOfFacts: number = 0;
 
-
   chartOptions: any;
-  highcharts:typeof Highcharts= Highcharts;
+  highcharts:typeof Highcharts = Highcharts;
 
   constructor(private DbService: DbServiceService) { }
 
-
   ngOnInit()
   {
+    this.loadData();
     this.barchart();
     this.getNumberOfFactsInPackage(4);
   }
@@ -106,5 +104,8 @@ export class FactsStatisticsComponent
   ]
 
 
+  loadData(){
+
+  }
 
 }

@@ -7,9 +7,9 @@
     position: fixed;
 }
 
+
 .display-packages-container {
     font-family: "Ink Free", sans-serif;
-    font-size: 40px;
     background-color: var(--rose-clair);
     border-radius: var(--bordure-arrondie);
     box-shadow: var(--box-shadow);
@@ -19,7 +19,35 @@
     margin: 75px 15px 15px 15px;
     display: flex;
     height: 78vh;
-    width: 98%;
+    flex-direction: column;
     justify-content: center;
     top: 0px;
+    font-size: 40px;
 }
+
+.left-image{
+    max-width: 100%;
+    max-height: 100%;
+    bottom: -100px;
+    left: -100px;
+    position: fixed;
+    transform: rotate(-15deg);
+}
+
+body {
+    overflow: visible;
+}
+
+.button{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.button-back{
+    border-radius: var(--petite-bordure);
+    box-shadow: var(--box-shadow);
+    background-color: var(--blanc);
+}
+.button-back:hover{
+    background-color: var(--vert-pale);
+}
+

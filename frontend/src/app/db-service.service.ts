@@ -127,4 +127,8 @@ export class DbServiceService {
       console.error('Error updating fact:', error);
     });
   }
+
+  getNbActualFactFromPackage(packageId: number): Observable<{ count: number }> {
+    return this.http.get<{ count: number }>(`/api/getNbactualfactfrompackage/${packageId}`);
+  }
 }

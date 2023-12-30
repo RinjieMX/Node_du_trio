@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from "@angular/router";
 import { DbServiceService } from "../db-service.service";
+import {concatMap, forkJoin, of, switchMap, take} from "rxjs";
 
 @Component({
   selector: 'app-study-now',
@@ -29,19 +30,36 @@ export class StudyNowComponent implements OnInit {
   ngOnInit() {
     this.DbService.getAllPackages().subscribe((data) => {
       this.AllPackages = data;
-      let firstPackage: any;
+      console.log("All Packages", this.AllPackages)
 
-      if(this.AllPackages.length != 0) firstPackage = this.AllPackages[0].id_package;
+      if (this.AllPackages.length === 0) {
+        // Absence de package
+        this.router.navigate(['/nomore-package']).then(r => {});
+      } else {
+        const observables = this.AllPackages.map(pack => {
+          return this.DbService.getNbActualFactFromPackage(pack.id_package);
+        });
 
-      if (!firstPackage || firstPackage == 0) { //on a aucun package alors on a aucun facts
-        this.router.navigate(['/nomore-fact']).then(r => {});
-      }
-      else {
-        this.getcurrentpackagefromId(firstPackage);
+        forkJoin(observables).subscribe((results) => {
+          let selectedPackage = null;
+
+          results.forEach((factCount, index) => {
+            if (factCount.count > 0) {
+              selectedPackage = this.AllPackages[index];
+              this.selectedPackageId = selectedPackage.id_package;
+              this.getcurrentpackagefromId(this.selectedPackageId);
+            }
+          });
+
+          // Si aucun package n'a de facts, sélectionnez le premier package de la liste
+          if (!selectedPackage) {
+            this.router.navigate(['/nomore-fact']).then(r => {});
+          }
+        });
       }
     });
-
   }
+
 
   //Obtenir toutes les informations d'une fact
   async getfactfromId(id: number) {
@@ -61,14 +79,14 @@ export class StudyNowComponent implements OnInit {
   getcurrentpackagefromId(id: number){
     this.DbService.getPackagesById(id).subscribe((data) => {
       this.currentPackage = data;
-      this.loadFacts();
+      this.loadFacts(this.selectedPackageId);
       this.getTotalFact();
     });
   }
 
   //Obtenir toutes les facts d'un package
-  loadFacts(){
-    this.http.get<any[]>(`/api/getactualfactfrompackage/${this.currentPackage.id_package}`).subscribe((data) => {
+  loadFacts(id_package: number){
+    this.http.get<any[]>(`/api/getactualfactfrompackage/${id_package}`).subscribe((data) => {
       this.facts = data;
       this.RandomFact();
     });
@@ -118,10 +136,11 @@ export class StudyNowComponent implements OnInit {
     //this.RandomFact();
     this.isVisible = false;
     this.isStated = false;
-    this.loadFacts();
+    this.loadFacts(this.selectedPackageId);
   }
 
   onPackageChange() {
+    console.log("selected package id : ", this.selectedPackageId);
     this.getcurrentpackagefromId(this.selectedPackageId);
     this.isVisible = false;
     this.isStated = false;

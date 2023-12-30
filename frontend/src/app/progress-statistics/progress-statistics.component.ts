@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as Highcharts from 'highcharts/highstock';
 import {Observable} from "rxjs";
+import { DbServiceService } from "../db-service.service";
 
 @Component({
   selector: 'app-progress-statistics',
@@ -35,13 +36,19 @@ export class ProgressStatisticsComponent  implements OnInit
     }
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private DbService: DbServiceService,private httpClient: HttpClient) { }
   showdata(): void
   {
     console.log('showdatarunning');
+    console.log(this.tableau1);
 
 
   }
+
+  /*getpackaenumer():number
+  {
+   this.DbService.getAllPackages()
+  }*/
   async ngOnInit() {
     console.log('Début de ngOnInit');
     try {
@@ -58,10 +65,16 @@ export class ProgressStatisticsComponent  implements OnInit
       this.tableau2 = response2;
       this.tableau3 = response3;
       this.tableau4 = response4;
-
+      console.log(response1)
       this.showdata();
       this.barchart();
-      console.log(this.tableau1)
+      //console.log(response1[0].state_fact);
+      //console.log(response1[1].state_fact);
+
+      for (let i = 0; i < response1.length; i++) {
+        console.log(response3[i].state_fact);
+      }
+
 
 
     } catch (error) {
@@ -70,6 +83,7 @@ export class ProgressStatisticsComponent  implements OnInit
 
     console.log('Fin de ngOnInit');
   }
+
 
   /*
   console.log('Avant la requête HTTP');

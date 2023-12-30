@@ -7,7 +7,9 @@ To make sure you have all the necessary packages installed for the project to ru
 - In the backend and frontend terminal, run: 'npm i'
 - In the backend terminal run 'npm install sequelize' and 'npm install --save-dev typescript'
 - In the front end terminal run 'npm install highcharts' and 'npm install highcharts-angular'
+
 - To finish in the backend, run 'tsc' to create the .js files
+Wait a bit, now you should see .js file appear under all .ts file.
 
 If any errors occur during these commands, make sure your Node.js is correctly installed and that you don't have any corrupted files.
 
@@ -15,7 +17,8 @@ If any errors occur during these commands, make sure your Node.js is correctly i
 
 First, ensure that the projet will recompile all ts file on changes. To make sure the settings is on, go to settings, 
 then settings sync. In language and Framework click on typescript and check the box 'Recompile on changes'.
-Now you should see .js file appear under all .ts file. 
+
+![Alt Text](./frontend/src/assets/screenshots/recompile_on_changes.png)
 
 To run the project, follow these steps:
 

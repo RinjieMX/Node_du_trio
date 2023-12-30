@@ -1,34 +1,36 @@
 <div class="display-container">
 
-<h1>How Anki Works</h1>
+  <h1>How Anki Works</h1>
 
   <section>
     <h2>Introduction</h2>
-    <p>Anki is a spaced repetition application that uses flashcards to facilitate learning and memorization.</p>
+    <p>The Anki project involves managing course packages of varying difficulty levels across multiple subjects. Each package contains a multitude of questions and answers that the user must learn. Our implementation of Anki encompasses all its main functionalities, from managing a package and its facts to recording the difficulties the user encountered during reviews of the package's facts. It also includes creating charts that connect the user's overall progress.
+    </p>
   </section>
 
   <section>
     <h2>Basic Principle</h2>
-    <p>Anki employs the spaced repetition algorithm to schedule facts reviews at optimal times, maximizing long-term retention.</p>
+    <p>Anki employs the spaced repetition algorithm to schedule facts reviews at optimal times, maximizing long-term retention. The user determines the level of difficulty he thinks is appropriate for a fact, determining when the question will pop again.</p>
   </section>
 
   <section>
     <h2>Creating Packages</h2>
-    <p>Users can create packages for certain subjects and precise the level of difficulty, what audience was it made for. These packages are then reviewed based on the user's mastery level.</p>
+    <p>Users can create packages for certain subjects and precise the level of difficulty, what audience was it made for. Note that all packages can be edited after creation. </p>
   </section>
 
   <section>
     <h2>Creating Facts</h2>
-    <p>Users can create facts containing questions and answers. These cards are then reviewed based on the user's mastery level.</p>
+    <p>Users can create facts containing questions and answers. These facts are then reviewed based on the user's choice of difficulty concerning these facts</p>
     <ul>
-      <li>Questions on the front, answers on the back.</li>
-      <li>Use of media (images, audio, video) to enhance cards.</li>
+      <li>Questions are displayed, answer are first hidden.</li>
+      <li>When the user decided to show the answer, a list of difficulty level are displayed to choose from</li>
+      <li>All level of difficulty chosen will affect the display of the facts for the user. An easy question won't be displayed back before some time, while a difficult question will turn around</li>
     </ul>
   </section>
 
   <section>
-    <h2>Daily Review</h2>
-    <p>Anki offers a daily review of facts, automatically adjusting the repetition interval based on the user's performance.</p>
+    <h2>Statistics</h2>
+    <p>Users have access to their own statistics </p>
   </section>
-</div>
 
+</div>

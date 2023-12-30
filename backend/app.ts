@@ -189,10 +189,6 @@ app.get('/api/getNbFactLeft/:idpackage', async (req, res) => {
         const count = await LearningFact.count({
             where: {
                 id_package: idpackage,
-                /*[Op.or]: [ //To get the fact left
-                    { state_fact: { [Op.ne]: 'Easy' } }, // state_fact différent de 'Easy'
-                    { state_fact: { [Op.is]: null } } // state_fact est null
-                ]*/
             }
         });
         res.status(200).json({ count });
@@ -207,6 +203,23 @@ app.get('/api/getfact/:idfact', async (req, res) => {
     try {
         const facts = await LearningFact.findByPk(idfact);
         res.status(200).send(facts);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des facts :', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+//Récupération des facts marquées comme Easy
+app.get('/api/geteasyfact/:idpackage', async (req, res) => {
+    const idpackage = parseInt(req.params.idpackage);
+    try {
+        const count = await LearningFact.count({
+            where: {
+                id_package: idpackage,
+                state_fact: 'Easy',
+            }
+        });
+        res.status(200).json({ count });
     } catch (error) {
         console.error('Erreur lors de la récupération des facts :', error);
         res.status(500).send('Internal Server Error');
@@ -300,6 +313,25 @@ app.put('/api/setStateFact/:id_fact', async (req, res) => {
         res.status(200).send(updatedFact);
     } catch (error) {
         console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+app.get('/api/getunusedfactfrompackage/:idpackage', async (req, res) => {
+    const idpackage = parseInt(req.params.idpackage);
+    try {
+        const facts = await LearningFact.findAll({
+            where: {
+                id_package: idpackage,
+                [Op.or]: [ //To get the fact left
+                    { state_fact: { [Op.ne]: 'Easy' } }, // state_fact différent de 'Easy'
+                    { state_fact: { [Op.is]: null } } // state_fact est null
+                ]
+            },
+        });
+        res.status(200).send(facts);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des facts :', error);
         res.status(500).send('Internal Server Error');
     }
 });

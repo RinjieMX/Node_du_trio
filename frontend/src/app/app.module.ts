@@ -24,7 +24,6 @@ import { FactsStatisticsComponent } from './facts-statistics/facts-statistics.co
 import { HomePageComponent } from './home-page/home-page.component';
 import { HelpAboutComponent } from './help-about/help-about.component';
 import { HelpDocumentationComponent } from './help-documentation/help-documentation.component';
-import { HelpGlossaryComponent } from './help-glossary/help-glossary.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +43,7 @@ import { HelpGlossaryComponent } from './help-glossary/help-glossary.component';
     FactsStatisticsComponent,
     HomePageComponent,
     HelpAboutComponent,
-    HelpDocumentationComponent,
-    HelpGlossaryComponent
+    HelpDocumentationComponent
   ],
   imports: [
     BrowserModule,

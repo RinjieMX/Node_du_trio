@@ -1,4 +1,10 @@
-# Project Name
+# Anki Realisation
+
+Made by : 
+
+Manon GARDIN - RinjieMX on Github
+Tiphaine KACHKACHI - Tiphk on Github
+Matias OTTENSEN - Mattcodman on Github
 
 Brief description of your project.
 

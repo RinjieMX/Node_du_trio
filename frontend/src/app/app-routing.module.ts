@@ -12,7 +12,7 @@ import {HomePageComponent} from "./home-page/home-page.component";
 import {HelpAboutComponent} from "./help-about/help-about.component";
 import {HelpDocumentationComponent} from "./help-documentation/help-documentation.component"
 import {DisplayAchievements} from "./achievements-page/achievements-page.component"
-
+import {PackageStatisticsComponent} from "./package-statistics/package-statistics.component"
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: 'home-page', component: HomePageComponent },
   { path: 'help-about', component: HelpAboutComponent},
   { path:'help-documentation', component: HelpDocumentationComponent},
-  { path:'achievements-page', component: DisplayAchievements}
+  { path:'achievements-page', component: DisplayAchievements},
+  { path:'package-statistics', component: PackageStatisticsComponent}
 ];
 
 @NgModule({

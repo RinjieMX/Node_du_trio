@@ -5,19 +5,14 @@ import { HttpClient } from "@angular/common/http";
 import { forkJoin } from 'rxjs';
 
 @Component({
-  selector: 'app-facts-statistics',
-  templateUrl: './facts-statistics.component.html',
-  styleUrl: './facts-statistics.component.css'
+  selector: 'app-package-statistics',
+  templateUrl: './package-statistics.component.html',
+  styleUrl: './package-statistics.component.css'
 })
-export class FactsStatisticsComponent implements OnInit
+export class PackageStatisticsComponent implements OnInit
 {
 
   AllPackages: any;
-
-  numberOfFacts1: number = 1;
-  numberOfFacts2: number = 2;
-  numberOfFacts3: number = 3;
-  numberOfFacts4: number = 4;
   numberOfFacts: number = 0;
 
   chartOptions: any;
@@ -69,14 +64,14 @@ export class FactsStatisticsComponent implements OnInit
                 {
                   name: 'Number of facts',
                   color: 'white',
-                 //data: data
+                  //data: data
                   data: data.map((count: number, index: number) => ({
                     y: count,
                     color: count <= 1 ? '#eb5b5b' :
                       count >1 && count < 5 ? '#ffb6c1' :
                         count >= 5 && count < 10 ? '#89e0ae' :
-                      count >= 10 ? '#27ae60' :
-                        '#27ae60'
+                          count >= 10 ? '#27ae60' :
+                            '#27ae60'
                   }))
                 }
               ]

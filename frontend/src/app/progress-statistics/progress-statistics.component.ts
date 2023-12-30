@@ -22,10 +22,11 @@ export class ProgressStatisticsComponent  implements OnInit
     console.log('Début de ngOnInit');
 
     this.barchart();
+    const packageId:number=1 ;
 
     console.log('Avant la requête HTTP');
 
-    this.httpClient.get('/api/getactualfactfrompackage/1').subscribe(
+    this.httpClient.get('/api/getactualfactfrompackage/${packageId}').subscribe(
       (response) => {
         console.log('inside');
         console.log('Réponse de l\'API réussie :', response);
@@ -55,11 +56,11 @@ export class ProgressStatisticsComponent  implements OnInit
           },
         title:
           {
-            text: 'NUMBER OF FACTS WORKED ON'
+            text: 'PROGRESS IN ANKI'
           },
         subtitle:
           {
-            text: 'What happened here in anki?'
+            text: 'what was easy? dificult?'
           },
         xAxis:
           {

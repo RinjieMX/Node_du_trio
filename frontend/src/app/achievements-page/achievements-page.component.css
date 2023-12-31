@@ -1,5 +1,6 @@
 .display-packages-container {
-  font-family: Arial, sans-serif;
+  font-family: 'Ink Free', sans-serif;
+  font-size: 25px;
   background-color: var(--rose-clair);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);

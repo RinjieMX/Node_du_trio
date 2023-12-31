@@ -28,6 +28,7 @@ h1 {
   margin-top: 10px;
   text-align: center;
   color: var(--blanc);
+  font-family: 'Ink Free', sans-serif;
 }
 
 #question-container {
@@ -74,6 +75,7 @@ h1 {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: 'Ink Free', sans-serif;
 }
 
 #next-button:hover {
@@ -100,10 +102,14 @@ h1 {
 .bouton-reveal{
   text-align: center;
   margin-top: 10px;
+  font-family: 'Ink Free', sans-serif;
+  font-size: 15px;
 }
 
 .change-package{
   color: var(--blanc);
+  font-family: 'Ink Free', sans-serif;
+  font-size: 20px;
 }
 
 .button-difficulty {

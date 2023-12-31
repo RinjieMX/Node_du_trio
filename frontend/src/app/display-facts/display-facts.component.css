@@ -1,5 +1,5 @@
 .display-facts-container {
-  font-family: Arial, sans-serif;
+  font-family: "Ink Free", sans-serif;
   background-color: var(--rose-clair);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
@@ -37,6 +37,7 @@ app-fact {
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 220px;
+  font-size: 20px;
 }
 
 .button-add:hover {
@@ -54,7 +55,6 @@ app-fact {
   transition: background-color 0.3s ease;
   width: 120px;
   z-index: 1;
-
   top: 80px;
   position: fixed;
   left: 40px;

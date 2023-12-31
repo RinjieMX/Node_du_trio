@@ -1,5 +1,4 @@
 .container {
-  font-family: Arial, sans-serif;
   background-color: var(--rose-clair);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
@@ -13,6 +12,10 @@
   justify-content: center;
   width: 100%;
 }
+.Titre{
+  font-family: "Ink Free", sans-serif;
+  font-size: 20px;
+}
 
 .addnew-package-container {
   background-color: var(--blanc);
@@ -24,12 +27,12 @@
 }
 
 .addnew-package-container h1 {
-  margin-bottom: 20px; /* Plus d'espace sous le titre */
+  margin-bottom: 20px;
   color: var(--vert-clair);
 }
 
 .form-group {
-  margin-bottom: 15px; /* Espace entre les champs de formulaire */
+  margin-bottom: 15px;
 }
 
 label {
@@ -41,17 +44,17 @@ input[type="text"],
 select,
 textarea {
   width: 100%;
-  padding: 10px; /* Plus grand espacement intérieur */
+  padding: 10px;
   box-sizing: border-box;
-  border: 1px solid var(--gris-clair); /* Bordure légère */
+  border: 1px solid var(--gris-clair);
   border-radius: var(--petite-bordure);
-  margin-bottom: 15px; /* Espace entre les champs */
+  margin-bottom: 15px;
 }
 
 input[type="submit"] {
   color: var(--blanc);
   background-color: var(--vert-clair);
-  padding: 12px; /* Plus grand espacement intérieur */
+  padding: 12px;
   border: none;
   border-radius: var(--petite-bordure);
   cursor: pointer;

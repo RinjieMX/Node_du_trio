@@ -26,18 +26,21 @@ h1 {
     color: var(--blanc);
     padding-bottom: 8px;
     margin-top: 10px;
+    font-family: 'Ink Free', sans-serif;
 }
 
 h3 {
     color: var(--blanc);
     padding-bottom: 8px;
     margin-bottom: 16px;
-    font-size: 15px;
+    font-size: 22px;
+    font-family: 'Ink Free', sans-serif;
 }
 h2 {
     color: var(--vert);
     padding-bottom: 8px;
     margin-bottom: 16px;
+    font-family: 'Ink Free', sans-serif;
 }
 
 ul.no-bullets {

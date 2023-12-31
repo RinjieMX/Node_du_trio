@@ -1,5 +1,4 @@
 .fact-container {
-  font-family: Arial, sans-serif;
   background-color: var(--blanc);
   border-radius: 8px;
   box-shadow: var(--box-shadow);
@@ -10,6 +9,7 @@
   margin: 15px;
   display: inline-block;
   vertical-align: top;
+  font-family: Arial, sans-serif;
 }
 
 .fact-detail {
@@ -29,11 +29,13 @@
   max-width: 100%;
 }
 
-/* Styles pour les boutons */
+
 .button-container {
   display: flex;
   justify-content: space-between;
   margin: 20px 10px 5px 5px;
+  font-family: "Ink Free", sans-serif;
+  font-size: 17px;
 }
 
 

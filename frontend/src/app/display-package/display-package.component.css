@@ -1,5 +1,6 @@
 .display-packages-container {
-  font-family: Arial, sans-serif;
+  font-family: "Ink Free", sans-serif;
+  font-size: 20px;
   background-color: var(--rose-clair);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
@@ -25,6 +26,8 @@ app-package {
 
 .filter-section {
   flex-direction: column;
+  font-family: "Ink Free", sans-serif;
+  font-size: 17px;
   background-color: var(--rose-pale);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);

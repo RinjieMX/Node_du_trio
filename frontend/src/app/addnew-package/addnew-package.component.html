@@ -3,21 +3,19 @@
 <div class="en-colonne">
 
   <div class="addnew-package-container">
-    <h1>Add a new package</h1>
+    <div class="Titre"><h1>Add a new package</h1></div>
 
     <form (ngSubmit)="insertPackage()" method="POST" #packageForm="ngForm">
       <label for="name-package"><span class="required">*</span> Package's name : </label>
       <input type="text" id="name-package" name="name-package" [(ngModel)]="title_package" required>
       <br>
 
-
-        <label for="description">Description :</label>
-        <textarea id="description" name="description" [(ngModel)]="description_package"></textarea>
-        <br>
-
+      <label for="description">Description :</label>
+      <textarea id="description" name="description" [(ngModel)]="description_package"></textarea>
+      <br>
 
       <label for="category"> <span class="required">*</span> Category : </label>
-      <select [(ngModel)]="category" id="category" name="category" required>
+      <select [(ngModel)]="category" id="category" name="category" required >
         <option value="Maths">Maths</option>
         <option value="English">English</option>
         <option value="Physics">Physics</option>
@@ -28,8 +26,6 @@
       </select>
       <br>
 
-
-      <!-- Target Audience Field -->
       <label for="target-audience">Target Audience :</label>
       <select [(ngModel)]="target_audience" id="target-audience" name="target-audience">
         <option value="Children">Children</option>
@@ -39,7 +35,6 @@
       </select>
       <br>
 
-      <!-- Difficulty Dropdown -->
       <label for="difficulty">Difficulty :</label>
       <select id="difficulty" name="difficulty" [(ngModel)]="difficulty_level">
         <option value="Easy">Easy</option>
@@ -49,7 +44,6 @@
       </select>
       <br>
 
-      <!--We check if all input we need to fill are indeed filled-->
       <div *ngIf="packageForm.invalid && (packageForm.dirty || packageForm.touched)" class="error-message">
         *Please fill out all the required fields*
       </div>

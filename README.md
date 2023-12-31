@@ -145,32 +145,37 @@ If we confirm the fact gets deleted.
 Discover now the "Study Now" page, the centerpiece of our app. It is here that we will dive into the heart of the subject and review the facts that we have recorded in our packs.
 The "Study Now" page will take you to an existing and not empty package. Otherwise, you will see a page informing you that no package is available, or that it is empty.
 
-![Alt Text](frontend/src/assets/screenshots/study-now/nomorefact.png)
-![Alt Text](frontend/src/assets/screenshots/study-now/nomorepackage.png)
+![Alt Text](frontend/src/assets/screenshots/nomorefact.png)
+
+![Alt Text](frontend/src/assets/screenshots/nomorepackage.png)
 
 You can easily change a package by selecting it from the drop-down menu at the top left of the screen.
 
-![Alt Text](frontend/src/assets/screenshots/study-now/combobox.png)
+![Alt Text](frontend/src/assets/screenshots/combobox.png)
 
 When studying the information, it is important to note that the facts will be presented in random order in the package. The question will be displayed, but the answer will remain hidden. To reveal it, just click on the "Reveal" button. At that time, you will also be able to indicate your level of confidence in your answer to the question by using the corresponding buttons, and you will move on to the next question.
 
-![Alt Text](frontend/src/assets/screenshots/study-now/ressenti-button.png)
+![Alt Text](frontend/src/assets/screenshots/ressenti-button.png)
 
 Your choice of trust level will determine how long before the issue reappears in the revision session. The revision time will correspond to the value indicated on the button you have selected. If you prefer to proceed to the next question without answering it, simply click on "Next Question".
 
 ## Feature Statistics
-![Alt Text](frontend/src/assets/screenshots/Features/facts-stats.PNG)
+
+![Alt Text](frontend/src/assets/screenshots/Features/facts stats.PNG)
+
 ![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
 
 ## Feature Achievements
 
 ## Feature Help
-![Alt Text](frontend/src/assets/screenshots/Features/Help-about.PNG)
+
+![Alt Text](frontend/src/assets/screenshots/Features/Help_about.PNG)
+
 This section introduces the functionality of the software, showing a little bit of
 every feature, so that the user understands whe he needs to do, and how to do it
 
+![Alt Text](frontend/src/assets/screenshots/Features/help documentation.PNG)
 
-![Alt Text](frontend/src/assets/screenshots/Features/help-documentation.PNG)
 In this part of our application, the user can find a lot of documentation/websites 
 in order to go further in his work. It allows to get even more knowledge when every package is finished in the app,
 (even if we can create new packages)
@@ -178,3 +183,11 @@ in order to go further in his work. It allows to get even more knowledge when ev
 ## Feature Login
 
 ## Contribution
+
+Concerning the statistics part, it was mostly done by Matias. It includes the importation of the Highcharts packages, the modeling of the charts, etc. His work was to gather as much data as possible in the whole application and to present it in different charts. It was necessary to use the backend app.js API to link data from different files across the frontend, import data, and store it in the charts. Tiphaine did the difficulty chart, and Manon helped Matias set the links between the chart and the app information. The most challenging part was making the data dynamic. This part took a lot of time.
+
+In the Help part, the content was created and written by Matias (the website presentation/features explanation, as well as the documentation and the additional websites), and fully designed by Tiphaine.
+
+Concerning the git pull/push, as not every member was used to this kind of cooperative work, the git push habit was not natural for every member of the team. So, as the tasks were attributed, sometimes, some members worked on their own without pushing or pulling in different files, in parallel. So, there were no conflicts, but not every member has the same amount of git pushes.
+
+

@@ -8,7 +8,6 @@ import { DbServiceService } from "../db-service.service";
   templateUrl: './progress-statistics.component.html',
   styleUrl: './progress-statistics.component.css'
 })
-
 export class ProgressStatisticsComponent  implements OnInit {
 
   chartOptions_1: any;

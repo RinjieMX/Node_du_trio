@@ -154,31 +154,37 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ## Feature Statistics
 
-![Alt Text](frontend/src/assets/screenshots/Features/facts_stats.PNG)
+Each of the graphics use the same code color. With red and pink behind attributed to low distribution, light green and green are used for high distribution. 
 
-here is the facts statistics chart. Is shows the amount of fact contained in every packages, 
-so that the user can know the repartition
+This graphics displays each difficulty level and how much the user chose it for each package.
+This is a good way for the user to follow his progress, as he can see how many fact he though were 'difficult' for example in a certain package.
 
-![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
+![Alt Text](frontend/src/assets/screenshots/statistiques/progress_stats.png)
 
-this fact displays with which difficulty the user passed the different packages.
-This is a good way for the user to follow his progress
+Here is the facts statistics chart. Is shows the amount of fact contained in every packages. 
 
-![Alt Text](frontend/src/assets/screenshots/Features/Package_stats.PNG)
-![Alt Text](frontend/src/assets/screenshots/Features/Package_stats_difficulty.PNG)
-in this last chart, we can check the difficulty of every package as well as the target audience,
-and the category
+![Alt Text](frontend/src/assets/screenshots/statistiques/fact_stats.png)
+
+In this last chart, we display the distribution of all Categories on all the packages. On the right corner, we have an option to display the same graphics but for the distribution of Target Audience and Difficulty Level.
+
+![Alt Text](frontend/src/assets/screenshots/statistiques/category_stats.png)
+![Alt Text](frontend/src/assets/screenshots/statistiques/target_audience_stats.png)
+![Alt Text](frontend/src/assets/screenshots/statistiques/difficulty_level_stats.png)
+
+
 
 ## Feature Achievements
 
-If a user select 'Easy' for all facts of a Package, the Package will be listed in the Achievements page.
+If a user select a type of difficulty for each facts in a package, the Package will be listed in the Achievements page.
+This means every Package who is in the 'waiting' list of packages will be displayed here. (All package whose study page shows it's done for now).
 
 ![Alt Text](frontend/src/assets/screenshots/achievements/all_packages_done.png)
 
-The Achievement shows every package that the user successfully finished once. If a fact is added to a package, and the user go to study the package in Study Now, it will be detected and won't figure anymore in the achievement page as it is no longer finished.
-In the same way, after 5 days facts marked as 'easy' come back to Study Now, thus the package's fact is removed from the achievements.
+The Achievement shows every package that the user finished. If a fact is added to a package, and the user go to study the package in Study Now, it will be detected and won't figure anymore in the achievement page as it is no longer finished.
+In the same way, after the time attributed to each fact difficulty is over days, the fact come back to Study Now, thus the package's fact is removed from the achievements.
 
 ![Alt Text](frontend/src/assets/screenshots/achievements/no_package_done.png)
+
 
 ## Feature Help
 

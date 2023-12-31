@@ -45,6 +45,7 @@ If no Package exist in all the filter option, the page allows you to go add a ne
 ![Alt Text](frontend/src/assets/screenshots/package-images/no_package_found.png)
 
 Now let's see what happens when we click on 'Edit Package':
+
 ![Alt Text](frontend/src/assets/screenshots/package-images/edit_package.png)
 
 All information about a package is displayed. Here we are offered 2 choices, either we edit the package or we can delete it.
@@ -52,23 +53,13 @@ First let's edit the package.
 
 ![Alt Text](frontend/src/assets/screenshots/package-images/we_are_editing_package.png)
 
-We can change all values. The title can't be empty. If you try to empty the title of the package, the modification won't be executed.
-On the other hand, a description can be empty. let's try to modify the 'English for All' Package :
-![Alt Text](frontend/src/assets/screenshots/package-images/we_are_editing_package.png)
-
+The display will change, and we can now change all values. The title can't be empty. If you try to empty the title of the package, the modification won't be executed.
+On the other hand, a description can be empty.
 If we decided to cancel our changes, we can click on the button cancel. This will bring us back to the previous version of the Package.
-In our case, we want to try if the edit works, se we will commit our changes.
-
-![Alt Text](frontend/src/assets/screenshots/package-images/package_was_changed.png)
 
 Let's go back to our list of all packages to make sure the changes worked. To do it faster, we can use the back button.
 
-
 ![Alt Text](frontend/src/assets/screenshots/back-button.png)
-
-We can see that the changes were indeed saved. 
-
-![Alt Text](frontend/src/assets/screenshots/package-images/our_new_packages.png)
 
 Now what happens if we would like to delete a Package ?
 On the 'French History' Package for example, if we hit the button Delete Package, a popup appears.

@@ -166,7 +166,14 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ## Feature Help
 ![Alt Text](frontend/src/assets/screenshots/features/Help about.png)
+This section introduces the functionality of the software, showing a little bit of
+every feature, so that the user understands whe he needs to do, and how to do it
+
+
 ![Alt Text](frontend/src/assets/screenshots/features/help documentation.png)
+In this part of our application, the user can find a lot of documentation/websites 
+in order to go further in his work. It allows to get even more knowledge when every package is finished in the app,
+(even if we can create new packages)
 
 ## Feature Login
 

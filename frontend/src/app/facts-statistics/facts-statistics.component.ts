@@ -72,10 +72,10 @@ export class FactsStatisticsComponent implements OnInit
                  //data: data
                   data: data.map((count: number, index: number) => ({
                     y: count,
-                    color: count <= 1 ? '#eb5b5b' :
-                      count >1 && count < 5 ? '#ffb6c1' :
-                        count >= 5 && count < 10 ? '#89e0ae' :
-                      count >= 10 ? '#27ae60' :
+                    color: count <= 3 ? '#eb5b5b' :
+                      count >3 && count <= 7 ? '#ffb6c1' :
+                        count > 7 && count <= 10 ? '#89e0ae' :
+                      count > 10 ? '#27ae60' :
                         '#27ae60'
                   }))
                 }

@@ -1,26 +1,24 @@
 <div class="container">
+  <h1>PACKAGE STATISTICS</h1>
 
-<h1>PACKAGE STATISTICS</h1>
+  <div class="dropdown">
 
-<div class="dropdown">
+    <label for="type"> Type of Statistics : </label>
+    <select [(ngModel)]="type_charts" id="type" name="type" (change)="updateChart()">
+      <option value="Category">Category</option>
+      <option value="Target">Target Audience</option>
+      <option value="Difficulty">Difficulty Level</option>
+    </select>
 
-  <label for="type"> Type of Statistics : </label>
-  <select [(ngModel)]="type_charts" id="type" name="type" (change)="updateChart()">
-    <option value="Category">Category</option>
-    <option value="Target">Target Audience</option>
-    <option value="Difficulty">Difficulty Level</option>
-
-  </select>
-
-</div>
+  </div>
 
 
-<highcharts-chart
-  *ngIf="chartOptions"
-  [Highcharts]="highcharts"
-  [options]="chartOptions"
-  style="height: 100%; width: 60%; display: block" >
+  <highcharts-chart
+    *ngIf="chartOptions"
+    [Highcharts]="highcharts"
+    [options]="chartOptions"
+    style="height: 100%; width: 60%; display: block" >
 
-</highcharts-chart>
+  </highcharts-chart>
 
 </div>

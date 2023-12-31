@@ -1,5 +1,6 @@
 .middle{
-  font-family: Arial, sans-serif;
+  font-family: 'Ink Free', sans-serif;
+  font-size: 30px;
   background-color: var(--rose-clair);
   border-radius: var(--bordure-arrondie);
   box-shadow: var(--box-shadow);
@@ -26,9 +27,9 @@
   z-index: 1;
   top: 80px;
   position: fixed;
-  top: 80px;
-  position: fixed;
   left: 80px;
+  font-family: 'Ink Free', sans-serif;
+  font-size: 18px;
 }
 
 
@@ -45,8 +46,8 @@
   z-index: 1;
   top: 80px;
   position: fixed;
-  top: 80px;
-  position: fixed;
+  font-family: 'Ink Free', sans-serif;
+  font-size: 18px;
   right: 80px;
 }
 

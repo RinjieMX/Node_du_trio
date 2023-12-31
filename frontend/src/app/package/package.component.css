@@ -1,5 +1,4 @@
 .package-container {
-  font-family: Arial, sans-serif;
   background-color: var(--blanc);
   border-radius: 8px;
   box-shadow: var(--box-shadow);
@@ -10,15 +9,20 @@
   margin: 15px;
   display: inline-block;
   vertical-align: top;
+  font-family: "Ink Free", sans-serif;
+  font-size: 15px;
 }
 
 .package-container h2 {
+  font-family: "Ink Free", sans-serif;
+  font-size: 40px;
   margin-bottom: 20px;
   color: var(--vert-clair);
   text-align: center;
 }
 
 .package-detail {
+  font-family: Arial, sans-serif;
   display: flex;
   margin-bottom: 10px;
 }
@@ -65,4 +69,6 @@
   align-items: center;
   flex: 1;
   height: 10vh;
+  font-family: "Ink Free", sans-serif;
+  font-size: 20px;
 }

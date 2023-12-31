@@ -1,25 +1,14 @@
-<div class="container"></div>
-
-<h1>FACTS STATS</h1>
-
-
-  <highcharts-chart
-    *ngIf="chartOptions"
-    [Highcharts]="highcharts"
-    [options]="chartOptions"
-    style="height: 100%; width: 60%; display: block" >
-
-  </highcharts-chart>
-
-
-
-<!-- fact-statistics.component.html -->
-<div *ngIf="numberOfFacts !== undefined">
-  <p>Nombre de faits dans le package 1 : {{ numberOfFacts1}}</p>
-  <p>Nombre de faits dans le package 2 : {{ numberOfFacts2 }}</p>
-  <p>Nombre de faits dans le package 3 : {{ numberOfFacts3 }}</p>
-  <p>Nombre de faits dans le package 4 : {{ numberOfFacts4 }}</p>
+<div class="container">
+  <h1>Facts Statistics</h1>
 </div>
 
-{{ numberOfFacts1 }}
+<highcharts-chart
+  *ngIf="chartOptions"
+  [Highcharts]="highcharts"
+  [options]="chartOptions"
+  style="height: 100%; width: 60%; display: block" >
+
+</highcharts-chart>
+
+
 

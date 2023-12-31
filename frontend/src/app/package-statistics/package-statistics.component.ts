@@ -70,8 +70,8 @@ export class PackageStatisticsComponent implements OnInit {
                             data: allCategories.map((category: string) => ({
                                 y: categoryCounts[category],
                                 color: categoryCounts[category] <= 1 ? '#eb5b5b' :
-                                    categoryCounts[category] > 1 && categoryCounts[category] < 5 ? '#ffb6c1' :
-                                        categoryCounts[category] >= 5 ? '#27ae60' :
+                                    categoryCounts[category] > 1 && categoryCounts[category] < 3 ? '#ffb6c1' :
+                                        categoryCounts[category] >= 3 ? '#27ae60' :
                                                 '#27ae60'
                             }))
                         }

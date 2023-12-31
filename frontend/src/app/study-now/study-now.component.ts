@@ -124,8 +124,20 @@ export class StudyNowComponent implements OnInit {
     //console.log(unusedFacts);
     if (unusedFacts.length === 0) {
       this.currentFact = null;
-      this.router.navigate(['/nomore-fact']);
-      return;
+
+      //on modifie la valeur de finished_package dans la table package
+      this.DbService.editPackageFinished(this.currentPackage.id_package, true).subscribe(
+          (updatedPackage) => {
+            console.log('Right in the .ts');
+
+            //on se dirige vers la page no more fact
+            this.router.navigate(['/nomore-fact']);
+            return;
+          },
+          (error) => {
+            console.error('Error updating fact:', error);
+          });
+
     }
 
     const randomIndex = Math.floor(Math.random() * unusedFacts.length);

@@ -25,6 +25,7 @@ section {
 h1 {
   color: var(--blanc);
   padding-bottom: 8px;
+  font-family: 'Ink Free', sans-serif;
   margin-top: 10px;
 }
 
@@ -33,4 +34,16 @@ h2 {
   border-bottom: 2px solid var(--vert);
   padding-bottom: 8px;
   margin-bottom: 16px;
+  font-family: 'Ink Free', sans-serif;
 }
+
+ul.no-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.no-bullets li {
+  padding-left: 1em; /* Adjust the padding as needed */
+  text-indent: -1em;
+}
+

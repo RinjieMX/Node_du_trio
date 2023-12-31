@@ -7,7 +7,6 @@
     position: fixed;
 }
 
-
 .display-packages-container {
     font-family: "Ink Free", sans-serif;
     background-color: var(--rose-clair);
@@ -22,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     top: 0px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .left-image{

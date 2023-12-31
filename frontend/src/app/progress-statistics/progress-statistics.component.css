@@ -1,7 +1,8 @@
 .container {
-  font-family: Arial, sans-serif;
   color: var(--noir);
   margin: 75px 15px 15px 15px;
+  font-family: 'Ink Free', sans-serif;
+  font-size: 18px;
 }
 
 #myChart {

@@ -6,8 +6,11 @@
         <option *ngFor="let package of AllPackages" [value]="package.id_package">{{ package.title_package }}</option>
       </select>
     </div>
-    <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
   </div>
+
+  <div class="colonne">
+
+    <h1 *ngIf="currentPackage">{{ currentPackage.title_package }}</h1>
 
     <div id="question-container" *ngIf="currentFact && currentPackage">
       <p>{{ currentFact.recto }}</p>
@@ -16,13 +19,14 @@
       <p>{{ currentFact.verso }}</p>
     </div>
 
-  <div class="bouton-reveal" *ngIf="!isVisible" [ngStyle]="{'margin-top': '140px'}">
-    <button class="reveal-button" (click)="onReveal()">Reveal</button>
-  </div>
-  <div class="bouton-reveal" *ngIf="isVisible" [ngStyle]="{'margin-top': '45px'}">
-    <button class="reveal-button" (click)="onReveal()">Hide</button>
-  </div>
+    <div class="bouton-reveal" *ngIf="!isVisible">
+      <button class="reveal-button" (click)="onReveal()">Reveal</button>
+    </div>
+    <div class="bouton-reveal" *ngIf="isVisible">
+      <button class="reveal-button" (click)="onReveal()">Hide</button>
+    </div>
 
+  </div>
 
   <div class="difficulty-div" *ngIf="isVisible && !isStated">
     <p id="txt-difficulty">How did you feel about it ?</p>

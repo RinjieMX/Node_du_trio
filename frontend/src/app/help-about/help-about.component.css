@@ -34,3 +34,14 @@ h2 {
   padding-bottom: 8px;
   margin-bottom: 16px;
 }
+
+ul.no-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.no-bullets li {
+  padding-left: 1em; /* Adjust the padding as needed */
+  text-indent: -1em;
+}
+

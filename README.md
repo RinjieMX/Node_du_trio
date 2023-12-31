@@ -54,6 +54,8 @@ Now let's see what happens when we click on 'Edit Package':
 All information about a package is displayed. Here we are offered 2 choices, either we edit the package or we can delete it.
 First let's edit the package.
 
+### Edit package
+
 ![Alt Text](frontend/src/assets/screenshots/package-images/we_are_editing_package.png)
 
 The display will change, and we can now change all values. The title can't be empty. If you try to empty the title of the package, the modification won't be executed.
@@ -63,6 +65,8 @@ If we decided to cancel our changes, we can click on the button cancel. This wil
 Let's go back to our list of all packages to make sure the changes worked. To do it faster, we can use the back button.
 
 ![Alt Text](frontend/src/assets/screenshots/back-button.png)
+
+### Delete Package
 
 Now what happens if we would like to delete a Package ?
 On the 'French History' Package for example, if we hit the button Delete Package, a popup appears.
@@ -78,6 +82,8 @@ Now that we saw all features related the manipulation of Packages, we can go and
 This will transfer us to another page that we will analyse in the next section.
 
 ![Alt Text](frontend/src/assets/screenshots/package-images/go_to_see_facts.png)
+
+### Add Package
 
 In the Package section in the navbar, we also have the choice to create a new Package. 
 
@@ -95,17 +101,9 @@ It's important to note that if we don't select anything for field that isn't req
 For the description field, if nothing is written, the description will state that nothing was provided.
 By default, the value for difficulty is Undefined and the value for target audience is Any.
 
-For example, let's create a new package like so :
-
-![Alt Text](frontend/src/assets/screenshots/package-images/about_to_be_created.png) 
-
 After clicking on the Add button, a small text informs us that the package was successfully created. This message disappear after few seconds.
 
 ![Alt Text](frontend/src/assets/screenshots/package-images/package_added.png)
-
-In the Explore Lessons page, we can find the package that was added :
-
-![Alt Text](frontend/src/assets/screenshots/package-images/new_package_found.png)
 
 ## Feature Fact
 
@@ -114,20 +112,16 @@ This opens a page that displays all facts linked to the package we clicked on ap
 
 ![Alt Text](frontend/src/assets/screenshots/fact-images/all_facts_inside_package.png)
 
-We, just like on the package interface, have multiple options to choose from. If we decide to add a new fact, a new component will appear at the top.
-
-![Alt Text](frontend/src/assets/screenshots/fact-images/new_fact.png)
-
-We can directly enter the questions/responses :
+We, just like on the package interface, have multiple options to choose from. If we decide to add a new fact, a new component will appear at the top in which we can directly enter the questions/responses :
 
 ![Alt Text](frontend/src/assets/screenshots/fact-images/create_fact.png)
 
-To add the fact we simply click 'Commit'
+To add the fact we simply click 'Commit':
 
 ![Alt Text](frontend/src/assets/screenshots/fact-images/add_fact_complete.png)
 
-We can click 'edit' again to modify the fact. 
-If we want to delete the fact we simply click on the button. A pop Up will appear asking us if we are sure.
+We can click 'Edit' again to modify the fact. 
+If we want to delete the fact we simply click on the button. A pop-Up will appear asking us if we are sure.
 
 ![Alt Text](frontend/src/assets/screenshots/fact-images/delete_fact.png)
 

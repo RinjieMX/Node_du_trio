@@ -14,14 +14,13 @@ Brief description of your project.
 - [Package](#feature-package)
 - [Facts](#feature-fact)
 - [Study Now](#feature-study-now)
-- [Contributing](#contributing)
+- [Contributing](#Contribution)
 
 ## Introduction
 
 The Anki project involves managing course packages of varying difficulty levels across multiple subjects. Each package contains a multitude of questions and answers that the user must learn. Our implementation of Anki encompasses all its main functionalities, from managing a package and its facts to recording the difficulties the user encountered during reviews of the package's facts. It also includes creating charts that connect the user's overall progress.
 
 ## Home Page
-![Home Page]
 
 The Home page is the page the user sees first. It displays all most important navigations to other pages using buttons, such as the Explore-Lessons page, the StudyNow page, the Statistics page and the Help-Documentation page.
 
@@ -87,16 +86,68 @@ This will transfer us to another page that we will analyse in the next section.
 
 ![Alt Text](frontend/src/assets/screenshots/package-images/go_to_see_facts.png)
 
-### Feature Fact
+In the Package section in the navbar, we also have the choice to create a new Package. 
 
-### Feature Study Now
+![Alt Text](frontend/src/assets/screenshots/package-images/new_package.png)
 
-### Feature Statistics
+A little * indicate us what field is required in order to create a new package. If not all * fields are completes, a small reminder pops up. 
 
-### Feature Achievements
+![Alt Text](frontend/src/assets/screenshots/package-images/reminder_required.png)
 
-### Feature Help
+For Category, Target Audience and Difficulty we need to choose between the options, but for Title and Description we are free to input whatever.
 
-### Feature Login
+![Alt Text](frontend/src/assets/screenshots/package-images/select_category.png)
+
+It's important to note that if we don't select anything for field that isn't required, the default value will be chosen for the package. 
+For the description field, if nothing is written, the description will state that nothing was provided.
+By default, the value for difficulty is Undefined and the value for target audience is Any.
+
+For example, let's create a new package like so :
+
+![Alt Text](frontend/src/assets/screenshots/package-images/about_to_be_created.png) 
+
+After clicking on the Add button, a small text informs us that the package was successfully created. This message disappear after few seconds.
+
+![Alt Text](frontend/src/assets/screenshots/package-images/package_added.png)
+
+In the Explore Lessons page, we can find the package that was added :
+
+![Alt Text](frontend/src/assets/screenshots/package-images/new_package_found.png)
+
+## Feature Fact
+
+We were on the Explore Lessons page, and we decided to click on the 'See Facts' button. 
+This opens a page that displays all facts linked to the package we clicked on appears.
+
+![Alt Text](frontend/src/assets/screenshots/fact-images/all_facts_inside_package.png)
+
+We, just like on the package interface, have multiple options to choose from. If we decide to add a new fact, a new component will appear at the top.
+
+![Alt Text](frontend/src/assets/screenshots/fact-images/new_fact.png)
+
+We can directly enter in the input the questions/responses :
+
+![Alt Text](frontend/src/assets/screenshots/fact-images/create_fact.png)
+
+To add the fact we simply click 'Commit'
+
+![Alt Text](frontend/src/assets/screenshots/fact-images/add_fact_complete.png)
+
+We can click 'edit' again to modify the fact. 
+If we want to delete the fact we simply click on the button. A pop Up will appear asking us if we are sure.
+
+![Alt Text](frontend/src/assets/screenshots/fact-images/delete_fact.png)
+
+If we confirm the fact gets deleted. 
+
+## Feature Study Now
+
+## Feature Statistics
+
+## Feature Achievements
+
+## Feature Help
+
+## Feature Login
 
 ## Contribution

@@ -166,6 +166,9 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ## Feature Help
 ![Alt Text](frontend/src/assets/screenshots/features/Help about.png)
+This section introduces the fonctionnality of the software, showing 
+
+
 ![Alt Text](frontend/src/assets/screenshots/features/help documentation.png)
 
 ## Feature Login

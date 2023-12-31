@@ -205,6 +205,7 @@ Regarding the Frontend development:
 - She created the 'display-fact' component.
 - She managed the addition, deletion, and modification of facts.
 - She developed the 'Study-now' component, including the algorithm for the random display of facts and time interval management.
+
 In the Statistics section of the project, Manon developed a graph that shows the number of facts per package, which is displayed on the 'Facts Statistics' page.
 
 Tiphaine took care of all visual aspect of the website, except for the Study-Now page which was done my Manon. Overall, every Html and css file was re-done by Tiphaine for each page on the website.

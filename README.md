@@ -168,8 +168,10 @@ Your choice of trust level will determine how long before the issue reappears in
 ## Feature Achievements
 
 If a user select 'Easy' for all facts of a Package, the Package will be listed in the Achievements page.
-Additionally, every package that was finished once in the Study Now will pop up in the Achievements. The Achievement shows every package that the user successfully finished once.
+The Achievement shows every package that the user successfully finished once. If a fact is added to a package, it will be detected and won't figure in the achievement page as it is no longer finished.
+In the same way, after 5 days facts marked as 'easy' come back to Study Now, thus the package's fact is removed from the achievements.
 
+![Alt Text](frontend/src/assets/screenshots/achievements/no_package_done.png)
 
 ## Feature Help
 

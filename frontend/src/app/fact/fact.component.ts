@@ -26,6 +26,9 @@ export class FactComponent {
 
   cancelEdit() {
     this.isEditing = false;
+    if (this.fact.recto === '' && this.fact.verso === ''){
+      this.deleteFact();
+    }
   }
 
   commitEdit() {

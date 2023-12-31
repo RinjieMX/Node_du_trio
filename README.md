@@ -159,13 +159,13 @@ When studying the information, it is important to note that the facts will be pr
 Your choice of trust level will determine how long before the issue reappears in the revision session. The revision time will correspond to the value indicated on the button you have selected. If you prefer to proceed to the next question without answering it, simply click on "Next Question".
 
 ## Feature Statistics
-![Alt Text](frontend/src/assets/screenshots/features/facts stats.png)
-![Alt Text](frontend/src/assets/screenshots/features/Statistics.png)
+![Alt Text](frontend/src/assets/screenshots/Features/facts-stats.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
 
 ## Feature Achievements
 
 ## Feature Help
-![Alt Text](frontend/src/assets/screenshots/features/Help about.png)
+![Alt Text](frontend/src/assets/screenshots/features/Help-about.PNG)
 This section introduces the functionality of the software, showing a little bit of
 every feature, so that the user understands whe he needs to do, and how to do it
 

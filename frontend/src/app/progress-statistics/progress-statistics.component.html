@@ -2,17 +2,11 @@
   <h1>Progress Statistics Data</h1>
 </div>
 
-
 <highcharts-chart
-*ngIf="chartOptions"
-[Highcharts]="highcharts"
-[options]="chartOptions"
-style="height: 100%; width: 100%; display: block">
-
+  *ngIf="chartOptions_1"
+  [Highcharts]="highcharts"
+  [options]="chartOptions_1"
+  style="height: 100%; width: 100%; display: block">
 </highcharts-chart>
 
-
-<div *ngFor="let fact of learningFacts">
-  {{ fact.state_fact }}
-</div>
 

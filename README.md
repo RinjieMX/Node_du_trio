@@ -196,6 +196,16 @@ It allows to get even more knowledge for all type of subject.
 The ReadMe file was created by Tiphaine and was then edited by each member, all working on their own part like in the project. 
 The BuildMe file was created by Tiphaine and Manon, and the ToDoList which was a easy way to check the progress was created by Tiphaine and regular updated by every member.
 
+In the Database area, she created the 'CreaPark' file and performed the initial inserts. Tiphaine used this work to add a lot of new inserts to have a better basis for our graphs.
+For the Backend, Manon was in charge of developing APIs in the 'app.ts' file. She also crafted the 'DBManager.ts' file, for the backend structure.
+Regarding the Frontend development:
+•	Manon developed the 'display-package' page.
+•	She implemented the feature for adding new packages.
+•	She created the 'display-fact' component.
+•	She managed the addition, deletion, and modification of facts.
+•	She developed the 'Study-now' component, including the algorithm for the random display of facts and time interval management.
+In the Statistics section of the project, Manon developed a graph that shows the number of facts per package, which is displayed on the 'Facts Statistics' page.
+
 Tiphaine took care of all visual aspect of the website, except for the Study-Now page which was done my Manon. Overall, every Html and css file was re-done by Tiphaine for each page on the website.
 Tiphaine also took care of the Editing (edit and delete) of a Package, to the visual interface, the api calls needed and all methods needed for the successfull deletions of a package regarding the foreign key between the package and fact.
 Another task is the Achievements Page, who was entirely done by Tiphaine, from the visual to the api calls and logic methods.

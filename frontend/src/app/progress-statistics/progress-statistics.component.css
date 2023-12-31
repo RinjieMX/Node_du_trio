@@ -1,8 +1,8 @@
 .container {
-  color: var(--noir);
-  margin: 75px 15px 15px 15px;
+  padding-top: 75px;
   font-family: 'Ink Free', sans-serif;
   font-size: 18px;
+  margin: 20px 50px;
 }
 
 #myChart {

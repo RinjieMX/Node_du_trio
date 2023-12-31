@@ -14,10 +14,6 @@ export class FactsStatisticsComponent implements OnInit
 
   AllPackages: any;
 
-  numberOfFacts1: number = 1;
-  numberOfFacts2: number = 2;
-  numberOfFacts3: number = 3;
-  numberOfFacts4: number = 4;
   numberOfFacts: number = 0;
 
   chartOptions: any;
@@ -27,10 +23,10 @@ export class FactsStatisticsComponent implements OnInit
 
   async ngOnInit() {
     console.log(101010);
-    this.loadData();
+    this.nbFactStats();
   }
 
-  loadData() {
+  nbFactStats() {
     this.DbService.getAllPackages().subscribe((data: any[]) => {
       const observables = data.map((pack: any) => {
         return this.DbService.getNbFactInPackage(pack.id_package);
@@ -44,7 +40,6 @@ export class FactsStatisticsComponent implements OnInit
 
           //Toutes les données des packages avec le nombre de facts associées
           this.AllPackages = data;
-          console.log(this.AllPackages);
 
           if (this.AllPackages){
             const packs: string[] = this.AllPackages.map((pack: any) => pack.title_package);

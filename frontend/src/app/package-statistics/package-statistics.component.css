@@ -1,11 +1,17 @@
-.container{
+.container {
   padding-top: 75px;
   font-family: 'Ink Free', sans-serif;
   font-size: 18px;
+  margin: 20px 50px;
 }
 
-.dropdown{
-    position: absolute;
-    top: 75px;
-    right: 75px;
+.dropdown {
+  padding-top: 30px;
+  position: absolute;
+  top: 75px;
+  right: 75px;
+}
+
+#type {
+  margin-left: 10px;
 }

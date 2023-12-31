@@ -193,21 +193,21 @@ It allows to get even more knowledge for all type of subject.
 
 ## Contribution
 
-The ReadMe file was created by Tiphaine and was then edited by each member, all working on their own part like in the project. 
-The BuildMe file was created by Tiphaine and Manon, and the ToDoList which was a easy way to check the progress was created by Tiphaine and regular updated by every member.
+
+
 
 Tiphaine took care of all visual aspect of the website, except for the Study-Now page which was done my Manon. Overall, every Html and css file was re-done by Tiphaine for each page on the website.
 Tiphaine also took care of the Editing (edit and delete) of a Package, to the visual interface, the api calls needed and all methods needed for the successfull deletions of a package regarding the foreign key between the package and fact.
 Another task is the Achievements Page, who was entirely done by Tiphaine, from the visual to the api calls and logic methods.
 Then Tiphaine did the Package Statistics page and made it even more dynamic by adding a dropdown to change the content of the graphics. Regarding the other Graphics made by Matias and Manon, Tiphaine modified the color and placement of the graphs on the page, for it to be more beautiful and centered.
-Finally, Tiphaine took care of re-designing all the Help pages to match the aesthetic of the website and modified all content who was previously made for the Help page to a more complete, usefull and appropriate version.
+Finally, Tiphaine took care of re-designing all the Help pages that were created by Matias to match the aesthetic of the website, and updated all content who was previously made for the Help page to a more complete, usefull and appropriate version.
 
-"Concerning the statistics part, it was mostly done by Matias. It includes the importation of the Highcharts packages, the modeling of the charts, etc. His work was to gather as much data as possible in the whole application and to present it in different charts. 
+Concerning the statistics part, it was mostly done by Matias. It includes the importation of the Highcharts packages, the modeling of the charts, etc. His work was to gather as much data as possible in the whole application and to present it in different charts. 
 It was necessary to use the backend app.js API to link data from different files across the frontend, import data, and store it in the charts. 
-Tiphaine did the difficulty chart, and Manon helped Matias set the links between the chart and the app information. The most challenging part was making the data dynamic. This part took a lot of time.
+Tiphaine did the category/target/difficulty chart, and Manon helped Matias set the links between the chart and the app information. The most challenging part was making the data dynamic. This part took a lot of time.
 
-In the Help part, the content was created and written by Matias (the website presentation/features explanation, as well as the documentation and the additional websites), and fully designed by Tiphaine.
+The ReadMe file was created by Tiphaine and was then edited by each member, all working on their own part like in the project.
+The BuildMe file was created by Tiphaine and Manon, and the ToDoList which was a easy way to check the progress was created by Tiphaine and regular updated by every member.
 
-Concerning the git pull/push, as not every member was used to this kind of cooperative work, the git push habit was not natural for every member of the team. So, as the tasks were attributed, sometimes, some members worked on their own without pushing or pulling in different files, in parallel. So, there were no conflicts, but not every member has the same amount of git pushes."
 
 

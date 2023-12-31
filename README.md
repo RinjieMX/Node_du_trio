@@ -167,6 +167,10 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ## Feature Achievements
 
+If a user select 'Easy' for all facts of a Package, the Package will be listed in the Achievements page.
+Additionally, every package that was finished once in the Study Now will pop up in the Achievements. The Achievement shows every package that the user successfully finished once.
+
+
 ## Feature Help
 
 ![Alt Text](frontend/src/assets/screenshots/Features/Help_about.PNG)

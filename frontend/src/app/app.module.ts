@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { MenuNavbarComponent } from './menu-navbar/menu-navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { AddnewPackageComponent } from './addnew-package/addnew-package.component';
 import { PackageComponent } from './package/package.component';
 import { DisplayPackageComponent } from './display-package/display-package.component';
@@ -22,8 +22,9 @@ import { FactsStatisticsComponent } from './facts-statistics/facts-statistics.co
 import { HomePageComponent } from './home-page/home-page.component';
 import { HelpAboutComponent } from './help-about/help-about.component';
 import { HelpDocumentationComponent } from './help-documentation/help-documentation.component';
-import {DisplayAchievements} from "./achievements-page/achievements-page.component";
-import {PackageStatisticsComponent} from "./package-statistics/package-statistics.component";
+import { DisplayAchievements } from "./achievements-page/achievements-page.component";
+import { PackageStatisticsComponent } from "./package-statistics/package-statistics.component";
+import { NomorePackageComponent } from './nomore-package/nomore-package.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {PackageStatisticsComponent} from "./package-statistics/package-statistic
     HelpAboutComponent,
     HelpDocumentationComponent,
     DisplayAchievements,
-    PackageStatisticsComponent
+    PackageStatisticsComponent,
+    NomorePackageComponent
   ],
   imports: [
     BrowserModule,

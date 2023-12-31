@@ -13,6 +13,7 @@ import {HelpAboutComponent} from "./help-about/help-about.component";
 import {HelpDocumentationComponent} from "./help-documentation/help-documentation.component"
 import {DisplayAchievements} from "./achievements-page/achievements-page.component"
 import {PackageStatisticsComponent} from "./package-statistics/package-statistics.component"
+import {NomorePackageComponent} from "./nomore-package/nomore-package.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'help-about', component: HelpAboutComponent},
   { path:'help-documentation', component: HelpDocumentationComponent},
   { path:'achievements-page', component: DisplayAchievements},
-  { path:'package-statistics', component: PackageStatisticsComponent}
+  { path:'package-statistics', component: PackageStatisticsComponent},
+  { path:'nomore-package', component: NomorePackageComponent }
 ];
 
 @NgModule({

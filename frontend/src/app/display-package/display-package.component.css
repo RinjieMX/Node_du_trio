@@ -54,17 +54,3 @@ app-package {
   display: flex;
 }
 
-.add-button {
-  background-color: var(--vert-clair);
-  color: var(--blanc);
-  border: none;
-  width: 220px;
-  height: 40px;
-  border-radius: var(--petite-bordure);
-  cursor: pointer;
-}
-
-.add-button:hover {
-  background-color: var(--vert);
-}
-

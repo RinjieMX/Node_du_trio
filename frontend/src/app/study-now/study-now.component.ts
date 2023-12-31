@@ -33,6 +33,7 @@ export class StudyNowComponent implements OnInit {
       console.log("All Packages", this.AllPackages)
 
       if (this.AllPackages.length === 0) {
+        console.log(this.AllPackages);
         // Absence de package
         this.router.navigate(['/nomore-package']).then(r => {});
       } else {

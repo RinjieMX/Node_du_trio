@@ -26,6 +26,7 @@ export class FactComponent {
 
   cancelEdit() {
     this.isEditing = false;
+    this.deleteFact();
   }
 
   commitEdit() {

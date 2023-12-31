@@ -186,3 +186,11 @@ in order to go further in his work. It allows to get even more knowledge when ev
 ## Feature Login
 
 ## Contribution
+
+Concerning the statistics part, it was mostly done by Matias. It includes the importation of the Highcharts packages, the modeling of the charts, etc. His work was to gather as much data as possible in the whole application and to present it in different charts. It was necessary to use the backend app.js API to link data from different files across the frontend, import data, and store it in the charts. Tiphaine did the difficulty chart, and Manon helped Matias set the links between the chart and the app information. The most challenging part was making the data dynamic. This part took a lot of time.
+
+In the Help part, the content was created and written by Matias (the website presentation/features explanation, as well as the documentation and the additional websites), and fully designed by Tiphaine.
+
+Concerning the git pull/push, as not every member was used to this kind of cooperative work, the git push habit was not natural for every member of the team. So, as the tasks were attributed, sometimes, some members worked on their own without pushing or pulling in different files, in parallel. So, there were no conflicts, but not every member has the same amount of git pushes.
+
+

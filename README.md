@@ -88,7 +88,7 @@ This will transfer us to another page that we will analyse in the next section.
 ![Alt Text](frontend/src/assets/screenshots/package-images/go_to_see_facts.png)
 
 ### Feature Fact
-
+here goes a photo
 ### Feature Study Now
 
 ### Feature Statistics

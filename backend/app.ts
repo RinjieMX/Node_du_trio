@@ -349,15 +349,3 @@ app.get('/api/getNbactualfactfrompackage/:idpackage', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-
-//--------------------- GET ALL -------------------------
-app.get('/api/getAllPackages', async (req, res) => {
-    try {
-        const packs = await LearningFact.findAll();
-        res.status(200).send(packs);
-    } catch (error) {
-        console.error('Erreur lors de la récupération des packages :', error);
-        res.status(500).send('Internal Server Error');
-    }
-});

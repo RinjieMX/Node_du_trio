@@ -64,15 +64,11 @@ export class DbServiceService {
     return this.http.delete(`/api/deleteFact/${id_fact}`);
   }
 
-  getallFactsFromPackage(id_package: number){
-    return this.http.get(`/api/getfactfrompackage/${id_package}`);
-  }
-
   deletePackage(id_package:number){
     //on a la confirmation on va aller récupérer tous les facts associés au package
       console.log("on récupère les facts", id_package);
       let facts: any = [];
-      this.getallFactsFromPackage(id_package).subscribe((data) => {
+      this.getAllFacts(id_package).subscribe((data) => {
         facts = data;
         console.log("on a récupérer les facts, longueur ", facts.length);
 
@@ -115,12 +111,9 @@ export class DbServiceService {
         );
     }
 
-
   getNbFactInPackage(idPackage: number): Observable<number> {
     return this.http.get<number>(`api/getNbFactinPackage/${idPackage}`);
   }
-
-
 
   setStateFact(id_fact: number, state: string, next_date: Date){
     const requestBody = {
@@ -129,7 +122,7 @@ export class DbServiceService {
     }
     this.http.put(`/api/setStateFact/${id_fact}`, requestBody).subscribe(
     (response) => {
-      //console.log('Fact_state updated successfully.', response);
+      console.log('Fact_state updated successfully.', response);
     },
     (error) => {
       console.error('Error updating fact:', error);

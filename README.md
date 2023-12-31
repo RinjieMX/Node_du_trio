@@ -197,7 +197,7 @@ in order to go further in his work. It allows to get even more knowledge when ev
 
 
 Tiphaine took care of all visual aspect of the website, except for the Study-Now page which was done my Manon. Overall, every Html and css file was re-done by Tiphaine for each page on the website.
-Tiphaine also took care of the Editing of a Package, to the visual interface, the api calls needed and all methods needed for the successfull deletions of a package regarding the foreign key between the package and fact.
+Tiphaine also took care of the Editing (edit and delete) of a Package, to the visual interface, the api calls needed and all methods needed for the successfull deletions of a package regarding the foreign key between the package and fact.
 Another task is the Achievements Page, who was entirely done by Tiphaine, from the visual to the api calls and logic methods.
 Then Tiphaine did the Package Statistics page and made it even more dynamic by adding a dropdown to change the content of the graphics. Regarding the other Graphics made by Matias and Manon, Tiphaine modified the color and placement of the graphs on the page, for it to be more beautiful and centered.
 Finally, Tiphaine took care of re-designing all the Help pages to match the aesthetic of the website and modified all content who was previously made for the Help page to a more complete, usefull and appropriate version.

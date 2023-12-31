@@ -194,8 +194,6 @@ It allows to get even more knowledge for all type of subject.
 ## Contribution
 
 
-
-
 In the Database area, she created the 'CreaPark' file and performed the initial inserts. Tiphaine used this work to add a lot of new inserts to have a better basis for our graphs.
 For the Backend, Manon was in charge of developing APIs in the 'app.ts' file. She also crafted the 'DBManager.ts' file, for the backend structure.
 Regarding the Frontend development:

@@ -39,7 +39,7 @@ h1 {
   color: var(--noir);
   background-color: var(--blanc);
   margin: 20px auto 10px auto;
-  max-width: 600px;
+  width: 600px;
   overflow-wrap: break-word;
 }
 
@@ -51,7 +51,7 @@ h1 {
   text-align: center;
   color: var(--noir);
   margin: 5px auto;
-  max-width: 600px;
+  width: 600px;
   overflow-wrap: break-word;
 }
 

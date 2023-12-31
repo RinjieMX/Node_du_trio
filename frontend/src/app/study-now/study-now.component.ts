@@ -140,6 +140,15 @@ export class StudyNowComponent implements OnInit {
           });
 
     }
+    else { //package pas fini on remet à false
+      //on modifie la valeur de finished_package dans la table package
+      this.DbService.editPackageFinished(this.currentPackage.id_package, false).subscribe(
+        (updatedPackage) => {
+        },
+        (error) => {
+          console.error('Error updating fact:', error);
+        });
+    }
 
     const randomIndex = Math.floor(Math.random() * unusedFacts.length);
     this.getfactfromId(unusedFacts[randomIndex].id_fact); //currentFact prend la valeur du prochain fact

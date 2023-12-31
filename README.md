@@ -31,9 +31,6 @@ The Home page is the page the user sees first. It displays all most important na
 ## Feature Package
 
 In the Packages drop-down bar, we can find two options.
-
-![Alt Text](./frontend/src/assets/screenshots/package_navbar.png)
-
 The first option displays the list of all Packages in the database. All information about a package is displayed.
 We can either See the facts linked to this particular package, or edit the package.
 
@@ -155,17 +152,21 @@ You can easily change a package by selecting it from the drop-down menu at the t
 
 When studying the information, it is important to note that the facts will be presented in random order in the package. The question will be displayed, but the answer will remain hidden. To reveal it, just click on the "Reveal" button. At that time, you will also be able to indicate your level of confidence in your answer to the question by using the corresponding buttons, and you will move on to the next question.
 
-![Alt Text](frontend/src/assets/screenshots/ressenti-button.png)
+![Alt Text](frontend/src/assets/screenshots/bouton-ressenti.png)
 
 Your choice of trust level will determine how long before the issue reappears in the revision session. The revision time will correspond to the value indicated on the button you have selected. If you prefer to proceed to the next question without answering it, simply click on "Next Question".
 
 ## Feature Statistics
 
-![Alt Text](frontend/src/assets/screenshots/Features/facts stats.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/facts_stats.PNG)
 
 ![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
 
 ## Feature Achievements
+
+If a user select 'Easy' for all facts of a Package, the Package will be listed in the Achievements page.
+Additionally, every package that was finished once in the Study Now will pop up in the Achievements. The Achievement shows every package that the user successfully finished once.
+
 
 ## Feature Help
 
@@ -174,7 +175,7 @@ Your choice of trust level will determine how long before the issue reappears in
 This section introduces the functionality of the software, showing a little bit of
 every feature, so that the user understands whe he needs to do, and how to do it
 
-![Alt Text](frontend/src/assets/screenshots/Features/help documentation.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/help_documentation.PNG)
 
 In this part of our application, the user can find a lot of documentation/websites 
 in order to go further in his work. It allows to get even more knowledge when every package is finished in the app,

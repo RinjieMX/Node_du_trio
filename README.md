@@ -14,6 +14,9 @@ Brief description of your project.
 - [Package](#feature-package)
 - [Facts](#feature-fact)
 - [Study Now](#feature-study-now)
+- [Statistiques](#feature-statistics)
+- [Achievements](#feature-study-now)
+- [Help](#feature-help)
 - [Contributing](#Contribution)
 
 ## Introduction
@@ -147,13 +150,29 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ![Alt Text](frontend/src/assets/screenshots/Features/facts_stats.PNG)
 
+here is the facts statistics chart. Is shows the amount of fact contained in every packages, 
+so that the user can know the repartition
+
 ![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
+
+this fact displays with which difficulty the user passed the different packages.
+This is a good way for the user to follow his progress
+
+![Alt Text](frontend/src/assets/screenshots/Features/Package_stats.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/Package_stats_difficulty.PNG)
+in this last chart, we can check the difficulty of every package as well as the target audience,
+and the category
 
 ## Feature Achievements
 
 If a user select 'Easy' for all facts of a Package, the Package will be listed in the Achievements page.
-Additionally, every package that was finished once in the Study Now will pop up in the Achievements. The Achievement shows every package that the user successfully finished once.
 
+![Alt Text](frontend/src/assets/screenshots/achievements/all_packages_done.png)
+
+The Achievement shows every package that the user successfully finished once. If a fact is added to a package, and the user go to study the package in Study Now, it will be detected and won't figure anymore in the achievement page as it is no longer finished.
+In the same way, after 5 days facts marked as 'easy' come back to Study Now, thus the package's fact is removed from the achievements.
+
+![Alt Text](frontend/src/assets/screenshots/achievements/no_package_done.png)
 
 ## Feature Help
 
@@ -167,8 +186,6 @@ every feature, so that the user understands whe he needs to do, and how to do it
 In this part of our application, the user can find a lot of documentation/websites 
 in order to go further in his work. It allows to get even more knowledge when every package is finished in the app,
 (even if we can create new packages)
-
-## Feature Login
 
 ## Contribution
 

@@ -40,7 +40,7 @@ On the right of the page we can see multiples options of filter. All the filter 
 
 ![Alt Text](frontend/src/assets/screenshots/package-images/display_package.png)
 
-If no Package exist in all the filter option, the page displays nothing:
+If no Package exist in all the filter option, the page allows you to go add a new Package:
 
 ![Alt Text](frontend/src/assets/screenshots/package-images/no_package_found.png)
 

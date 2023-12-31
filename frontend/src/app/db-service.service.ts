@@ -52,6 +52,14 @@ export class DbServiceService {
     return this.http.put(`/api/editpackage/${id_package}`, requestBody);
   }
 
+  editPackageFinished(id_package: number, fini: boolean){
+      const requestBody = {
+          newfinishedvalue: fini
+      }
+      console.log('Right in the editPackageFinished');
+      return this.http.put(`/api/editpackageFinished/${id_package}`, requestBody);
+  }
+
   deleteFact(id_fact: number) {
     return this.http.delete(`/api/deleteFact/${id_fact}`);
   }

@@ -44,5 +44,4 @@ export class DisplayAchievements implements OnInit {
     );
   };
 
-
 }

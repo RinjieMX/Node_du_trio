@@ -111,6 +111,31 @@ app.put('/api/editpackage/:id', async (req, res) => {
 
 });
 
+app.put('/api/editpackageFinished/:id', async (req, res) => {
+
+    console.log('Received PUT request with body:', req.body);
+    const id = parseInt(req.params.id);
+    const newfinished = req.body.newfinishedvalue;
+    try {
+        const [rowsUpdated, [updatePackage]] = await LearningPackage.update(
+            { finished_package: newfinished},
+            {
+                returning: true,
+                where: { id_package: id },
+            }
+        );
+        if (rowsUpdated === 0 || !updatePackage) {
+            res.status(404).json({ error: 'Package not found' });
+            return;
+        }
+        res.status(200).json(updatePackage);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+
+});
+
 app.delete('/api/deletePackage/:id_package', async (req, res) => {
 
     const id_package = req.params.id_package;

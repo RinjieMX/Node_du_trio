@@ -5,10 +5,8 @@
 To make sure you have all the necessary packages installed for the project to run, please follow these steps:
 
 - In the backend and frontend terminal, run: 'npm i'
-- In the backend terminal run 'npm install sequelize' and 'npm install --save-dev typescript'
-- In the front end terminal run 'npm install highcharts' and 'npm install highcharts-angular'
-
 - To finish in the backend, run 'tsc' to create the .js files
+
 Wait a bit, now you should see .js file appear under all .ts file.
 
 If any errors occur during these commands, make sure your Node.js is correctly installed and that you don't have any corrupted files.

@@ -31,9 +31,6 @@ The Home page is the page the user sees first. It displays all most important na
 ## Feature Package
 
 In the Packages drop-down bar, we can find two options.
-
-![Alt Text](./frontend/src/assets/screenshots/package_navbar.png)
-
 The first option displays the list of all Packages in the database. All information about a package is displayed.
 We can either See the facts linked to this particular package, or edit the package.
 

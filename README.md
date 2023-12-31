@@ -155,7 +155,7 @@ You can easily change a package by selecting it from the drop-down menu at the t
 
 When studying the information, it is important to note that the facts will be presented in random order in the package. The question will be displayed, but the answer will remain hidden. To reveal it, just click on the "Reveal" button. At that time, you will also be able to indicate your level of confidence in your answer to the question by using the corresponding buttons, and you will move on to the next question.
 
-![Alt Text](frontend/src/assets/screenshots/ressenti-button.png)
+![Alt Text](frontend/src/assets/screenshots/bouton-ressenti.png)
 
 Your choice of trust level will determine how long before the issue reappears in the revision session. The revision time will correspond to the value indicated on the button you have selected. If you prefer to proceed to the next question without answering it, simply click on "Next Question".
 

@@ -160,7 +160,18 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ![Alt Text](frontend/src/assets/screenshots/Features/facts_stats.PNG)
 
+here is the facts statistics chart. Is shows the amount of fact contained in every packages, 
+so that the user can know the repartition
+
 ![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
+
+this fact displays with which difficulty the user passed the different packages.
+This is a good way for the user to follow his progress
+
+![Alt Text](frontend/src/assets/screenshots/Features/Package_stats.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/Package_stats_difficulty.PNG)
+in this last chart, we can check the difficulty of every package as well as the target audience,
+and the category
 
 ## Feature Achievements
 

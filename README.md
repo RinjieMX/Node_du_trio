@@ -152,6 +152,7 @@ Each of the graphics use the same code color. With red and pink behind attribute
 
 This graphics displays each difficulty level and how much the user chose it for each package.
 This is a good way for the user to follow his progress, as he can see how many fact he though were 'difficult' for example in a certain package.
+*Don't forget to go on Study Now and rate some facts for the graph to be filled !*
 
 ![Alt Text](frontend/src/assets/screenshots/statistiques/progress_stats.png)
 

@@ -161,7 +161,7 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ## Feature Statistics
 
-![Alt Text](frontend/src/assets/screenshots/Features/facts stats.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/facts_stats.PNG)
 
 ![Alt Text](frontend/src/assets/screenshots/Features/Statistics.PNG)
 
@@ -174,7 +174,7 @@ Your choice of trust level will determine how long before the issue reappears in
 This section introduces the functionality of the software, showing a little bit of
 every feature, so that the user understands whe he needs to do, and how to do it
 
-![Alt Text](frontend/src/assets/screenshots/Features/help documentation.PNG)
+![Alt Text](frontend/src/assets/screenshots/Features/help_documentation.PNG)
 
 In this part of our application, the user can find a lot of documentation/websites 
 in order to go further in his work. It allows to get even more knowledge when every package is finished in the app,

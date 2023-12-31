@@ -88,15 +88,17 @@ This will transfer us to another page that we will analyse in the next section.
 ![Alt Text](frontend/src/assets/screenshots/package-images/go_to_see_facts.png)
 
 ### Feature Fact
-here goes a photo
+
 ### Feature Study Now
 
 ### Feature Statistics
-
+![Alt Text](frontend/src/assets/screenshots/features/facts stats.png)
+![Alt Text](frontend/src/assets/screenshots/features/Statistics.png)
 ### Feature Achievements
 
 ### Feature Help
-
+![Alt Text](frontend/src/assets/screenshots/features/Help about.png)
+![Alt Text](frontend/src/assets/screenshots/features/help documentation.png)
 ### Feature Login
 
 ## Contribution

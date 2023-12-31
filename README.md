@@ -142,6 +142,22 @@ If we confirm the fact gets deleted.
 
 ## Feature Study Now
 
+Discover now the "Study Now" page, the centerpiece of our app. It is here that we will dive into the heart of the subject and review the facts that we have recorded in our packs.
+The "Study Now" page will take you to an existing and not empty package. Otherwise, you will see a page informing you that no package is available, or that it is empty.
+
+![Alt Text](frontend/src/assets/screenshots/study-now/nomorefact.png)
+![Alt Text](frontend/src/assets/screenshots/study-now/nomorepackage.png)
+
+You can easily change a package by selecting it from the drop-down menu at the top left of the screen.
+
+![Alt Text](frontend/src/assets/screenshots/study-now/combobox.png)
+
+When studying the information, it is important to note that the facts will be presented in random order in the package. The question will be displayed, but the answer will remain hidden. To reveal it, just click on the "Reveal" button. At that time, you will also be able to indicate your level of confidence in your answer to the question by using the corresponding buttons, and you will move on to the next question.
+
+![Alt Text](frontend/src/assets/screenshots/study-now/ressenti-button.png)
+
+Your choice of trust level will determine how long before the issue reappears in the revision session. The revision time will correspond to the value indicated on the button you have selected. If you prefer to proceed to the next question without answering it, simply click on "Next Question".
+
 ## Feature Statistics
 ![Alt Text](frontend/src/assets/screenshots/features/facts stats.png)
 ![Alt Text](frontend/src/assets/screenshots/features/Statistics.png)

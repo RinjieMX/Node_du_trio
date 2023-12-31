@@ -81,7 +81,7 @@ export class EditPackageComponent implements OnInit {
   }
 
   confirmDelete(): void {
-    const confirmation = confirm('Are you sure you want to delete this package?');
+    const confirmation = confirm('Are you sure you want to delete this package and all its corresponding facts ?');
 
     if (confirmation) {
         this.DbService.deletePackage(this.currentPackage.id_package);

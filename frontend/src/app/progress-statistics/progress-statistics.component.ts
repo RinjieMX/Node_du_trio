@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts/highstock';
-import {forkJoin, Observable} from "rxjs";
+import { forkJoin } from "rxjs";
 import { DbServiceService } from "../db-service.service";
 
 @Component({
@@ -9,24 +8,21 @@ import { DbServiceService } from "../db-service.service";
   templateUrl: './progress-statistics.component.html',
   styleUrl: './progress-statistics.component.css'
 })
-export class ProgressStatisticsComponent  implements OnInit
-{
-  chartOptions: any;
+
+export class ProgressStatisticsComponent  implements OnInit {
+
+  chartOptions_1: any;
   highcharts:typeof Highcharts= Highcharts;
 
-  public learningFacts: any[] = [];
   public AllPackages: any;
 
-  constructor(private DbService: DbServiceService,private httpClient: HttpClient) { }
+  constructor(private DbService: DbServiceService) { }
 
-  async ngOnInit() {
-    console.log('Début de ngOnInit');
-      this.loadData();
-      //this.barchart();
-    console.log('Fin de ngOnInit');
+  ngOnInit() {
+    this.graph1();
   }
 
-  loadData() {
+  graph1() {
     this.DbService.getAllPackages().subscribe((data: any[]) => {
       const observables = data.map((pack: any) => {
         return this.DbService.getAllFacts(pack.id_package);
@@ -108,7 +104,7 @@ export class ProgressStatisticsComponent  implements OnInit
               }
             ]
 
-            this.chartOptions =
+            this.chartOptions_1 =
               {
                 chart:
                   {
@@ -139,5 +135,4 @@ export class ProgressStatisticsComponent  implements OnInit
       );
     });
   }
-
 }

@@ -166,7 +166,6 @@ In this last chart, we display the distribution of all Categories on all the pac
 ![Alt Text](frontend/src/assets/screenshots/statistiques/difficulty_level_stats.png)
 
 
-
 ## Feature Achievements
 
 If a user select a type of difficulty for each facts in a package, the Package will be listed in the Achievements page.
@@ -182,19 +181,20 @@ In the same way, after the time attributed to each fact difficulty is over days,
 
 ## Feature Help
 
+This section introduces the functionality our website, explaining a little bit of every feature, so that the user understands whe he needs to do, and how to do it.
+
 ![Alt Text](frontend/src/assets/screenshots/Features/Help_about.PNG)
 
-This section introduces the functionality of the software, showing a little bit of
-every feature, so that the user understands whe he needs to do, and how to do it
+In this part of our application, the user can find a lot of documentation/websites for each category of subject. The link are not dynamically related to the database, we add them through html. 
+It allows to get even more knowledge for all type of subject.
 
 ![Alt Text](frontend/src/assets/screenshots/Features/help_documentation.PNG)
 
-In this part of our application, the user can find a lot of documentation/websites 
-in order to go further in his work. It allows to get even more knowledge when every package is finished in the app,
-(even if we can create new packages)
 
 ## Contribution
 
+The ReadMe file was created by Tiphaine and was then edited by each member, all working on their own part like in the project. 
+The BuildMe file was created by Tiphaine and Manon, and the ToDoList which was a easy way to check the progress was created by Tiphaine and regular updated by every member.
 
 Tiphaine took care of all visual aspect of the website, except for the Study-Now page which was done my Manon. Overall, every Html and css file was re-done by Tiphaine for each page on the website.
 Tiphaine also took care of the Editing (edit and delete) of a Package, to the visual interface, the api calls needed and all methods needed for the successfull deletions of a package regarding the foreign key between the package and fact.

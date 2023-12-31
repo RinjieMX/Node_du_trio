@@ -146,6 +146,7 @@ Discover now the "Study Now" page, the centerpiece of our app. It is here that w
 The "Study Now" page will take you to an existing and not empty package. Otherwise, you will see a page informing you that no package is available, or that it is empty.
 
 ![Alt Text](frontend/src/assets/screenshots/study-now/nomorefact.png)
+
 ![Alt Text](frontend/src/assets/screenshots/study-now/nomorepackage.png)
 
 You can easily change a package by selecting it from the drop-down menu at the top left of the screen.
@@ -160,6 +161,7 @@ Your choice of trust level will determine how long before the issue reappears in
 
 ## Feature Statistics
 ![Alt Text](frontend/src/assets/screenshots/features/facts stats.png)
+
 ![Alt Text](frontend/src/assets/screenshots/features/Statistics.png)
 
 ## Feature Achievements

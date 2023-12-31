@@ -2,6 +2,7 @@
 
 ## Côté fonctionnalité de l'application
 
+- Update la valeur finished_package pour la page Achievements
 
 ## Coté design de l'interface de l'application
 
